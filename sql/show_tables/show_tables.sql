@@ -1,0 +1,3 @@
+USE supercooljobs;
+
+SHOW TABLES;
