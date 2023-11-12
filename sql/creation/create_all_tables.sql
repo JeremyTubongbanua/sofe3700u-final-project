@@ -54,8 +54,8 @@ CREATE TABLE IF NOT EXISTS `recruit` (
     full_name VARCHAR(255) NOT NULL,
     recruit_location VARCHAR(255),
     bio TEXT,
-    recruit_resume TEXT,
     picture TEXT,
+    recruit_resume TEXT,
     recruit_status_id INTEGER NOT NULL,
     PRIMARY KEY (id),
     FOREIGN KEY (recruit_status_id) REFERENCES recruit_status (id)
@@ -66,8 +66,8 @@ CREATE TABLE IF NOT EXISTS `recruiter` (
     u_name VARCHAR(255) NOT NULL,
     pass_hash VARCHAR(255) NOT NULL,
     full_name VARCHAR(255) NOT NULL,
-    bio TEXT,
     recruiter_location VARCHAR(255),
+    bio TEXT,
     picture TEXT,
     FOREIGN KEY (company_id) REFERENCES company (id),
     PRIMARY KEY (id)

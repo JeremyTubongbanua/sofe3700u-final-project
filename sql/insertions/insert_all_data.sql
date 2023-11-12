@@ -113,3 +113,16 @@ VALUES
     (20, 7, 'Marketing Intern', 'A current college/university student who wants to help give the Internet its privacy back, familiar with making videos or still graphics.', 10000, 'https://images.pexels.com/photos/936135/pexels-photo-936135.jpeg?auto=compress&cs=tinysrgb&w=1600', 1, 0, 0),
     (21, 7, 'Marketing Intern', 'A current college/university student who wants to help give the Internet its privacy back, familiar with making videos or still graphics.', 10000, 'https://images.pexels.com/photos/936135/pexels-photo-936135.jpeg?auto=compress&cs=tinysrgb&w=1600', 1, 0, 0),
     (22, 7, 'Marketing Intern', 'A current college/university student who wants to help give the Internet its privacy back, familiar with making videos or still graphics.', 10000, 'https://images.pexels.com/photos/936135/pexels-photo-936135.jpeg?auto=compress&cs=tinysrgb&w=1600', 1, 0, 0);
+
+INSERT INTO `recruit` (id, u_name, pass_hash, full_name, recruit_location, bio, picture, recruit_resume, recruit_status_id)
+VALUES 
+    (0, 'x23mark', '202cb962ac59075b964b07152d234b70', 'Jeremy Tubongbanua', 'Scarborough, Ontario, Canada', '3rd-Year Software Engineering Student Specializaing in IoT', 'https://imgur.com/SbwZN0K', 'https://www.linkedin.com/in/jeremy-tubongbanua/', 0),
+    (1, 'jerryshum', 'de877b38b46ff2a81533394464d8c7ae', 'Jerry Shum', 'Oshawa, Ontario, Canada', '3rd-Year Software Engineering Student', 'https://imgur.com/fxfajwb', 'https://www.linkedin.com/in/jerry-shum/', 1),
+    (2, 'neh2332', '202cb962ac59075b964b07152d234b70', 'Nehmat Farooq', 'Oshawa, Ontario, Canada', '3rd-Year Software Engineering Student | Aspiring Software Engineer | Gym Enjoyer', 'https://imgur.com/aqSgVKF', 'https://www.linkedin.com/in/nehmat-farooq/', 1),
+    (3, 'dudeman', 'de877b38b46ff2a81533394464d8c7ae', 'Noah Toma', 'Ajax, Ontario, Canada', '3rd-Year Software Engineering Student | Certified Goat', 'https://imgur.com/undefined', 'https://www.linkedin.com/in/nt-se/', 0),
+    (4, 'moker', '202cb962ac59075b964b07152d234b70', 'Wesley Kyle De Guzman', 'Scarborough, Ontario, Canada', '3rd-Year Mechatronics Engineering Student at Ontario Tech University', 'https://imgur.com/BGzXDUd', 'https://www.linkedin.com/in/wesley-de-guzman-46529b207/', 1),
+    (5, 'kh', 'de877b38b46ff2a81533394464d8c7ae', 'Khalid Hafeez', 'Ontario, Canada', 'Associate Professor at Ontario Tech University', 'https://shared.ontariotechu.ca/shared/faculty/feas/images/faculty-photos/khalid.hafeez.png', 'https://engineering.ontariotechu.ca/people/ecse/khalid.hafeez.php', 0),
+    (6, 'billgates', '202cb962ac59075b964b07152d234b70', 'Bill Gates', 'San Jose, California', 'Founder of Microsoft', 'https://imgur.com/JOnMzUu', 'https://en.wikipedia.org/wiki/Bill_Gates', 0),
+    (7, 'kevinwang', 'de877b38b46ff2a81533394464d8c7ae', 'Kevin Wang', 'Rome, Italy', 'Associate Professor of Finance at Rotman', 'https://imgur.com/A8bcvUF', 'https://www.rotman.utoronto.ca/FacultyAndResearch/Faculty/FacultyBios/Wang_K', 1);
+
+    /* 'https://imgur.com/PLbZ2ZD'*/
