@@ -48,7 +48,7 @@ VALUES (
         'Ontario Power Generation',
         'We power the province of Ontario',
         'Ontario, Canada',
-        'https://imgur.com/undefined'
+        'https://imgur.com/3ccTKp1'
     ),
     (
         4,
@@ -60,8 +60,8 @@ VALUES (
     (
         5,
         'Microsoft',
-        '4400-81 Bay St Toronto, ON M5J 0E7',
         'Microsoft made the Windows operating system',
+        '4400-81 Bay St Toronto, ON M5J 0E7',
         'https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/2048px-Microsoft_logo.svg.png'
     ),
     (
@@ -69,7 +69,14 @@ VALUES (
         'Code Ninjas',
         'We teach students virtually in all areas from elementary to high school STEM education.',
         NULL,
-        'https://imgur.com/pIwUCIg',
+        'https://imgur.com/pIwUCIg'
+    ),
+    (
+        7,
+        'Atsign',
+        'We are a SV start up building Networking 2.0 technology securing networkign devices by making them addressable wherever and whenever, closing ports on vulnerable networking devices and making firewalls truly firewalls, and giving data privacy back to the people of the Internet.',
+        NULL,
+        'https://imgur.com/undefined'
     );
 INSERT INTO `job_posting` (
         id,
@@ -98,3 +105,11 @@ VALUES
     (12, 6, 'Elementary-Level Math Tutor', 'Familiar with basic math such as calculating the circumference and area of a circle.', 8000, 'https://images.pexels.com/photos/3771074/pexels-photo-3771074.jpeg?auto=compress&cs=tinysrgb&w=1600', 1, 1, 1),
     (13, 6, 'Elementary-Level English Tutor', 'Looking for a concurrent university student with English level 10.', 8000, 'https://images.pexels.com/photos/256417/pexels-photo-256417.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', 1, 1, 1),
     (14, 6, 'Elementary-Level Science Tutor', 'Looking for a concurrent university student with basic knowledge of biology, chemistry, and physics.', 8000, 'https://images.pexels.com/photos/2280571/pexels-photo-2280571.jpeg?auto=compress&cs=tinysrgb&w=1600', 1, 1, 1),
+    (15, 6, 'High School Math Tutor', 'Familiar with calculus and vectors', 10000, 'https://images.pexels.com/photos/6238050/pexels-photo-6238050.jpeg?auto=compress&cs=tinysrgb&w=1600', 1, 1, 1),
+    (16, 6, 'High School Science Tutor', 'Familiar with calculus and vectors', 10000, 'https://images.pexels.com/photos/6238050/pexels-photo-6238050.jpeg?auto=compress&cs=tinysrgb&w=1600', 1, 1, 1),
+    (17, 7, 'Software Intern', 'A current college/university student who wants to help give the Internet its privacy back, familiar with C and/or Dart.', 10000, 'https://images.pexels.com/photos/2698465/pexels-photo-2698465.jpeg?auto=compress&cs=tinysrgb&w=1600', 1, 0, 0),
+    (18, 7, 'Software Intern', 'A current college/university student who wants to help give the Internet its privacy back, familiar with C and/or Dart.', 10000, 'https://images.pexels.com/photos/2698465/pexels-photo-2698465.jpeg?auto=compress&cs=tinysrgb&w=1600', 1, 0, 0),
+    (19, 7, 'Software Intern', 'A current college/university student who wants to help give the Internet its privacy back, familiar with C and/or Dart.', 10000, 'https://images.pexels.com/photos/2698465/pexels-photo-2698465.jpeg?auto=compress&cs=tinysrgb&w=1600', 1, 0, 0),
+    (20, 7, 'Marketing Intern', 'A current college/university student who wants to help give the Internet its privacy back, familiar with making videos or still graphics.', 10000, 'https://images.pexels.com/photos/936135/pexels-photo-936135.jpeg?auto=compress&cs=tinysrgb&w=1600', 1, 0, 0),
+    (21, 7, 'Marketing Intern', 'A current college/university student who wants to help give the Internet its privacy back, familiar with making videos or still graphics.', 10000, 'https://images.pexels.com/photos/936135/pexels-photo-936135.jpeg?auto=compress&cs=tinysrgb&w=1600', 1, 0, 0),
+    (22, 7, 'Marketing Intern', 'A current college/university student who wants to help give the Internet its privacy back, familiar with making videos or still graphics.', 10000, 'https://images.pexels.com/photos/936135/pexels-photo-936135.jpeg?auto=compress&cs=tinysrgb&w=1600', 1, 0, 0);
