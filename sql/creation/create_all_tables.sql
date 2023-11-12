@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS `job_posting_frequency` (
     PRIMARY KEY (id)
 );
 CREATE TABLE IF NOT EXISTS `recruit_status` (
-    id INTEGER NOT NULL,
+    id INTEGER NOT NULL ,
     recruit_status TEXT NOT NULL,
     PRIMARY KEY (id)
 );
