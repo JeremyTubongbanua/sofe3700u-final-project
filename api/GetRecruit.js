@@ -1,6 +1,6 @@
 
 function responseGetAllRecruits(db, req, res) {
-    query = 'SELECT recruit.id, recruit.u_name, recruit.pass_hash, recruit.full_name, recruit.recruit_location, recruit.bio, recruit.picture, recruit.recruit_resume, recruit_status.recruit_status, profession.profession FROM recruit LEFT JOIN recruit_status ON recruit.recruit_status_id = recruit_status.id JOIN recruit_professions ON recruit.id = recruit_professions.recruit_id JOIN profession ON recruit_professions.profession_id = profession.id;';
+    query = 'SELECT recruit.id, recruit.u_name, recruit.pass_hash, recruit.full_name, recruit.recruit_location, recruit.bio, recruit.picture, recruit.recruit_resume, recruit_status.recruit_status, profession.profession FROM recruit LEFT JOIN recruit_status ON recruit.recruit_status_id = recruit_status.id LEFT JOIN recruit_professions ON recruit.id = recruit_professions.recruit_id LEFT JOIN profession ON recruit_professions.profession_id = profession.id ORDER BY recruit.id ASC;';
     db.query(query, (err, result) => {
         if(err) {
             res.status(400).send({'message': 'error'});
@@ -18,7 +18,9 @@ function responseGetAllRecruits(db, req, res) {
             for(let i = 0; i < result.length; i++) {
                 for(let j = 0; j < data.length; j++) {
                     if(data[j]['id'] === result[i]['id']) {
-                        data[j]['professions'].push(result[i]['profession']);
+                        if(result[i]['profession'] != null) {
+                            data[j]['professions'].push(result[i]['profession']);
+                        }
                     }
                 }
             }
@@ -32,7 +34,7 @@ function responseGetAllRecruits(db, req, res) {
 
 
 function responseGetRecruitById(db, req, res, id) {
-    query = 'SELECT recruit.id, recruit.u_name, recruit.pass_hash, recruit.full_name, recruit.recruit_location, recruit.bio, recruit.picture, recruit.recruit_resume, recruit_status.recruit_status, profession.profession FROM (recruit JOIN recruit_status ON recruit.recruit_status_id = recruit_status.id) LEFT JOIN recruit_professions ON recruit.id = recruit_professions.recruit_id LEFT JOIN profession ON recruit_professions.profession_id = profession.id WHERE recruit.id = ' + id + ';';
+    query = 'SELECT recruit.id, recruit.u_name, recruit.pass_hash, recruit.full_name, recruit.recruit_location, recruit.bio, recruit.picture, recruit.recruit_resume, recruit_status.recruit_status, profession.profession FROM (recruit LEFT JOIN recruit_status ON recruit.recruit_status_id = recruit_status.id) LEFT JOIN recruit_professions ON recruit.id = recruit_professions.recruit_id LEFT JOIN profession ON recruit_professions.profession_id = profession.id WHERE recruit.id = ' + id + ';';
     db.query(query, (err, result) => {
         if(err) {
             res.status(400).send({'message': 'error'});
@@ -52,7 +54,7 @@ function responseGetRecruitById(db, req, res, id) {
 }
 
 function responseGetRecruitByUName(db, req, res, u_name) {
-    query = 'SELECT recruit.id, recruit.u_name, recruit.pass_hash, recruit.full_name, recruit.recruit_location, recruit.bio, recruit.picture, recruit.recruit_resume, recruit_status.recruit_status, profession.profession FROM (recruit JOIN recruit_status ON recruit.recruit_status_id = recruit_status.id) LEFT JOIN recruit_professions ON recruit.id = recruit_professions.recruit_id LEFT JOIN profession ON recruit_professions.profession_id = profession.id WHERE recruit.u_name = \"' + u_name + '\";';
+    query = 'SELECT recruit.id, recruit.u_name,  recruit.pass_hash, recruit.full_name, recruit.recruit_location, recruit.bio, recruit.picture, recruit.recruit_resume, recruit_status.recruit_status, profession.profession FROM (recruit LEFT JOIN recruit_status ON recruit.recruit_status_id = recruit_status.id) LEFT JOIN recruit_professions ON recruit.id = recruit_professions.recruit_id LEFT JOIN profession ON recruit_professions.profession_id = profession.id WHERE recruit.u_name = \"' + u_name + '\";';
     db.query(query, (err, result) => {
         if(err) {
             res.status(400).send({'message': 'error, no such user'});
