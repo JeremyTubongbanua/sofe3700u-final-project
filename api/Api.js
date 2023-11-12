@@ -24,35 +24,29 @@ db.connect((err) => {
 });
 
 app.get('/recruit/id', (req, res) => {
-    const url = req.url;
-    const body = req.body;
-    console.log('GET ' + url + '    ' + JSON.stringify(body));
-
-    if(body === undefined || body['id'] === undefined || body['id'] === NaN) {
+    console.log('GET ' + req.url + '    ' + JSON.stringify(req.body));
+    if(req.body === undefined || req.body['id'] === undefined || req.body['id'] === NaN) {
         // does not exist, or is not a number
         res.status(400).send({'message': 'id is required and must be a number'});
     } else {
         // id is a number
-        data = {}
-        query = 'SELECT recruit.id, recruit.u_name, recruit.pass_hash, recruit.full_name, recruit.recruit_location, recruit.bio, recruit.picture, recruit.recruit_resume, recruit_status.recruit_status, profession.profession FROM recruit JOIN recruit_status ON recruit.recruit_status_id = recruit_status.id JOIN recruit_professions ON recruit.id = recruit_professions.recruit_id RIGHT JOIN profession ON recruit_professions.profession_id = profession.id WHERE recruit.id = ' + body['id'] + ';'
-        db.query(query, (err, result) => {
-            if(err) {
-                res.status(400).send({'message': 'error'});
-            } else {
-                console.log('==================\n\nQUERY:\n' + query + '\n\nRECV:\n\n' + JSON.stringify(result) + '\n\n\n===========================');
-                data = result[0];
-                data['professions'] = [];
-                for(var i = 0; i < result.length; i++) {
-                    if(data['profession'] != null) {
-                        data['professions'].push(result[i]['profession']);
-                    }
-                }
-                data['profession'] = undefined;
-                res.status(200).send({'message': 'success', 'data': data});
-            }
-        });
+        const id = req.body['id'];
+        const {responseGetRecruitById} = require('./GetRecruit.js');
+        responseGetRecruitById(db, req, res, id);
     }
 });
+
+app.get('/recruit/u_name', (req, res) => {
+    console.log('GET ' + req.url + '    ' + JSON.stringify(req.body));
+    if(req.body === undefined || req.body['u_name'] === undefined) {
+        // does not exist
+        res.status(400).send({'message': 'u_name is required'});
+    } else {
+        const u_name = req.body['u_name'];
+        const {responseGetRecruitByUName} = require('./GetRecruit.js');
+        responseGetRecruitByUName(db, req, res, u_name);
+    }
+})
 
 app.post('/recruit')
 
