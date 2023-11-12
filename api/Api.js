@@ -23,8 +23,15 @@ db.connect((err) => {
     }
 });
 
+query = 'SELECT '
 
-app.use(express.json());
+db.query(query, (err, result) => {
+    if(err) {
+        console.log(err);
+    } else {
+        console.log(result);
+    }
+});
 
 app.get('/recruit/id', (req, res) => {
     const url = req.url;
