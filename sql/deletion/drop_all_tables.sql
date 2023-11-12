@@ -13,3 +13,4 @@ DROP TABLE IF EXISTS `recruit_status`;
 DROP TABLE IF EXISTS `job_posting_frequency`;
 DROP TABLE IF EXISTS `job_posting_type`;
 DROP TABLE IF EXISTS `job_posting_status`;
+DROP TABLE IF EXISTS `profession`;

@@ -24,6 +24,11 @@ CREATE TABLE IF NOT EXISTS `job_application_status` (
     job_application_status TEXT NOT NULL,
     PRIMARY KEY (id)
 );
+CREATE TABLE IF NOT EXISTS `profession` (
+    id INTEGER NOT NULL,
+    profession VARCHAR(255) NOT NULL,
+    PRIMARY KEY (id)
+);
 CREATE TABLE IF NOT EXISTS `company` (
     id INTEGER NOT NULL,
     company_name VARCHAR(255) NOT NULL,
@@ -82,11 +87,15 @@ CREATE TABLE IF NOT EXISTS `job_application` (
 );
 CREATE TABLE `recruit_professions` (
     recruit_id INTEGER NOT NULL,
-    profession VARCHAR(255) NOT NULL,
-    PRIMARY KEY (recruit_id, profession)
+    profession_id INTEGER NOT NULL,
+    FOREIGN KEY (recruit_id) REFERENCES recruit (id),
+    FOREIGN KEY (profession_id) REFERENCES profession (id),
+    PRIMARY KEY (recruit_id, profession_id)
 );
 CREATE TABLE `job_posting_professions` (
     job_posting_id INTEGER NOT NULL,
-    profession VARCHAR(255) NOT NULL,
-    PRIMARY KEY (job_posting_id, profession)
+    profession_id INTEGER NOT NULL,
+    FOREIGN KEY (job_posting_id) REFERENCES job_posting (id),
+    FOREIGN KEY (profession_id) REFERENCES profession (id),
+    PRIMARY KEY (job_posting_id, profession_id)
 );
