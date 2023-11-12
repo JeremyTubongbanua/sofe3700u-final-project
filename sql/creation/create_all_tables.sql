@@ -9,6 +9,11 @@ CREATE TABLE IF NOT EXISTS `job_posting_type` (
     job_posting_type TEXT NOT NULL,
     PRIMARY KEY (id)
 );
+CREATE TABLE IF NOT EXISTS `job_posting_frequency` (
+    id INTEGER NOT NULL,
+    job_posting_frequency TEXT NOT NULL,
+    PRIMARY KEY (id)
+);
 CREATE TABLE IF NOT EXISTS `recruit_status` (
     id INTEGER NOT NULL,
     recruit_status TEXT NOT NULL,
@@ -22,8 +27,8 @@ CREATE TABLE IF NOT EXISTS `job_application_status` (
 CREATE TABLE IF NOT EXISTS `company` (
     id INTEGER NOT NULL,
     company_name VARCHAR(255) NOT NULL,
-    company_location VARCHAR(255) NOT NULL,
     company_description TEXT NOT NULL,
+    company_location VARCHAR(255),
     logo TEXT,
     PRIMARY KEY (id)
 );
@@ -32,11 +37,11 @@ CREATE TABLE IF NOT EXISTS `job_posting` (
     company_id INTEGER NOT NULL,
     job_posting_title VARCHAR(255) NOT NULL,
     job_posting_description TEXT NOT NULL,
-    job_posting_location VARCHAR(255) NOT NULL,
     salary INTEGER,
     picture TEXT,
-    job_posting_type_id INTEGER NOT NULL,
     job_posting_status_id INTEGER NOT NULL,
+    job_posting_type_id INTEGER NOT NULL,
+    job_posting_frequency_id INTEGER NOT NULL,
     FOREIGN KEY (company_id) REFERENCES company (id),
     FOREIGN KEY (job_posting_type_id) REFERENCES job_posting_type (id),
     FOREIGN KEY (job_posting_status_id) REFERENCES job_posting_status (id),
