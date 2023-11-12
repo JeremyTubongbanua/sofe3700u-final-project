@@ -32,7 +32,7 @@ function responseGetAllRecruits(db, req, res) {
 
 
 function responseGetRecruitById(db, req, res, id) {
-    query = 'SELECT recruit.id, recruit.u_name, recruit.pass_hash, recruit.full_name, recruit.recruit_location, recruit.bio, recruit.picture, recruit.recruit_resume, recruit_status.recruit_status, profession.profession FROM recruit JOIN recruit_status ON recruit.recruit_status_id = recruit_status.id JOIN recruit_professions ON recruit.id = recruit_professions.recruit_id RIGHT JOIN profession ON recruit_professions.profession_id = profession.id WHERE recruit.id = ' + id + ';'
+    query = 'SELECT recruit.id, recruit.u_name, recruit.pass_hash, recruit.full_name, recruit.recruit_location, recruit.bio, recruit.picture, recruit.recruit_resume, recruit_status.recruit_status, profession.profession FROM (recruit JOIN recruit_status ON recruit.recruit_status_id = recruit_status.id) LEFT JOIN recruit_professions ON recruit.id = recruit_professions.recruit_id LEFT JOIN profession ON recruit_professions.profession_id = profession.id WHERE recruit.id = ' + id + ';';
     db.query(query, (err, result) => {
         if(err) {
             res.status(400).send({'message': 'error'});
@@ -52,12 +52,16 @@ function responseGetRecruitById(db, req, res, id) {
 }
 
 function responseGetRecruitByUName(db, req, res, u_name) {
-    query = 'SELECT recruit.id, recruit.u_name, recruit.pass_hash, recruit.full_name, recruit.recruit_location, recruit.bio, recruit.picture, recruit.recruit_resume, recruit_status.recruit_status, profession.profession FROM recruit JOIN recruit_status ON recruit.recruit_status_id = recruit_status.id JOIN recruit_professions ON recruit.id = recruit_professions.recruit_id RIGHT JOIN profession ON recruit_professions.profession_id = profession.id WHERE recruit.u_name = \"' + u_name + '\";'
+    query = 'SELECT recruit.id, recruit.u_name, recruit.pass_hash, recruit.full_name, recruit.recruit_location, recruit.bio, recruit.picture, recruit.recruit_resume, recruit_status.recruit_status, profession.profession FROM (recruit JOIN recruit_status ON recruit.recruit_status_id = recruit_status.id) LEFT JOIN recruit_professions ON recruit.id = recruit_professions.recruit_id LEFT JOIN profession ON recruit_professions.profession_id = profession.id WHERE recruit.u_name = \"' + u_name + '\";';
     db.query(query, (err, result) => {
         if(err) {
-            res.status(400).send({'message': 'error'});
+            res.status(400).send({'message': 'error, no such user'});
         } else {
             console.log('==================\n\nQUERY:\n' + query + '\n\nRECV:\n\n' + JSON.stringify(result) + '\n\n\n===========================');
+            if(result.length === 0) {
+                res.status(400).send({'message': 'error, no such user'});
+                return;
+            }
             data = result[0];
             data['professions'] = [];
             for(var i = 0; i < result.length; i++) {

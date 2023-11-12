@@ -2,8 +2,10 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const mysql = require('mysql2');
+const cors = require('cors');
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 dotenv.config({ path: './.env' });
 
@@ -23,8 +25,14 @@ db.connect((err) => {
     }
 });
 
-app.get('/recruit/id', (req, res) => {
-    console.log('GET ' + req.url + '    ' + JSON.stringify(req.body));
+app.get('/', (req, res) => {
+    console.log('GET ' + req.url);
+    res.send('Hello World!');
+});
+
+
+app.post('/recruit/id', (req, res) => {
+    console.log('POST ' + req.url + '    ' + JSON.stringify(req.body));
     if (req.body === undefined || req.body['id'] === undefined || req.body['id'] === NaN) {
         // does not exist, or is not a number
         res.status(400).send({ 'message': 'id is required and must be a number' });
@@ -36,8 +44,8 @@ app.get('/recruit/id', (req, res) => {
     }
 });
 
-app.get('/recruit/u_name', (req, res) => {
-    console.log('GET ' + req.url + '    ' + JSON.stringify(req.body));
+app.post('/recruit/u_name', (req, res) => {
+    console.log('POST ' + req.url + '    ' + JSON.stringify(req.body));
     if (req.body === undefined || req.body['u_name'] === undefined) {
         // does not exist
         res.status(400).send({ 'message': 'u_name is required' });
@@ -49,7 +57,7 @@ app.get('/recruit/u_name', (req, res) => {
 })
 
 app.get('/recruits', (req, res) => {
-    console.log('GET ' + req.url + '    ' + JSON.stringify(req.body));
+    console.log('GET ' + req.url);
     const { responseGetAllRecruits } = require('./GetRecruit.js');
     responseGetAllRecruits(db, req, res);
 })
@@ -60,7 +68,7 @@ app.put('/recruit', (req, res) => {
     responsePutRecruit(db, req, res);
 });
 
-const server = app.listen(3000, '0.0.0.0', () => {
+const server = app.listen(3001, '0.0.0.0', () => {
     const host = server.address().address;
     const port = server.address().port;
     console.log(`API listening at http://${host}:${port}`);
