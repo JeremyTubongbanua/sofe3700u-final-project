@@ -68,6 +68,12 @@ app.put('/recruit', (req, res) => {
     responsePutRecruit(db, req, res);
 });
 
+app.patch('/recruit', (req, res) => {
+    console.log('PATCH ' + req.url + '    ' + JSON.stringify(req.body));
+    const { responsePatchRecruit } = require('./PatchRecruit.js');
+    responsePatchRecruit(db, req, res);
+});
+
 app.put('/recruiter', (req, res) => {
     console.log('PUT ' + req.url + '    ' + JSON.stringify(req.body));
     const { responsePutRecruiter } = require('./PutRecruiter.js');
@@ -78,7 +84,19 @@ app.post('/job_posting/id', (req, res) => {
     console.log('POST ' + req.url + '    ' + JSON.stringify(req.body));
     const { responseGetJobPostingById } = require('./GetJobPosting.js');
     responseGetJobPostingById(db, req, res);
-})
+});
+
+app.post('/job_postings', (req, res) => {
+    console.log('POST ' + req.url + '    ' + JSON.stringify(req.body));
+    const { responseGetAllJobPostings } = require('./GetJobPosting.js');
+    responseGetAllJobPostings(db, req, res);
+});
+
+app.post('/job_posting/filter', (req, res) => {
+    console.log('POST ' + req.url + '    ' + JSON.stringify(req.body));
+    const { responseGetFilteredJobPostings } = require('./GetJobPosting.js');
+    responseGetFilteredJobPostings(db, req, res);
+});
 
 const server = app.listen(3001, '0.0.0.0', () => {
     const host = server.address().address;

@@ -1,36 +1,36 @@
 USE supercooljobs;
 CREATE TABLE IF NOT EXISTS `job_posting_status` (
-    id INTEGER NOT NULL,
+    id INTEGER NOT NULL UNIQUE,
     job_posting_status TEXT NOT NULL,
     PRIMARY KEY (id)
 );
 CREATE TABLE IF NOT EXISTS `job_posting_type` (
-    id INTEGER NOT NULL,
+    id INTEGER NOT NULL UNIQUE,
     job_posting_type TEXT NOT NULL,
     PRIMARY KEY (id)
 );
 CREATE TABLE IF NOT EXISTS `job_posting_frequency` (
-    id INTEGER NOT NULL,
+    id INTEGER NOT NULL UNIQUE,
     job_posting_frequency TEXT NOT NULL,
     PRIMARY KEY (id)
 );
 CREATE TABLE IF NOT EXISTS `recruit_status` (
-    id INTEGER NOT NULL ,
+    id INTEGER NOT NULL UNIQUE,
     recruit_status TEXT NOT NULL,
     PRIMARY KEY (id)
 );
 CREATE TABLE IF NOT EXISTS `job_application_status` (
-    id INTEGER NOT NULL,
+    id INTEGER NOT NULL UNIQUE,
     job_application_status TEXT NOT NULL,
     PRIMARY KEY (id)
 );
 CREATE TABLE IF NOT EXISTS `profession` (
-    id INTEGER NOT NULL,
+    id INTEGER NOT NULL UNIQUE,
     profession VARCHAR(255) NOT NULL,
     PRIMARY KEY (id)
 );
 CREATE TABLE IF NOT EXISTS `company` (
-    id INTEGER NOT NULL,
+    id INTEGER NOT NULL UNIQUE,
     company_name VARCHAR(255) NOT NULL,
     company_description TEXT NOT NULL,
     company_location VARCHAR(255),
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `company` (
     PRIMARY KEY (id)
 );
 CREATE TABLE IF NOT EXISTS `job_posting` (
-    id INTEGER NOT NULL,
+    id INTEGER NOT NULL UNIQUE,
     company_id INTEGER NOT NULL,
     job_posting_title VARCHAR(255) NOT NULL,
     job_posting_description TEXT NOT NULL,
@@ -53,8 +53,8 @@ CREATE TABLE IF NOT EXISTS `job_posting` (
     PRIMARY KEY (id)
 );
 CREATE TABLE IF NOT EXISTS `recruit` (
-    id INTEGER NOT NULL,
-    u_name VARCHAR(255) NOT NULL,
+    id INTEGER NOT NULL UNIQUE,
+    u_name VARCHAR(255) NOT NULL UNIQUE,
     pass_hash VARCHAR(255) NOT NULL,
     full_name VARCHAR(255) NOT NULL,
     recruit_location VARCHAR(255),
@@ -66,9 +66,9 @@ CREATE TABLE IF NOT EXISTS `recruit` (
     FOREIGN KEY (recruit_status_id) REFERENCES recruit_status (id)
 );
 CREATE TABLE IF NOT EXISTS `recruiter` (
-    id INTEGER NOT NULL,
+    id INTEGER NOT NULL UNIQUE,
     company_id INTEGER,
-    u_name VARCHAR(255) NOT NULL,
+    u_name VARCHAR(255) NOT NULL UNIQUE,
     pass_hash VARCHAR(255) NOT NULL,
     full_name VARCHAR(255) NOT NULL,
     recruiter_location VARCHAR(255),
