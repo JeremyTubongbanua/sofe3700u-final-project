@@ -7,7 +7,7 @@ import './navBar.css';
 function NavBar() {
     return (
 
-        <Nav className="d-flex justify-content-around align-items-center w-100 p-4 overflow-hidden" activeKey="/home">
+        <Nav className="d-flex justify-content-around align-items-center w-100 p-3 overflow-hidden" activeKey="/home">
             <Navbar.Brand href="/home" className='logo'>Super Cool Jobs</Navbar.Brand>
             <Nav.Item>
                 <Nav.Link href="/" className='link-text'>Job Postings</Nav.Link>
