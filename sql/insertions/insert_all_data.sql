@@ -156,7 +156,7 @@ INSERT INTO `recruiter` (id, company_id, u_name, pass_hash, full_name, recruiter
     (6, 6, 'recruiter7', '202cb962ac59075b964b07152d234b70', 'John Doe', 'Toronto, Ontario, Canada', 'Recruiter at Code Ninjas', 'https://imgur.com/0B738gb'),
     (7, 7, 'recruiter8', 'de877b38b46ff2a81533394464d8c7ae', 'Jane Doe', 'Toronto, Ontario, Canada', 'Recruiter at Atsign', 'https://imgur.com/0B738gb');
 
-INSERT INTO `job_application` (recruit_id, job_posting_id, application_status_id)
+INSERT INTO `job_application` (recruit_id, job_posting_id, job_application_status_id)
 VALUES 
     (0, 12, 1),
     (0, 14, 0),

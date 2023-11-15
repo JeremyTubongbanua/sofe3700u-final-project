@@ -104,6 +104,12 @@ app.post('/company/id', (req, res) => {
     responseGetCompanyById(db, req, res);
 });
 
+app.put('/job_application/recruitapply', (req, res) => {
+    console.log('PUT ' + req.url + '    ' + JSON.stringify(req.body));
+    const { responsePutJobApplicationRecruitApply } = require('./JobApplication.js');
+    responsePutJobApplicationRecruitApply(db, req, res);
+})
+
 const server = app.listen(3001, '0.0.0.0', () => {
     const host = server.address().address;
     const port = server.address().port;
