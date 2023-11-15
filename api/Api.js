@@ -116,6 +116,12 @@ app.post('/professions', (req, res) => {
     responseGetAllProfessions(db, req, res);
 })
 
+app.post('/company/job_postings', (req, res) => {
+    console.log('POST ' + req.url + '    ' + JSON.stringify(req.body));
+    const { responseGetJobPostingsByCompanyId } = require('./GetJobPosting.js');
+    responseGetJobPostingsByCompanyId(db, req, res);
+});
+
 const server = app.listen(3001, '0.0.0.0', () => {
     const host = server.address().address;
     const port = server.address().port;

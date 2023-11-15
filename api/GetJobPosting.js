@@ -22,6 +22,42 @@ const responseGetJobPostingById = (db, req, res) => {
     }
 };
 
+const responseGetJobPostingsByCompanyId = (db, req, res) => {
+    if(req.body === undefined) {
+        res.status(400).send({ 'message': 'error', 'data': 'id must be provided' });
+    } else {
+        const id = req.body['id'];
+        query = 'SELECT DISTINCT job_posting.id, job_posting.company_id, job_posting.job_posting_title, job_posting.job_posting_description, job_posting.salary, job_posting.picture, job_posting.picture, job_posting_status.job_posting_status, job_posting_type.job_posting_type, job_posting_frequency.job_posting_frequency, profession.profession FROM job_posting JOIN view11 ON job_posting.company_id = view11.company_id JOIN job_posting_status ON job_posting.job_posting_status_id = job_posting_status.id JOIN job_posting_type ON job_posting.job_posting_type_id = job_posting_type.id JOIN job_posting_frequency ON job_posting.job_posting_frequency_id = job_posting_frequency.id LEFT JOIN job_posting_professions ON job_posting.id = job_posting_professions.job_posting_id LEFT JOIN profession ON job_posting_professions.profession_id = profession.id WHERE view11.company_id = ' + id + ';'
+        db.query(query, (err, result) => {
+            if (err) {
+                res.status(400).send({ 'message': 'error', 'data': err });
+            } else {
+                allData = [];
+                for(let i = 0; i < result.length; i++)
+                {
+                    let found = false;
+                    for(let j = 0; j < allData.length; j++) {
+                        if(allData[j]['id'] === result[i]['id']) {
+                            allData[j]['professions'].push(result[i]['profession']);
+                            found = true;
+                            break;
+                        }
+                    }
+                    if(!found) {
+                        data = {};
+                        data = result[i];
+                        data['professions'] = [];
+                        data['professions'].push(result[i]['profession']);
+                        delete data['profession'];
+                        allData.push(data);
+                    }
+                }
+                res.status(200).send({ 'message': 'success', 'data': allData });
+            }
+        });
+    }
+};
+
 const responseGetAllJobPostings = (db, req, res) => {
     query = 'SELECT job_posting.id, job_posting.company_id, company.company_name, job_posting.job_posting_title, job_posting.job_posting_description, job_posting.salary, job_posting.picture, job_posting_status.job_posting_status, job_posting_type.job_posting_type, job_posting_frequency.job_posting_frequency, profession.profession FROM job_posting JOIN company ON job_posting.company_id = company.id JOIN job_posting_status ON job_posting.job_posting_status_id = job_posting_status.id JOIN job_posting_type ON job_posting.job_posting_type_id = job_posting_type.id JOIN job_posting_frequency ON job_posting.job_posting_frequency_id = job_posting_frequency.id LEFT JOIN job_posting_professions ON job_posting.id = job_posting_professions.job_posting_id LEFT JOIN profession ON job_posting_professions.profession_id = profession.id;';
     db.query(query, (err, result) => {
@@ -124,4 +160,4 @@ const responseGetFilteredJobPostings = (db, req, res) => {
     }
 }
 
-module.exports = { responseGetJobPostingById, responseGetAllJobPostings, responseGetFilteredJobPostings };
+module.exports = { responseGetJobPostingById, responseGetAllJobPostings, responseGetJobPostingsByCompanyId, responseGetFilteredJobPostings };
