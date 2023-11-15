@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Card, Button, Form, CardBody, FormLabel, FormControl } from 'react-bootstrap'
 import SignUp from './components/signUp'
-import Header from './components/header';
+import Login from './components/login';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -12,7 +12,7 @@ root.render(
         <Router>
             <Routes>
                 <Route path="/" Component={SignUp} />
-                <Route path="/header" Component={Header} />
+                <Route path="/login" Component={Login} />
             </Routes>
         </Router>
     </React.StrictMode>

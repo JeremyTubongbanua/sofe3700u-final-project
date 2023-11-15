@@ -21,7 +21,7 @@ function SignUp() {
                         <div className="card border border-2 border-black rounded-0 text-center ">
                             <div className="card-body">
                                 <div className='card-title my-5 title-card'>
-                                    Sign Up As
+                                    Log In As
                                 </div>
                                 <form className='mx-auto w-75'>
                                     <div className="mb-3">
@@ -80,7 +80,7 @@ function SignUp() {
                                         Sign Up
                                     </button>
 
-                                    <Link to="/header">
+                                    <Link to="/Login">
                                         <button className="btn btn-outline-secondary w-75 mt-3 p-3">
                                             Log In
                                         </button>
