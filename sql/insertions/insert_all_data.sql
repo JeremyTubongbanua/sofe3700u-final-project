@@ -5,7 +5,7 @@ VALUES (0, 'Closed'),
 INSERT INTO `job_posting_type` (id, job_posting_type)
 VALUES (0, 'Remote'),
     (1, 'Hybrid'),
-    (2, 'On-site');
+    (2, 'In-Person');
 INSERT INTO `job_posting_frequency` (id, job_posting_frequency)
 VALUES (0, 'Contract'), (1, 'Part-Time'), (2, 'Full-Time');
 INSERT INTO `recruit_status` (id, recruit_status)

@@ -98,6 +98,12 @@ app.post('/job_posting/filter', (req, res) => {
     responseGetFilteredJobPostings(db, req, res);
 });
 
+app.post('/company/id', (req, res) => {
+    console.log('POST ' + req.url + '    ' + JSON.stringify(req.body));
+    const { responseGetCompanyById } = require('./GetCompany.js');
+    responseGetCompanyById(db, req, res);
+});
+
 const server = app.listen(3001, '0.0.0.0', () => {
     const host = server.address().address;
     const port = server.address().port;
