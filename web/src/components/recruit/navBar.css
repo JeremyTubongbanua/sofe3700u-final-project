@@ -10,5 +10,28 @@
     font-weight: 300;
     font-size: 24px;
     text-transform: uppercase;
+}
 
+.link-text {
+    font-family: Roboto, sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    color: black;
+}
+
+.link-text {
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: black;
+    border-bottom: 2px solid transparent;
+    /* Add a transparent border */
+}
+
+.link-text:hover {
+    text-shadow: .25px 0px .1px,
+        -.25px 0px .1px;
+    color: black;
+    border-color: gray;
+    /* Change the border color on hover */
 }
