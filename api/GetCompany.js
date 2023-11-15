@@ -1,7 +1,7 @@
 
 const responseGetCompanyById = (db, req, res) => {
-    if(req.body === undefined || req.body['id'] === undefined) {
-        res.status(400).send({'message': 'id is required'});
+    if (req.body === undefined || req.body['id'] === undefined) {
+        res.status(400).send({ 'message': 'id is required' });
     }
     query = 'SELECT * FROM company WHERE company.id = ' + req.body['id'];
     db.query(query, (err, result) => {
@@ -13,14 +13,18 @@ const responseGetCompanyById = (db, req, res) => {
                 res.status(404).send({ 'message': 'company not found' });
             } else {
                 data = result[0];
-                query = 'SELECT job_posting.id, job_posting.company_id, job_posting.job_posting_title, job_posting.job_posting_description, job_posting.salary, job_posting.picture, job_posting_status.job_posting_status, job_posting_type.job_posting_type, job_posting_frequency.job_posting_frequency FROM job_posting JOIN job_posting_status ON job_posting.job_posting_status_id = job_posting_status.id JOIN job_posting_type ON job_posting.job_posting_type_id = job_posting_type.id JOIN job_posting_frequency ON job_posting_frequency.id = job_posting.job_posting_frequency_id WHERE job_posting.company_id = ' + data['id'];
+                query = 'SELECT job_posting.id FROM job_posting WHERE job_posting.company_id = ' + data['id'] + ' ORDER BY job_posting.id ASC;';
                 db.query(query, (err, result) => {
                     if (err) {
                         console.log(err);
                         res.status(500).send({ 'message': 'error', 'error': err });
                     } else {
-                        data['job_postings'] = result;
-                        res.status(200).send({'message': 'success', 'company': data});
+                        job_postings = [];
+                        for (let i = 0; i < result.length; i++) {
+                            job_postings.push(result[i]['id']);
+                        }
+                        data['job_postings'] = job_postings;
+                        res.status(200).send({ 'message': 'success', 'data': data });
                     }
                 });
             }
