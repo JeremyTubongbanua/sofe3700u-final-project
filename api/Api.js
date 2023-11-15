@@ -70,8 +70,14 @@ app.put('/recruit', (req, res) => {
 
 app.put('/recruiter', (req, res) => {
     console.log('PUT ' + req.url + '    ' + JSON.stringify(req.body));
-    const {responsePutRecruiter} = require('./PutRecruiter.js');
+    const { responsePutRecruiter } = require('./PutRecruiter.js');
     responsePutRecruiter(db, req, res);
+})
+
+app.post('/job_posting/id', (req, res) => {
+    console.log('POST ' + req.url + '    ' + JSON.stringify(req.body));
+    const { responseGetJobPostingById } = require('./GetJobPosting.js');
+    responseGetJobPostingById(db, req, res);
 })
 
 const server = app.listen(3001, '0.0.0.0', () => {
