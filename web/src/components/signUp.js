@@ -21,7 +21,7 @@ function SignUp() {
                         <div className="card border border-2 border-black rounded-0 text-center ">
                             <div className="card-body">
                                 <div className='card-title my-5 title-card'>
-                                    Log In As
+                                    Sign Up As
                                 </div>
                                 <form className='mx-auto w-75'>
                                     <div className="mb-3">
