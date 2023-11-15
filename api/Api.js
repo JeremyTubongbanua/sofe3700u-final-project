@@ -68,6 +68,12 @@ app.put('/recruit', (req, res) => {
     responsePutRecruit(db, req, res);
 });
 
+app.put('/recruiter', (req, res) => {
+    console.log('PUT ' + req.url + '    ' + JSON.stringify(req.body));
+    const {responsePutRecruiter} = require('./PutRecruiter.js');
+    responsePutRecruiter(db, req, res);
+})
+
 const server = app.listen(3001, '0.0.0.0', () => {
     const host = server.address().address;
     const port = server.address().port;
