@@ -110,6 +110,12 @@ app.put('/job_application/recruitapply', (req, res) => {
     responsePutJobApplicationRecruitApply(db, req, res);
 })
 
+app.post('/professions', (req, res) => {
+    console.log('POST ' + req.url + '    ' + JSON.stringify(req.body));
+    const { responseGetAllProfessions } = require('./GetProfessions.js');
+    responseGetAllProfessions(db, req, res);
+})
+
 const server = app.listen(3001, '0.0.0.0', () => {
     const host = server.address().address;
     const port = server.address().port;
