@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+
+* {
+    font-family: Roboto, sans-serif;
+}
+
+.logo {
+    font-family: Inter, sans-serif;
+    font-weight: 300;
+    font-size: 24px;
+    text-transform: uppercase;
+
+}
