@@ -80,9 +80,10 @@ CREATE TABLE IF NOT EXISTS `recruiter` (
 CREATE TABLE IF NOT EXISTS `job_application` (
     recruit_id INTEGER NOT NULL,
     job_posting_id INTEGER NOT NULL,
-    application_status_id INTEGER NOT NULL,
+    job_application_status_id INTEGER NOT NULL,
     FOREIGN KEY (recruit_id) REFERENCES recruit (id),
     FOREIGN KEY (job_posting_id) REFERENCES job_posting (id),
+    FOREIGN KEY (job_application_status_id) REFERENCES job_application_status (id),
     PRIMARY KEY (recruit_id, job_posting_id)
 );
 CREATE TABLE `recruit_professions` (
