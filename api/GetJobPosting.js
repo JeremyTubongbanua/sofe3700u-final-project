@@ -98,7 +98,7 @@ const responseGetFilteredJobPostings = (db, req, res) => {
 
         db.query(sql, (err, result) => {
             if (err) {
-                res.status(400).send({ 'message': 'error', 'result': err });
+                res.status(400).send({ 'message': 'error', 'data': err });
             } else {
                 allData = [];
                 for (let i = 0; i < result.length; i++) {
@@ -118,7 +118,7 @@ const responseGetFilteredJobPostings = (db, req, res) => {
                         allData.push(data);
                     }
                 }
-                res.status(200).send({ 'message': 'success', 'result': allData });
+                res.status(200).send({ 'message': 'success', 'data': allData });
             }
         });
     }

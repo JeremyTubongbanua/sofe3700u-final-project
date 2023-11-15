@@ -1,7 +1,7 @@
 
 const responsePatchRecruit = (db, req, res) => {
     if(req.body === undefined) {
-        res.status(400).send({ 'message': 'body is required' });
+        res.status(400).send({ 'message': 'error', 'data': 'body is required' });
     }
     query = 'UPDATE recruit SET ';
     let first = true;
@@ -16,9 +16,9 @@ const responsePatchRecruit = (db, req, res) => {
     query += ' WHERE id = ' + req.body['id'] + ';';
     db.query(query, (err, result) => {
         if (err) {
-            res.status(400).send({ 'message': 'error', 'result': err });
+            res.status(400).send({ 'message': 'error', 'data': err });
         } else {
-            res.status(200).send({ 'message': 'success', 'result': result });
+            res.status(200).send({ 'message': 'success', 'data': result });
         }
     });
 }
