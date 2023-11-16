@@ -24,7 +24,21 @@ const responseGetCompanyById = (db, req, res) => {
                             job_postings.push(result[i]['id']);
                         }
                         data['job_postings'] = job_postings;
-                        res.status(200).send({ 'message': 'success', 'data': data });
+                        recruiters = []
+                        query = 'SELECT recruiter.id FROM recruiter WHERE recruiter.company_id = ' + data['id'] + ' ORDER BY recruiter.id ASC;';
+                        db.query(query, (err, result) => {
+                            if (err) {
+                                console.log(err);
+                                res.status(500).send({ 'message': 'error', 'data': err });
+                            } else {
+                                for (let i = 0; i < result.length; i++) {
+                                    recruiters.push(result[i]['id']);
+                                }
+                                data['recruiters'] = recruiters;
+                                res.status(200).send({ 'message': 'success', 'data': data });
+                            }
+                        }
+                        );
                     }
                 });
             }
@@ -32,6 +46,19 @@ const responseGetCompanyById = (db, req, res) => {
     });
 };
 
+const responseGetAllCompanies = (db, req, res) => {
+    query = 'SELECT * FROM company ORDER BY company.id ASC;';
+    db.query(query, (err, result) => {
+        if (err) {
+            console.log(err);
+            res.status(500).send({ 'message': 'error', 'data': err });
+        } else {
+            res.status(200).send({ 'message': 'success', 'data': result });
+        }
+    });
+}
+
 module.exports = {
-    responseGetCompanyById
+    responseGetCompanyById,
+    responseGetAllCompanies
 };

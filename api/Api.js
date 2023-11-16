@@ -122,6 +122,18 @@ app.post('/company/job_postings', (req, res) => {
     responseGetJobPostingsByCompanyId(db, req, res);
 });
 
+app.patch('/recruiter', (req, res) => {
+    console.log('PATCH ' + req.url + '    ' + JSON.stringify(req.body));
+    const { responsePatchRecruiter } = require('./PatchRecruiter.js');
+    responsePatchRecruiter(db, req, res);
+});
+
+app.post('/companies', (req, res) => {
+    console.log('POST ' + req.url + '    ' + JSON.stringify(req.body));
+    const { responseGetAllCompanies } = require('./GetCompany.js');
+    responseGetAllCompanies(db, req, res);
+})
+
 const server = app.listen(3001, '0.0.0.0', () => {
     const host = server.address().address;
     const port = server.address().port;
