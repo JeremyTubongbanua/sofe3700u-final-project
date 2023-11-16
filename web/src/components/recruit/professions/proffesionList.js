@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import Profession from './profession';
 
 
@@ -47,11 +50,18 @@ function ProfessionList() {
 
     // Render components dynamically based on the fetched data
     return (
-        <div>
-            {data.map((professionData) => (
-                <Profession key={professionData.id} name={professionData.profession} />
-            ))}
+        <div className='p-4'>
+            <Container>
+                <Row sm="5">
+                    {data.map((professionData) => (
+                        <Col>
+                            <Profession key={professionData.id} name={professionData.profession} />
+                        </Col>
+                    ))}
+                </Row>
+            </Container>
         </div>
+
     );
 }
 

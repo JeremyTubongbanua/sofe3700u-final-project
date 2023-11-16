@@ -17,7 +17,7 @@ function SignUp() {
             <Header />
             <div className="container mt-5">
                 <div className="row justify-content-center">
-                    <div className="col-md-4">
+                    <div className="col-xs-4">
                         <div className="card border border-2 border-black rounded-0 text-center ">
                             <div className="card-body">
                                 <div className='card-title my-5 title-card'>
