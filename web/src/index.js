@@ -15,7 +15,6 @@ root.render(
     <React.StrictMode>
         <Router>
             <Routes>
-                <Route path="/" Component={NavBar} />
                 <Route path="/home" Component={Home} />
                 <Route path="/signup" Component={SignUp} />
                 <Route path="/login" Component={Login} />
