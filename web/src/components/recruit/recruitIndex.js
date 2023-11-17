@@ -1,7 +1,7 @@
 import React from 'react';
-import NavBar from './navBar';
+import NavBar from '../navBar/navBar';
 import FilterIndex from './filters/filterIndex';
-import SearchBar from './searchBar';
+import SearchBar from './searchBar/searchBar';
 import Posting from './postings/posting';
 import { Col, Container, Row, Stack } from 'react-bootstrap';
 
