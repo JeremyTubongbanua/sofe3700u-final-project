@@ -6,7 +6,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import SignUp from './components/homeFiles/signUp';
 import Login from './components/homeFiles/login';
 import Home from './components/homeFiles/home';
-import NavBar from './components/recruit/navBar';
 import RecruitIndex from './components/recruit/recruitIndex';
 import Posting from './components/recruit/postings/posting'
 
