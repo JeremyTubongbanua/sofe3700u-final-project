@@ -10,7 +10,7 @@ function Profession(props) {
         <div className='pd'>
             <Form>
                 <div className="md-3">
-                    <Form.Check // prettier-ignore
+                    <Form.Check
                         type='checkbox'
                         id={props.id}
                         label={props.name}

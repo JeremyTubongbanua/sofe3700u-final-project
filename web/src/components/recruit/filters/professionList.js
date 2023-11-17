@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Profession from './profession';
+import './professionList.css';
 
 
 function ProfessionList() {
@@ -50,8 +51,9 @@ function ProfessionList() {
 
     // Render components dynamically based on the fetched data
     return (
-        <div className='p-4'>
-            <Container>
+        <div className=''>
+            <Container className='p-2 bg-secondary'>
+                <h1 className='pb-2 prof-head mb-3'>Professions:</h1>
                 <Row sm="5">
                     {data.map((professionData) => (
                         <Col>

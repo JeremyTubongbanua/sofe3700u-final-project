@@ -8,6 +8,7 @@ import Login from './components/homeFiles/login';
 import Home from './components/homeFiles/home';
 import NavBar from './components/recruit/navBar';
 import RecruitIndex from './components/recruit/recruitIndex';
+import Posting from './components/recruit/postings/posting'
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -19,6 +20,7 @@ root.render(
                 <Route path="/signup" Component={SignUp} />
                 <Route path="/login" Component={Login} />
                 <Route path="/recruit" Component={RecruitIndex} />
+                <Route path="/posting" Component={Posting} />
 
             </Routes>
         </Router>

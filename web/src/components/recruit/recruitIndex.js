@@ -1,15 +1,29 @@
 import React from 'react';
-import ProfessionList from './professions/proffesionList';
 import NavBar from './navBar';
+import FilterIndex from './filters/filterIndex';
+import SearchBar from './searchBar';
+import Posting from './postings/posting';
+import { Col, Container, Row, Stack } from 'react-bootstrap';
 
 
 
 function RecruitIndex() {
 
     return (
-        <div>
+        <div className='position-relative'>
             <NavBar />
-            <ProfessionList />
+
+            <Stack gap={5} className='mt-5'>
+                <SearchBar />
+                <FilterIndex />
+                <Container>
+                    <Row>
+                        <Col>
+                            <Posting />
+                        </Col>
+                    </Row>
+                </Container>
+            </Stack>
         </div>
     );
 }
