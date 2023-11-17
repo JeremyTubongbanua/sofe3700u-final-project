@@ -19,7 +19,6 @@ root.render(
                 <Route path="/login" Component={Login} />
                 <Route path="/recruit" Component={RecruitIndex} />
                 <Route path="/posting" Component={Posting} />
-
             </Routes>
         </Router>
     </React.StrictMode>
