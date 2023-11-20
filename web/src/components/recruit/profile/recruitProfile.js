@@ -1,67 +1,60 @@
+
 import React from 'react';
-import { Button, Col, Form, Row, Image, Stack } from 'react-bootstrap';
+import { Button, Col, Form, Row } from 'react-bootstrap';
 
-function RecruitProfile(props) {
+function RecruitProfile() {
     return (
-        <div className='d-flex align-items-center justify-content-center' style={{ minHeight: '100vh' }}>
-            <Form style={{ width: '100%', maxWidth: '800px' }}>
-                <div className='p-4 d-flex flex-column align-items-stretch bg-secondary-subtle'>
-                    <Row className="mb-2 flex-grow-1 align-self-stretch  ">
-                        <Col xs={12} md={6} className="d-flex align-items-center">
-                            <Stack gap={3}>
+        <Form>
+            <Row className="mb-3">
+                <Form.Group as={Col} controlId="formGridEmail">
+                    <Form.Label>Email</Form.Label>
+                    <Form.Control type="email" placeholder="Enter email" />
+                </Form.Group>
 
-                                <h1 style={{ fontSize: '18px' }}>
-                                    Username: {props.u_name}
-                                </h1>
+                <Form.Group as={Col} controlId="formGridPassword">
+                    <Form.Label>Password</Form.Label>
+                    <Form.Control type="password" placeholder="Password" />
+                </Form.Group>
+            </Row>
 
-                                <div className='image-container' style={{ width: '200px', height: '200px', display: 'flex', justifyContent: 'center', alignItems: 'center', overflow: 'hidden' }}>
-                                    <Image className="h-100 w-100" src={props.picture} rounded fluid />
-                                </div>
+            <Form.Group className="mb-3" controlId="formGridAddress1">
+                <Form.Label>Address</Form.Label>
+                <Form.Control placeholder="1234 Main St" />
+            </Form.Group>
 
-                                <Form.Group controlId="formStatus">
-                                    <Form.Label>Status</Form.Label>
-                                    <Form.Control className='rounded-0' placeholder={props.recruit_status} disabled />
-                                </Form.Group>
+            <Form.Group className="mb-3" controlId="formGridAddress2">
+                <Form.Label>Address 2</Form.Label>
+                <Form.Control placeholder="Apartment, studio, or floor" />
+            </Form.Group>
 
-                                <Form.Group controlId="formProfession">
-                                    <Form.Label>Professions</Form.Label>
-                                    <Form.Control className='rounded-0' placeholder={props.professions} disabled />
-                                </Form.Group>
-                            </Stack>
-                        </Col>
+            <Row className="mb-3">
+                <Form.Group as={Col} controlId="formGridCity">
+                    <Form.Label>City</Form.Label>
+                    <Form.Control />
+                </Form.Group>
 
-                        <Col xs={12} md={6} className="d-flex align-items-center">
-                            <Stack gap={3}>
-                                <Form.Group controlId="formGridUsername">
-                                    <Form.Label>Full Name</Form.Label>
-                                    <Form.Control className='rounded-0' type="fullname" placeholder={props.full_name} disabled />
-                                </Form.Group>
+                <Form.Group as={Col} controlId="formGridState">
+                    <Form.Label>State</Form.Label>
+                    <Form.Select defaultValue="Choose...">
+                        <option>Choose...</option>
+                        <option>...</option>
+                    </Form.Select>
+                </Form.Group>
 
-                                <Form.Group controlId="formGridPassword">
-                                    <Form.Label>Password</Form.Label>
-                                    <Form.Control className='rounded-0' type="password" placeholder={props.pass_hash} disabled />
-                                </Form.Group>
+                <Form.Group as={Col} controlId="formGridZip">
+                    <Form.Label>Zip</Form.Label>
+                    <Form.Control />
+                </Form.Group>
+            </Row>
 
-                                <Form.Group controlId="formGridAddress1">
-                                    <Form.Label>Address</Form.Label>
-                                    <Form.Control className='rounded-0' placeholder={props.recruit_location} disabled />
-                                </Form.Group>
+            <Form.Group className="mb-3" id="formGridCheckbox">
+                <Form.Check type="checkbox" label="Check me out" />
+            </Form.Group>
 
-                                <Form.Group controlId="formResume">
-                                    <Form.Label>Resume URL</Form.Label>
-                                    <Form.Control className='rounded-0' placeholder={props.recruit_resume} disabled />
-                                </Form.Group>
-
-                                <Form.Group controlId="formBio">
-                                    <Form.Label>Bio</Form.Label>
-                                    <Form.Control className='rounded-0' style={{ resize: 'none' }} as="textarea" rows={6} placeholder={props.bio} disabled />
-                                </Form.Group>
-                            </Stack>
-                        </Col>
-                    </Row>
-                </div>
-            </Form>
-        </div>
+            <Button variant="primary" type="submit">
+                Submit
+            </Button>
+        </Form>
     );
 }
 

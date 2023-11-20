@@ -5,5 +5,3 @@ function RecruiterIndex() {
 }
 
 export default RecruiterIndex;
-
-
