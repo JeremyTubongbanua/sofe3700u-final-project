@@ -195,7 +195,7 @@ function SignUp() {
                                                     Recruit
                                                 </label>
                                             </div>
-                                            <div className="form-check mx-2">
+                                            <div className="form-check mx-2">x
                                                 <input
                                                     type="radio"
                                                     className="form-check-input"
