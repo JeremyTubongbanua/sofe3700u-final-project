@@ -1,23 +1,58 @@
-import React, { Component } from 'react';
-import { Card, Button } from 'react-bootstrap';
-
+import React, { useState, useEffect } from 'react';
+import { Card, Button, Col, Row } from 'react-bootstrap';
 
 function Posting() {
-    return (
-        <div>
-            <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src="https://cdn.discordapp.com/attachments/1038256818083868707/1174947567314948177/image.png?ex=65697231&is=6556fd31&hm=26f9223099712725baeaa68f593ec458580e5c5ccc675d60a6e411eeaed6164e&" />
-                <Card.Body>
-                    <Card.Title>Card Title</Card.Title>
-                    <Card.Text>
-                        Some quick example text to build on the card title and make up the
-                        bulk of the card's content.
-                    </Card.Text>
-                    <Button variant="primary">Go somewhere</Button>
-                </Card.Body>
-            </Card>
-        </div>
-    );
+  const [recruits, setRecruits] = useState([]);
+
+  useEffect(() => {
+    // Replace this with your own data
+    const data = [
+      {
+        picture: 'url_to_picture',
+        full_name: 'Full Name',
+        bio: 'Bio',
+        position: 'Position',
+        address: 'Address',
+        salary: 'Salary',
+        status: 'Status',
+        type: 'Type',
+        frequency: 'Frequency'
+      },
+      // Add more recruits as needed
+    ];
+    setRecruits(data);
+  }, []);
+
+  return (
+    <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'flex-start' }}>
+      {recruits.map((recruit, index) => (
+        <Card key={index} style={{ width: '18rem', margin: '10px', backgroundColor: 'grey' }}>
+          <Card.Img variant="top" src={recruit.picture} />
+          <Card.Body>
+            <Row>
+              <Col>
+                <Card.Title>{recruit.full_name}</Card.Title>
+                <Card.Text>
+                  Position: {recruit.position}<br/>
+                  Address: {recruit.address}<br/>
+                  Bio: {recruit.bio}
+                </Card.Text>
+              </Col>
+              <Col>
+                <Card.Text>
+                  Salary: {recruit.salary}<br/>
+                  Status: {recruit.status}<br/>
+                  Type: {recruit.type}<br/>
+                  Frequency: {recruit.frequency}
+                </Card.Text>
+              </Col>
+            </Row>
+            <Button variant="primary">Go somewhere</Button>
+          </Card.Body>
+        </Card>
+      ))}
+    </div>
+  );
 }
 
 export default Posting;
