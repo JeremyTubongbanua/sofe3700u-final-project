@@ -56,8 +56,8 @@ function ProfessionList() {
                 <h1 className='pb-2 prof-head mb-3'>Professions:</h1>
                 <Row sm="5">
                     {data.map((professionData) => (
-                        <Col>
-                            <Profession key={professionData.id} name={professionData.profession} />
+                        <Col key={professionData.id}>
+                            <Profession name={professionData.profession} />
                         </Col>
                     ))}
                 </Row>
