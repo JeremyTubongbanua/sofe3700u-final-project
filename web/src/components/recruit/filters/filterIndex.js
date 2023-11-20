@@ -1,6 +1,7 @@
 import React from 'react';
 import ButtonFilters from './buttonFilters';
 import ProfessionList from './professionList';
+import SalaryRange from './salaryRange';
 import { Container, Row, Col, Stack } from 'react-bootstrap';
 
 function FilterIndex() {
@@ -16,8 +17,8 @@ function FilterIndex() {
                         <Stack gap={4}>
 
                             <ButtonFilters className="p-5" />
-                            <div className='bg-black p-5'>
-                                meow
+                            <div>
+                                <SalaryRange />
                             </div>
                         </Stack>
                     </Col>
