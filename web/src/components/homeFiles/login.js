@@ -4,15 +4,16 @@ import Header from './header';
 
 
 function Login() {
-    const [userType, setUserType] = useState('recruit');
 
-    const handleUserTypeChange = (event) => {
-        setUserType(event.target.value);
-    };
+    const [username, setUsername] = useState('x23mark');
+    const [password, setPassword] = useState('202cb962ac59075b964b07152d234b70');
+
+    const onLoginPress = () => {
+        const url = 
+    }
 
     return (
         <div>
-
             <Header />
             <div className="container mt-5">
                 <div className="row justify-content-center">
@@ -27,16 +28,17 @@ function Login() {
                                         <label htmlFor="username" className="form-label ">
                                             Username
                                         </label>
-                                        <input type="username" className="form-control rounded-0 bg-secondary-subtle" id="username" />
+                                        <input type="text" value={username} onChange={(e) => {setUsername(e.target.value)}} className="form-control rounded-0 bg-secondary-subtle" id="username" />
                                     </div>
                                     <div className="mb-3">
                                         <label htmlFor="password" className="form-label">
                                             Password
                                         </label>
-                                        <input type="password" className="form-control rounded-0 bg-secondary-subtle" id="password" />
+
+                                        <input type="password" value={password} onChange={(e) => {setPassword(e.target.value)}} className="form-control rounded-0 bg-secondary-subtle" id="password" />
                                     </div>
 
-                                    <button type="submit" className="btn btn-dark mt-3 w-75 p-3">
+                                    <button className="btn btn-dark mt-3 w-75 p-3">
                                         Log In
                                     </button>
 
@@ -51,9 +53,6 @@ function Login() {
                     </div>
                 </div>
             </div>
-
-
-
         </div>
     );
 };
