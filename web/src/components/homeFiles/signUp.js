@@ -62,10 +62,7 @@ function SignUp() {
         setConfirmPassword(event.target.value);
     };
 
-    const onSignUpPress = async (event) => {
-        // userType == 'recruit' || 'recruiter'
-        // username, password, confirmPassword
-
+    const onSignUpPress = () => {
         if (password !== confirmPassword) {
             alert('Passwords do not match');
             return;
@@ -84,18 +81,18 @@ function SignUp() {
             body['recruit_location'] = location;
             body['recruit_status_id'] = 1;
         } else if (userType == 'recruiter') {
-            for (let i = 0; i < companies.length; i++) {
-                if (companies[i].company_name == selectedCompany) {
-                    body['company_id'] = companies[i].id;
-                    break;
-                }
-            }
+            body['company_id'] = parseInt(selectedCompany);
             body['recruiter_location'] = location;
         } else {
             return;
         }
 
-        fetch('http://jeremymark.ca:3001/' + userType, {
+        const url = 'http://jeremymark.ca:3001/' + userType;
+
+        console.log(JSON.stringify(body));
+        console.log(url);
+
+        fetch(url, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -107,6 +104,8 @@ function SignUp() {
             } else {
                 alert('Sign up failed. Please try again.');
             }
+        }).catch((err) => {
+            console.log(err);
         });
     }
 
@@ -122,7 +121,7 @@ function SignUp() {
                                 <div className='card-title my-5 title-card'>
                                     Sign Up As
                                 </div>
-                                <form className='mx-auto w-75'>
+                                <form className='mx-auto w-75' onSubmit={() => { }}>
                                     <div className="mb-3">
                                         <label htmlFor="username" className="form-label ">
                                             Username
