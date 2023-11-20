@@ -7,7 +7,7 @@ import SignUp from './components/homeFiles/signUp';
 import Login from './components/homeFiles/login';
 import Home from './components/homeFiles/home';
 import RecruitIndex from './components/recruit/recruitIndex';
-import Posting from './components/recruit/postings/posting'
+import PostingView from './components/recruit/postings/postingView'
 import RecruitProfile from './components/recruit/profile/recruitProfile';
 import RecruiterIndex from './components/recruiter/recruiterIndex';
 import CompanyPostings from './components/recruiter/companyPostings/companyPostings';
@@ -22,8 +22,9 @@ root.render(
                 <Route path="/signup" Component={SignUp} />
                 <Route path="/login" Component={Login} />
                 <Route path="/recruit" Component={RecruitIndex} />
-                <Route path="/posting" Component={Posting} />
+                <Route path="/posting" Component={PostingView} />
                 <Route path="/recruitprofile" Component={RecruitProfile} />
+                <Route path="/jobpostingview" Component={RecruitProfile} />
                 <Route path='/recruiter' Component={RecruiterIndex}>
                     <Route path='company' Component={CompanyPostings} />
                     <Route path='myCompany' Component={RecruiterCompany} />
