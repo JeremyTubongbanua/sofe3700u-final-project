@@ -11,7 +11,7 @@ function PostingView(props) {
                             <Stack gap={3}>
 
                                 <h1 style={{ fontSize: '18px' }}>
-                                    Company: {props.companyName}
+                                    Company: {props.company_name}
                                 </h1>
 
                                 <div className='image-container' style={{ width: '200px', height: '200px', display: 'flex', justifyContent: 'center', alignItems: 'center', overflow: 'hidden' }}>
@@ -21,7 +21,7 @@ function PostingView(props) {
 
                                 <Form.Group controlId="formJobTitle">
                                     <Form.Label>Job Title</Form.Label>
-                                    <Form.Control className='rounded-0' type="text" placeholder={props.jobTitle} disabled />
+                                    <Form.Control className='rounded-0' type="text" placeholder={props.job_posting_title} disabled />
                                 </Form.Group>
 
                                 <Form.Group controlId="formSalary">
@@ -31,7 +31,7 @@ function PostingView(props) {
 
                                 <Form.Group controlId="formRequestedProfessions">
                                     <Form.Label>Requested Professions/Degrees</Form.Label>
-                                    <Form.Control className='rounded-0' type="text" placeholder={props.requestedProfessions} disabled />
+                                    <Form.Control className='rounded-0' type="text" placeholder={props.professions} disabled />
                                 </Form.Group>
                             </Stack>
                         </Col>
@@ -40,27 +40,27 @@ function PostingView(props) {
                             <Stack gap={3}>
                                 <Form.Group controlId="formJobDescription">
                                     <Form.Label>Job Description</Form.Label>
-                                    <Form.Control className='rounded-0' style={{ resize: 'none' }} as="textarea" rows={5} placeholder={props.jobDescription} disabled />
+                                    <Form.Control className='rounded-0' style={{ resize: 'none' }} as="textarea" rows={5} placeholder={props.job_posting_description} disabled />
                                 </Form.Group>
 
                                 <Form.Group controlId="formPostingID">
                                     <Form.Label>Posting ID</Form.Label>
-                                    <Form.Control className='rounded-0' type="text" placeholder={props.postingID} disabled />
+                                    <Form.Control className='rounded-0' type="text" placeholder={props.id} disabled />
                                 </Form.Group>
 
                                 <Form.Group controlId="formPostingStatus">
                                     <Form.Label>Job Posting Status</Form.Label>
-                                    <Form.Control className='rounded-0' type="text" placeholder={props.postingID} disabled />
+                                    <Form.Control className='rounded-0' type="text" placeholder={props.job_posting_status} disabled />
                                 </Form.Group>
 
                                 <Form.Group controlId="formPostingType">
                                     <Form.Label>Job Posting Type</Form.Label>
-                                    <Form.Control className='rounded-0' type="text" placeholder={props.postingID} disabled />
+                                    <Form.Control className='rounded-0' type="text" placeholder={props.job_posting_type} disabled />
                                 </Form.Group>
 
                                 <Form.Group controlId="formPostingFreq">
                                     <Form.Label>Job Posting Frequency</Form.Label>
-                                    <Form.Control className='rounded-0' type="text" placeholder={props.postingID} disabled />
+                                    <Form.Control className='rounded-0' type="text" placeholder={props.job_posting_frequency} disabled />
                                 </Form.Group>
                             </Stack>
                         </Col>

@@ -11,21 +11,21 @@ function RecruitProfile(props) {
                             <Stack gap={3}>
 
                                 <h1 style={{ fontSize: '18px' }}>
-                                    Username: {props.username}
+                                    Username: {props.u_name}
                                 </h1>
 
                                 <div className='image-container' style={{ width: '200px', height: '200px', display: 'flex', justifyContent: 'center', alignItems: 'center', overflow: 'hidden' }}>
-                                    <Image className="h-100 w-100" src={props.profileImageURL} rounded fluid />
+                                    <Image className="h-100 w-100" src={props.picture} rounded fluid />
                                 </div>
 
                                 <Form.Group controlId="formStatus">
                                     <Form.Label>Status</Form.Label>
-                                    <Form.Control className='rounded-0' placeholder={props.status} disabled />
+                                    <Form.Control className='rounded-0' placeholder={props.recruit_status} disabled />
                                 </Form.Group>
 
                                 <Form.Group controlId="formProfession">
                                     <Form.Label>Professions</Form.Label>
-                                    <Form.Control className='rounded-0' placeholder={props.profession} disabled />
+                                    <Form.Control className='rounded-0' placeholder={props.professions} disabled />
                                 </Form.Group>
                             </Stack>
                         </Col>
@@ -34,22 +34,22 @@ function RecruitProfile(props) {
                             <Stack gap={3}>
                                 <Form.Group controlId="formGridUsername">
                                     <Form.Label>Full Name</Form.Label>
-                                    <Form.Control className='rounded-0' type="fullname" placeholder={props.fullname} disabled />
+                                    <Form.Control className='rounded-0' type="fullname" placeholder={props.full_name} disabled />
                                 </Form.Group>
 
                                 <Form.Group controlId="formGridPassword">
                                     <Form.Label>Password</Form.Label>
-                                    <Form.Control className='rounded-0' type="password" placeholder={props.password} disabled />
+                                    <Form.Control className='rounded-0' type="password" placeholder={props.pass_hash} disabled />
                                 </Form.Group>
 
                                 <Form.Group controlId="formGridAddress1">
                                     <Form.Label>Address</Form.Label>
-                                    <Form.Control className='rounded-0' placeholder={props.address} disabled />
+                                    <Form.Control className='rounded-0' placeholder={props.recruit_location} disabled />
                                 </Form.Group>
 
                                 <Form.Group controlId="formResume">
                                     <Form.Label>Resume URL</Form.Label>
-                                    <Form.Control className='rounded-0' placeholder={props.resume} disabled />
+                                    <Form.Control className='rounded-0' placeholder={props.recruit_resume} disabled />
                                 </Form.Group>
 
                                 <Form.Group controlId="formBio">
