@@ -11,6 +11,7 @@ import RecruitProfile from './components/recruit/profile/recruitProfile';
 import RecruiterIndex from './components/recruiter/recruiterIndex';
 import CompanyPostings from './components/recruiter/companyPostings/companyPostings';
 import RecruiterCompany from './components/recruiter/recruiterCompany/recruiterCompany';
+import RecruiterProfile from './components/recruiter/recruiterProfile/recruiterProfile';
 
 const root = document.getElementById("root");
 
@@ -25,12 +26,10 @@ ReactDOM.createRoot(root).render(
                     <Route path="profile" element={<RecruitProfile />} />
                     <Route path="posting" element={<PostingView />} />
                 </Route>
-                <Route path="/posting" element={<PostingView />} />
-                <Route path="/recruitprofile" element={<RecruitProfile />} />
-                <Route path="/jobpostingview" element={<RecruitProfile />} />
                 <Route path='/recruiter' element={<RecruiterIndex />}>
-                    <Route path='company' element={<CompanyPostings />} />
-                    <Route path='myCompany' element={<RecruiterCompany />} />
+                    <Route path='company' element={<RecruiterCompany />} />
+                    <Route path='profile' element={<RecruiterProfile />} />
+
                 </Route>
             </Routes>
         </Router>
