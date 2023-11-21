@@ -14,11 +14,11 @@ function RecruitNav() {
                         Super Cool Jobs
                     </NavLink>
 
-                    <NavLink to="/recruit/profile" className='link-text' activeStyle={{ borderBottom: '2px solid gray' }}>
-                        Recruit Profile
+                    <NavLink to="/recruit" className='link-text' activeStyle={{ borderBottom: '2px solid gray' }}>
+                        View Postings
                     </NavLink>
-                    <NavLink to="/recruit/posting" className='link-text' activeStyle={{ borderBottom: '2px solid gray' }}>
-                        Recruit Posting
+                    <NavLink to="/recruit/profile" className='link-text' activeStyle={{ borderBottom: '2px solid gray' }}>
+                        My Profile
                     </NavLink>
                     <Nav.Link>
                         <button type="submit" className="btn btn-outline-dark w-80 p-3 px-5">
