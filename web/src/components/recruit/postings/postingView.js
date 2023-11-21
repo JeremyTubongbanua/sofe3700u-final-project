@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Form, Image, Row, Stack } from 'react-bootstrap';
+import { Col, Form, Image, Row, Stack, Button } from 'react-bootstrap';
 
 function PostingView(props) {
     return (
@@ -62,8 +62,16 @@ function PostingView(props) {
                                     <Form.Label>Job Posting Frequency</Form.Label>
                                     <Form.Control className='rounded-0' type="text" placeholder={props.job_posting_frequency} disabled />
                                 </Form.Group>
+
+
                             </Stack>
                         </Col>
+
+                        <Form.Group>
+                            <Button variant="primary" type="submit" className='w-100 mt-4'>
+                                Apply
+                            </Button>
+                        </Form.Group>
                     </Row>
                 </div>
             </Form>
