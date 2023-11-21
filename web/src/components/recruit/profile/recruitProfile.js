@@ -101,7 +101,7 @@ function RecruitProfile(props) {
                                                 bio: bio,
                                                 picture: picture,
                                                 recruit_resume: recruit_resume,
-                                                recruit_status: recruit_status,
+                                                recruit_status_id: recruit_status == 'Looking for Jobs' ? 1 : 0,
                                                 // professions: professions
                                             }),
                                             headers: {
