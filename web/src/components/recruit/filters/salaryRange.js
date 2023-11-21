@@ -11,7 +11,7 @@ function SalaryRange() {
   return (
     <Container fluid>
       <Row className="justify-content-start align-items-start">
-        <Col xs={12} md={12} className="bg-light rounded p-4 d-flex flex-column align-items-center">
+        <Col xs={12} md={12} className="bg-body-secondary rounded p-4 d-flex flex-column align-items-center">
           <p className="mb-4 text-center">Salary Range</p>
           <div className="d-flex justify-content-between w-75">
             <Form.Group controlId="formMinSalary" className="mr-2 w-75">

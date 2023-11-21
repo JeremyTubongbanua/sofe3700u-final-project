@@ -13,6 +13,7 @@ function RecruitHome() {
             <Container>
                 <Row>
                     <Col>
+
                         <Posting />
                     </Col>
                 </Row>
