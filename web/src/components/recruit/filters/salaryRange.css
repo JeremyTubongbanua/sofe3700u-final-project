@@ -1,0 +1,11 @@
+/* Disable the arrows for number input */
+.disable-number-arrows::-webkit-inner-spin-button,
+.disable-number-arrows::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.disable-number-arrows {
+    -moz-appearance: textfield;
+    /* Firefox */
+}

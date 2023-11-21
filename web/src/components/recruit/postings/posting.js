@@ -31,7 +31,6 @@ function Posting() {
         // Include any parameters your API requires
       }),
     });
-
     const result = await response.json();
     setPostings(result.data);
   };
@@ -47,20 +46,23 @@ function Posting() {
         <Col key={index} className="p-3 d-flex">
           <Card className='w-100 bg-body-secondary'>
 
-            <Card.Img variant="top" src={jobPostings.picture} className='overflow-hidden' style={{ height: '12.5rem', objectFit: 'cover' }} />
-            <Card.Body>
+            <Card.Img variant="top" src={jobPostings.picture} className='overflow-hidden' style={{ height: '15rem', objectFit: 'cover' }} />
+            <Card.Body className='d-flex flex-column h-100 '>
               <Card.Title>{jobPostings.job_posting_title}</Card.Title>
-              <Card.Text style={{ fontSize: '0.75rem', flex: '1' }}>
-                Company: {jobPostings.company_name}<br />
+              <Card.Text style={{ fontSize: '1rem' }} className='flex-grow-1'>
+                Company: {jobPostings.company_name}<br /><br />
+
                 Description: {jobPostings.job_posting_description}
               </Card.Text>
-              <Card.Text style={{ fontSize: '0.75rem' }}>
+              <Card.Text style={{ fontSize: '1rem' }} className='flex-grow-1'>
                 Salary: {jobPostings.salary}<br />
                 Status: {jobPostings.job_posting_status}<br />
                 Type: {jobPostings.job_posting_type}<br />
                 Frequency: {jobPostings.job_posting_frequency}
               </Card.Text>
-              <Button variant="primary" className='mt-2'>Check Profile</Button>
+              <div className="mt-auto flex-shrink-1">
+                <Button variant="primary" className="w-50">Check Profile</Button>
+              </div>
             </Card.Body>
           </Card>
         </Col>
