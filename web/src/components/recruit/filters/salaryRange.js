@@ -1,12 +1,18 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container, Row, Col, Form } from 'react-bootstrap';
 
-function SalaryRange() {
-  const [salary, setSalary] = useState({ min: '', max: '' });
+function SalaryRange(props) {
+  const [salary, setSalary] = useState({ min: 0, max: 80000 });
 
   const handleInputChange = (e) => {
-    setSalary({ ...salary, [e.target.name]: e.target.value });
+    setSalary({ ...salary, [e.target.name]: parseFloat(e.target.value) });
   };
+
+  useEffect(() => {
+    props.setFilter((prev) => {
+      return { ...prev, minSalary: salary.min, maxSalary: salary.max };
+    });
+  }, [salary]);
 
   return (
     <Container fluid>

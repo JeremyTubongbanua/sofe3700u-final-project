@@ -6,7 +6,7 @@ import Profession from './profession';
 import './professionList.css';
 
 
-function ProfessionList() {
+function ProfessionList(props) {
     // State to store the fetched data
     const [data, setData] = useState(null);
     // State to handle loading and error states
@@ -57,7 +57,7 @@ function ProfessionList() {
                 <Row sm="5">
                     {data.map((professionData) => (
                         <Col key={professionData.id}>
-                            <Profession name={professionData.profession} />
+                            <Profession setFilter={props.setFilter} name={professionData.profession} id={professionData.id} />
                         </Col>
                     ))}
                 </Row>

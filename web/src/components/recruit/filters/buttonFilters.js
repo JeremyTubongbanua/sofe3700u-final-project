@@ -4,7 +4,7 @@ import { Button, Row, Col, Container, Form } from 'react-bootstrap';
 
 
 
-function ButtonFilters() {
+function ButtonFilters(props) {
 
     <script>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;500;700&display=swap');
@@ -21,15 +21,65 @@ function ButtonFilters() {
                             <div key={'status-closed'} className="mb-3">
                                 <Form.Check
                                     type={'checkbox'}
-                                    id={`status-closed`}
+                                    id={0}
                                     label={`Closed`}
+                                    onChange={(e) => {
+                                        const val = 0;
+                                        if(e.target.checked) {
+                                            props.setFilter((prev) => {
+                                                return {
+                                                    ...prev,
+                                                    statuses: [
+                                                        ...prev.statuses,
+                                                        val
+                                                    ]
+                                                };
+                                            });
+                                        } else {
+                                            props.setFilter((prev) => {
+                                                // get rid of id from professions array
+                                                const newStatus = prev.statuses.filter((status) => {
+                                                    return status != val;
+                                                });
+                                                return {
+                                                    ...prev,
+                                                    statuses: newStatus
+                                                };
+                                            });
+                                        }
+                                    }}
                                 />
                             </div>
                             <div key={'status-open'} className="mb-3">
                                 <Form.Check
                                     type={'checkbox'}
-                                    id={`status-open`}
+                                    id={1}
                                     label={`Open`}
+                                    onChange={(e) => {
+                                        const val = 1;
+                                        if (e.target.checked) {
+                                            props.setFilter((prev) => {
+                                                return {
+                                                    ...prev,
+                                                    statuses: [
+                                                        ...prev.statuses,
+                                                        val
+                                                    ]
+                                                };
+                                            });
+                                        } else {
+                                            props.setFilter((prev) => {
+                                                // get rid of id from professions array
+                                                const newStatus = prev.statuses.filter((status) => {
+                                                    return status != val;
+                                                });
+                                                return {
+                                                    ...prev,
+                                                    statuses: newStatus
+                                                };
+                                            });
+                                        }
+                                    }}
                                 />
                             </div>
                         </Form>
@@ -40,24 +90,99 @@ function ButtonFilters() {
                             <div key={'Type-remote'} className="mb-3">
                                 <Form.Check
                                     type={'checkbox'}
-                                    id={`Type-Remote`}
+                                    id={0}
                                     label={`Remote`}
+                                    onChange={(e) => {
+                                        const val = 0;
+                                        if(e.target.checked) {
+                                            props.setFilter((prev) => {
+                                                return {
+                                                    ...prev,
+                                                    types: [
+                                                        ...prev.types,
+                                                        val
+                                                    ]
+                                                };
+                                            });
+                                        } else {
+                                            props.setFilter((prev) => {
+                                                // get rid of id from professions array
+                                                const newType = prev.types.filter((type) => {
+                                                    return type != val;
+                                                });
+                                                return {
+                                                    ...prev,
+                                                    types: newType
+                                                };
+                                            });
+                                        }
+                                    }}
                                 />
                             </div>
 
                             <div key={'Type-Hybrid'} className="mb-3">
                                 <Form.Check
                                     type={'checkbox'}
-                                    id={`Type-Hybrid`}
+                                    id={1}
                                     label={`Hybrid`}
+                                    onChange={(e) => {
+                                        const val = 1;
+                                        if(e.target.checked) {
+                                            props.setFilter((prev) => {
+                                                return {
+                                                    ...prev,
+                                                    types: [
+                                                        ...prev.types,
+                                                        val
+                                                    ]
+                                                };
+                                            });
+                                        } else {
+                                            props.setFilter((prev) => {
+                                                // get rid of id from professions array
+                                                const newType = prev.types.filter((type) => {
+                                                    return type != val;
+                                                });
+                                                return {
+                                                    ...prev,
+                                                    types: newType
+                                                };
+                                            });
+                                        }
+                                    }}
                                 />
                             </div>
 
                             <div key={'Type-Inperson'} className="mb-3">
                                 <Form.Check
                                     type={'checkbox'}
-                                    id={`Type-Inperson`}
+                                    id={2}
                                     label={`In-Person`}
+                                    onChange={(e) => {
+                                        const val = 2;
+                                        if(e.target.checked) {
+                                            props.setFilter((prev) => {
+                                                return {
+                                                    ...prev,
+                                                    types: [
+                                                        ...prev.types,
+                                                        val
+                                                    ]
+                                                };
+                                            });
+                                        } else {
+                                            props.setFilter((prev) => {
+                                                // get rid of id from professions array
+                                                const newType = prev.types.filter((type) => {
+                                                    return type != val;
+                                                });
+                                                return {
+                                                    ...prev,
+                                                    types: newType
+                                                };
+                                            });
+                                        }
+                                    }}
                                 />
                             </div>
 
@@ -71,6 +196,31 @@ function ButtonFilters() {
                                     type={'checkbox'}
                                     id={`Freq-Contract`}
                                     label={`Contract`}
+                                    onChange={(e) => {
+                                        const val = 0;
+                                        if(e.target.checked) {
+                                            props.setFilter((prev) => {
+                                                return {
+                                                    ...prev,
+                                                    frequencies: [
+                                                        ...prev.frequencies,
+                                                        val
+                                                    ]
+                                                };
+                                            });
+                                        } else {
+                                            props.setFilter((prev) => {
+                                                // get rid of id from professions array
+                                                const newFreq = prev.frequencies.filter((freq) => {
+                                                    return freq != val;
+                                                });
+                                                return {
+                                                    ...prev,
+                                                    frequencies: newFreq
+                                                };
+                                            });
+                                        }
+                                    }}
                                 />
                             </div>
                             <div key={'Freq-Parttime'} className="mb-3">
@@ -78,6 +228,31 @@ function ButtonFilters() {
                                     type={'checkbox'}
                                     id={`Freq-Parttime`}
                                     label={`Part-Time`}
+                                    onChange={(e) => {
+                                        const val = 1;
+                                        if(e.target.checked) {
+                                            props.setFilter((prev) => {
+                                                return {
+                                                    ...prev,
+                                                    frequencies: [
+                                                        ...prev.frequencies,
+                                                        val
+                                                    ]
+                                                };
+                                            });
+                                        } else {
+                                            props.setFilter((prev) => {
+                                                // get rid of id from professions array
+                                                const newFreq = prev.frequencies.filter((freq) => {
+                                                    return freq != val;
+                                                });
+                                                return {
+                                                    ...prev,
+                                                    frequencies: newFreq
+                                                };
+                                            });
+                                        }
+                                    }}
                                 />
                             </div>
                             <div key={'Freq-Fulltime'} className="mb-3">
@@ -85,6 +260,31 @@ function ButtonFilters() {
                                     type={'checkbox'}
                                     id={`Freq-Fulltime`}
                                     label={`Full-Time`}
+                                    onChange={(e) => {
+                                        const val = 2;
+                                        if(e.target.checked) {
+                                            props.setFilter((prev) => {
+                                                return {
+                                                    ...prev,
+                                                    frequencies: [
+                                                        ...prev.frequencies,
+                                                        val
+                                                    ]
+                                                };
+                                            });
+                                        } else {
+                                            props.setFilter((prev) => {
+                                                // get rid of id from professions array
+                                                const newFreq = prev.frequencies.filter((freq) => {
+                                                    return freq != val;
+                                                });
+                                                return {
+                                                    ...prev,
+                                                    frequencies: newFreq
+                                                };
+                                            });
+                                        }
+                                    }}
                                 />
                             </div>
                         </Form>
