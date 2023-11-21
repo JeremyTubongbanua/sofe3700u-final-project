@@ -2,7 +2,7 @@
 
 const responseLogin = (db, req, res) => {
 
-    query = 'SELECT * FROM view12 WHERE u_name=' + req.body['u_name'] + ';'
+    query = 'SELECT * FROM view12 WHERE u_name=\"' + req.body['u_name'] + '\";'
     db.query(query, (err, result) => {
         if(err) {
             res.status(400).json({'message': 'error', 'data': err});
