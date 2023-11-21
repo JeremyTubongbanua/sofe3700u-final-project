@@ -51,8 +51,7 @@ function Posting() {
             <Card.Body>
               <Card.Title>{jobPostings.job_posting_title}</Card.Title>
               <Card.Text style={{ fontSize: '0.75rem', flex: '1' }}>
-                Position: {jobPostings.position}<br />
-                Address: {jobPostings.address}<br />
+                Company: {jobPostings.company_name}<br />
                 Description: {jobPostings.job_posting_description}
               </Card.Text>
               <Card.Text style={{ fontSize: '0.75rem' }}>
