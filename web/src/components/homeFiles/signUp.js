@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Header from './header';
 import './signUp.css';
+import bcrypt from 'bcryptjs'
 
 
 function SignUp() {
@@ -68,9 +69,13 @@ function SignUp() {
             return;
         }
 
+        // hash password
+        const hashedPassword = bcrypt.hashSync(password);
+        console.log(hashedPassword);
+
         let body = {
             "u_name": username,
-            "pass_hash": password,
+            "pass_hash": hashedPassword,
             "full_name": fullName,
             "picture": picture,
             "bio": bio,
@@ -87,7 +92,30 @@ function SignUp() {
             return;
         }
 
-        const url = 'http://jeremymark.ca:3001/' + userType;
+        let url = 'http://jeremymark.ca:3001/u_names';
+
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({}),
+        }).then((response) => {
+            return response.json();
+        }).then((data) => {
+            let u_names = [];
+            for (let i = 0; i < data.data.length; i++) {
+                u_names.push(data.data[i].u_name);
+            }
+            if(u_names.includes(username)) {
+                alert('Username already exists.');
+                return;
+            }
+        }).catch((err) => {
+            alert(err);
+        });
+
+        url = 'http://jeremymark.ca:3001/' + userType;
 
         console.log(JSON.stringify(body));
         console.log(url);
@@ -121,7 +149,7 @@ function SignUp() {
                                 <div className='card-title my-5 title-card'>
                                     Sign Up As
                                 </div>
-                                <form className='mx-auto w-75' onSubmit={() => { }}>
+                                <div className='mx-auto w-75' onSubmit={() => { }}>
                                     <div className="mb-3">
                                         <label htmlFor="username" className="form-label ">
                                             Username
@@ -195,7 +223,7 @@ function SignUp() {
                                                     Recruit
                                                 </label>
                                             </div>
-                                            <div className="form-check mx-2">x
+                                            <div className="form-check mx-2">
                                                 <input
                                                     type="radio"
                                                     className="form-check-input"
@@ -256,7 +284,7 @@ function SignUp() {
                                             Log In
                                         </button>
                                     </Link>
-                                </form>
+                                </div>
                             </div>
                         </div>
                     </div>
