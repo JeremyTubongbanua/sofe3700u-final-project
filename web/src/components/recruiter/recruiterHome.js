@@ -1,11 +1,14 @@
 import React from 'react';
 
+
 function RecruiterHome() {
     return (
-        // JSX code for your component goes here
-        <div>
-            <h1>Welcome to the Recruit Home component!</h1>
-            {/* Add more JSX elements as needed */}
+        <div className="container mt-5">
+            <div className="row justify-content-center">
+                <div className="col-12 text-center">
+                    <h1 className="display-2">Current Company Postings</h1>
+                </div>
+            </div>
         </div>
     );
 }
