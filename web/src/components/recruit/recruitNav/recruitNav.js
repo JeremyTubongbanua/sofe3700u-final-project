@@ -6,7 +6,7 @@ import './navBar.css';
 
 function RecruitNav() {
     return (
-        <Navbar bg="light" expand="lg">
+        <Navbar expand="lg">
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="d-flex justify-content-around align-items-center w-100 overflow-hidden">

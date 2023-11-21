@@ -13,7 +13,7 @@ function ButtonFilters() {
 
     return (
         <div className=''>
-            <Container className='bg-secondary'>
+            <Container className='bg-body-secondary rounded'>
                 <Row sm="3" className='p-2'>
                     <Col>
                         <h1 style={{ fontSize: '18px', fontWeight: 700, fontFamily: 'Roboto' }}> Status</h1>

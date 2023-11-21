@@ -1,90 +1,72 @@
 import React, { useState, useEffect } from 'react';
 import { Card, Button, Col, Row } from 'react-bootstrap';
 
-function Posting() {
-  const [recruits, setRecruits] = useState([]);
+const cardStyles = {
+  width: '100%',
+  backgroundColor: 'grey',
+};
 
+const imgStyles = {
+  border: '5px solid grey',
+};
+
+const cardBodyStyles = {
+  display: 'flex',
+  flexDirection: 'column',
+};
+
+function Posting() {
+  const [jobPostings, setPostings] = useState([]);
+
+  const fetchData = async () => {
+
+    const response = await fetch('http://jeremymark.ca:3001/job_postings', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        // Add any other headers needed for your API
+      },
+      // Add any data needed for the POST request in the body
+      body: JSON.stringify({
+        // Include any parameters your API requires
+      }),
+    });
+
+    const result = await response.json();
+    setPostings(result.data);
+  };
+
+  // Use useEffect to make the API call when the component mounts
   useEffect(() => {
-    // Replace this with your own data
-    const data = [
-      {
-        picture: 'https://cdn.discordapp.com/attachments/1142192592256258080/1176044378716901466/image.png?ex=656d6fad&is=655afaad&hm=b9928a0d2c54cce9e3d8b6d4ad0caad66bb44f71d54a925bd06e843803a7a0a4&',
-        full_name: 'Full Name',
-        bio: 'Bio',
-        position: 'Position',
-        address: 'Address',
-        salary: 'Salary',
-        status: 'Status',
-        type: 'Type',
-        frequency: 'Frequency'
-      },
-      {
-        picture: 'https://cdn.discordapp.com/attachments/1142192592256258080/1176044378716901466/image.png?ex=656d6fad&is=655afaad&hm=b9928a0d2c54cce9e3d8b6d4ad0caad66bb44f71d54a925bd06e843803a7a0a4&',
-        full_name: 'Full Name',
-        bio: 'Bio',
-        position: 'Position',
-        address: 'Address',
-        salary: 'Salary',
-        status: 'Status',
-        type: 'Type',
-        frequency: 'Frequency'
-      },
-      {
-        picture: 'https://cdn.discordapp.com/attachments/1142192592256258080/1176044378716901466/image.png?ex=656d6fad&is=655afaad&hm=b9928a0d2c54cce9e3d8b6d4ad0caad66bb44f71d54a925bd06e843803a7a0a4&',
-        full_name: 'Full Name',
-        bio: 'Bio',
-        position: 'Position',
-        address: 'Address',
-        salary: 'Salary',
-        status: 'Status',
-        type: 'Type',
-        frequency: 'Frequency'
-      },
-      {
-        picture: 'https://cdn.discordapp.com/attachments/1142192592256258080/1176044378716901466/image.png?ex=656d6fad&is=655afaad&hm=b9928a0d2c54cce9e3d8b6d4ad0caad66bb44f71d54a925bd06e843803a7a0a4&',
-        full_name: 'Full Name',
-        bio: 'Bio',
-        position: 'Software Engineer',
-        address: 'Address',
-        salary: 'Salary',
-        status: 'Status',
-        type: 'Type',
-        frequency: 'Frequency'
-      },
-      // Add more recruits as needed
-    ];
-    setRecruits(data);
-  }, []);
+    fetchData();
+  }, []); // Empty dependency array ensures the effect runs once after the initial render
 
   return (
-    <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'flex-start' }}>
-      {recruits.map((recruit, index) => (
-        <Card key={index} style={{ width: '19rem', margin: '10px', backgroundColor: 'grey' }}>
-          <Card.Img variant="top" src={recruit.picture} style={{ border: '5px solid grey' }} />
-          <Card.Body style={{ padding: '20px' }}>
-            <Row>
-              <Col style={{ paddingRight: '20px' }}>
-                <Card.Title>{recruit.full_name}</Card.Title>
-                <Card.Text style={{ marginBottom: '20px', fontSize: '0.75rem' }}>
-                  Position: {recruit.position}<br/>
-                  Address: {recruit.address}<br/>
-                  Bio: {recruit.bio}
-                </Card.Text>
-              </Col>
-              <Col style={{ paddingLeft: '20px' }}>
-                <Card.Text style={{ marginBottom: '20px', fontSize: '0.75rem' }}>
-                  Salary: {recruit.salary}<br/>
-                  Status: {recruit.status}<br/>
-                  Type: {recruit.type}<br/>
-                  Frequency: {recruit.frequency}
-                </Card.Text>
-              </Col>
-            </Row>
-            <Button variant="primary" style={{ marginTop: '20px' }}>Check Profile</Button>
-          </Card.Body>
-        </Card>
+    <Row xs={1} md={2} lg={3} xl={4} className="g-4">
+      {jobPostings.map((jobPostings, index) => (
+        <Col key={index} className="p-3 d-flex">
+          <Card className='w-100 bg-body-secondary'>
+
+            <Card.Img variant="top" src={jobPostings.picture} className='overflow-hidden' style={{ height: '12.5rem', objectFit: 'cover' }} />
+            <Card.Body>
+              <Card.Title>{jobPostings.job_posting_title}</Card.Title>
+              <Card.Text style={{ fontSize: '0.75rem', flex: '1' }}>
+                Position: {jobPostings.position}<br />
+                Address: {jobPostings.address}<br />
+                Description: {jobPostings.job_posting_description}
+              </Card.Text>
+              <Card.Text style={{ fontSize: '0.75rem' }}>
+                Salary: {jobPostings.salary}<br />
+                Status: {jobPostings.job_posting_status}<br />
+                Type: {jobPostings.job_posting_type}<br />
+                Frequency: {jobPostings.job_posting_frequency}
+              </Card.Text>
+              <Button variant="primary" className='mt-2'>Check Profile</Button>
+            </Card.Body>
+          </Card>
+        </Col>
       ))}
-    </div>
+    </Row>
   );
 }
 
