@@ -1,18 +1,45 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Header from './header';
-
+import bcrypt from 'bcryptjs'
 
 function Login() {
-    const [userType, setUserType] = useState('recruit');
 
-    const handleUserTypeChange = (event) => {
-        setUserType(event.target.value);
-    };
+    const [username, setUsername] = useState('x23mark');
+    const [password, setPassword] = useState('202cb962ac59075b964b07152d234b70');
+
+    const onLoginPress = () => {
+        const url = 'http://jeremymark.ca:3001/login';
+        const hashedPassword = bcrypt.hashSync(password);
+        const body = {
+            u_name: username,
+            pass_hash: hashedPassword
+        };
+        const options = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(body)
+        };
+        fetch(url, options)
+            .then((res) => res.json())
+            .then((data) => {
+                if (data.message === 'success') {
+                    // set username in cookie
+                    document.cookie = `u_name=${data.data.u_name}`;
+                    // set account_type in cookie
+                    document.cookie = `account_type=${data.data.account_type}`;
+                    alert('Logged in successfully. account_type: ' + data.data.account_type + ' u_name: ' + data.data.u_name);
+                    // redirect to /${account_type}
+                    window.location.href = `/${data.data.account_type}`;
+                } else {
+                    alert('Incorrect username or password');
+                }
+            }).catch((err) => { alert(err) });
+
+    }
 
     return (
         <div>
-
             <Header />
             <div className="container mt-5">
                 <div className="row justify-content-center">
@@ -22,21 +49,22 @@ function Login() {
                                 <div className='card-title my-5 title-card'>
                                     Log In
                                 </div>
-                                <form className='mx-auto w-75'>
+                                <div className='mx-auto w-75'>
                                     <div className="mb-3">
                                         <label htmlFor="username" className="form-label ">
                                             Username
                                         </label>
-                                        <input type="username" className="form-control rounded-0 bg-secondary-subtle" id="username" />
+                                        <input type="text" value={username} onChange={(e) => { setUsername(e.target.value) }} className="form-control rounded-0 bg-secondary-subtle" id="username" />
                                     </div>
                                     <div className="mb-3">
                                         <label htmlFor="password" className="form-label">
                                             Password
                                         </label>
-                                        <input type="password" className="form-control rounded-0 bg-secondary-subtle" id="password" />
+
+                                        <input type="password" value={password} onChange={(e) => { setPassword(e.target.value) }} className="form-control rounded-0 bg-secondary-subtle" id="password" />
                                     </div>
 
-                                    <button type="submit" className="btn btn-dark mt-3 w-75 p-3">
+                                    <button onClick={(e) => { onLoginPress() }} className="btn btn-dark mt-3 w-75 p-3">
                                         Log In
                                     </button>
 
@@ -45,15 +73,12 @@ function Login() {
                                             Sign Up
                                         </button>
                                     </Link>
-                                </form>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-
-
         </div>
     );
 };

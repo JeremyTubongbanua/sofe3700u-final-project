@@ -134,6 +134,18 @@ app.post('/companies', (req, res) => {
     responseGetAllCompanies(db, req, res);
 })
 
+app.post('/u_names', (req, res) => {
+    console.log('POST ' + req.url + '   ' + JSON.stringify(req.body));
+    const {responseGetAllUNames} = require('./GetUNames.js');
+    responseGetAllUNames(db, req, res);
+})
+
+app.post('/login', (req, res) => {
+    console.log('POST ' + req.url + '   ' + JSON.stringify(req.body));
+    const {responseLogin} = require('./Login.js');
+    responseLogin(db, req, res);
+});
+
 const server = app.listen(3001, '0.0.0.0', () => {
     const host = server.address().address;
     const port = server.address().port;

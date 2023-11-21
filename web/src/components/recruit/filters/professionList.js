@@ -6,7 +6,7 @@ import Profession from './profession';
 import './professionList.css';
 
 
-function ProfessionList() {
+function ProfessionList(props) {
     // State to store the fetched data
     const [data, setData] = useState(null);
     // State to handle loading and error states
@@ -52,12 +52,12 @@ function ProfessionList() {
     // Render components dynamically based on the fetched data
     return (
         <div className=''>
-            <Container className='p-2 bg-secondary'>
+            <Container className='p-2 rounded bg-dark-subtle'>
                 <h1 className='pb-2 prof-head mb-3'>Professions:</h1>
                 <Row sm="5">
                     {data.map((professionData) => (
-                        <Col>
-                            <Profession key={professionData.id} name={professionData.profession} />
+                        <Col key={professionData.id}>
+                            <Profession setFilter={props.setFilter} name={professionData.profession} id={professionData.id} />
                         </Col>
                     ))}
                 </Row>

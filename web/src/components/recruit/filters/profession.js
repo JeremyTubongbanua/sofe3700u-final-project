@@ -14,6 +14,31 @@ function Profession(props) {
                         type='checkbox'
                         id={props.id}
                         label={props.name}
+                        onChange={(e) => {
+                            const val = props.name;
+                            if(e.target.checked) {
+                                props.setFilter((prev) => {
+                                    return {
+                                        ...prev,
+                                        professions: [
+                                            ...prev.professions,
+                                            val
+                                        ]
+                                    };
+                                });
+                            } else {
+                                props.setFilter((prev) => {
+                                    // get rid of id from professions array
+                                    const newProfessions = prev.professions.filter((profession) => {
+                                        return profession !== val;
+                                    });
+                                    return {
+                                        ...prev,
+                                        professions: newProfessions
+                                    };
+                                });
+                            }
+                        }}
                     />
                 </div>
             </Form>
