@@ -17,6 +17,9 @@ function RecruitNav() {
                     <NavLink to="/recruit" className='link-text' activeStyle={{ borderBottom: '2px solid gray' }}>
                         View Postings
                     </NavLink>
+                    <NavLink to="/recruit/myapps" className='link-text' activeStyle={{ borderBottom: '2px solid gray' }}>
+                        My Applications
+                    </NavLink>
                     <NavLink to="/recruit/profile" className='link-text' activeStyle={{ borderBottom: '2px solid gray' }}>
                         My Profile
                     </NavLink>

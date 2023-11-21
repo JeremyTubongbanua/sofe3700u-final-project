@@ -12,6 +12,7 @@ import RecruiterIndex from './components/recruiter/recruiterIndex';
 import CompanyPostings from './components/recruiter/companyPostings/companyPostings';
 import RecruiterCompany from './components/recruiter/recruiterCompany/recruiterCompany';
 import RecruiterProfile from './components/recruiter/recruiterProfile/recruiterProfile';
+import MyApplications from './components/recruit/myApplications/myApplications';
 
 const root = document.getElementById("root");
 
@@ -19,12 +20,13 @@ ReactDOM.createRoot(root).render(
     <React.StrictMode>
         <Router>
             <Routes>
-                <Route path="/home" element={<Home />} />
+                <Route path="/" element={<Home />} />
                 <Route path="/signup" element={<SignUp />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/recruit" element={<RecruitIndex />}>
                     <Route path="profile" element={<RecruitProfile />} />
                     <Route path="posting" element={<PostingView />} />
+                    <Route path="myapps" element={<MyApplications />} />
                 </Route>
                 <Route path='/recruiter' element={<RecruiterIndex />}>
                     <Route path='company' element={<RecruiterCompany />} />

@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route, Outlet } from 'react-router-dom
 import RecruitHome from './recruitHome/recruitHome';
 import RecruitProfile from './profile/recruitProfile';
 import PostingView from './postings/postingView';
+import MyApplications from './myApplications/myApplications';
 
 function RecruitIndex() {
     return (
@@ -13,7 +14,7 @@ function RecruitIndex() {
                 <Route path="/" element={<Outlet />}>
                     <Route index element={<RecruitHome />} />
                     <Route path="profile" element={<RecruitProfile />} />
-                    <Route path="posting" element={<PostingView />} />
+                    <Route path="myapps" element={<MyApplications />} />
                 </Route>
             </Routes>
         </div>
