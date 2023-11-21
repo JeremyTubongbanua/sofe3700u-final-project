@@ -140,6 +140,12 @@ app.post('/u_names', (req, res) => {
     responseGetAllUNames(db, req, res);
 })
 
+app.post('/login', (req, res) => {
+    console.log('POST ' + req.url + '   ' + JSON.stringify(req.body));
+    const {responseLogin} = require('./Login.js');
+    responseLogin(db, req, res);
+});
+
 const server = app.listen(3001, '0.0.0.0', () => {
     const host = server.address().address;
     const port = server.address().port;
