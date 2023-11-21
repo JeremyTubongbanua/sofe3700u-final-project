@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Header from './header';
-
+import bcrypt from 'bcryptjs'
 
 function Login() {
 
@@ -10,9 +10,10 @@ function Login() {
 
     const onLoginPress = () => {
         const url = 'http://jeremymark.ca:3001/login';
+        const hashedPassword = bcrypt.hashSync(password);
         const body = {
             u_name: username,
-            pass_hash: password
+            pass_hash: hashedPassword
         };
         const options = {
             method: 'POST',

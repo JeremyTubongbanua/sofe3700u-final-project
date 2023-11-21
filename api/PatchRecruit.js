@@ -6,6 +6,7 @@ const responsePatchRecruit = (db, req, res) => {
     query = 'UPDATE recruit SET ';
     let first = true;
     for (let key in req.body) {
+        if(key === 'id') continue;
         if (first) {
             first = false;
         } else {
