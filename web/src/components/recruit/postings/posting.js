@@ -125,7 +125,7 @@ function Posting(props) {
                     document.cookie = `jobPostingId=${jobPostings.id}`;
                     window.location.href = '/recruit/posting';
                   }
-                }>Check Profile</Button>
+                }>View Posting</Button>
               </div>
             </Card.Body>
           </Card>

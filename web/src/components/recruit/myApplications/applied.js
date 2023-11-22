@@ -43,7 +43,7 @@ function Applied(props) {
                     console.log(jobPostings);
                     return (
                         <Col key={index} xs={12} md={4}>
-                            <Card className="mb-3" style={{ width: '100%' }} onClick={
+                            <Card className="mb-3 h-75" style={{ width: '100%' }} onClick={
                                 () => {
                                     document.cookie = `jobPostingId=${jobPosting.id}`;
                                     window.location.href = '/recruit/posting';

@@ -6,7 +6,7 @@ function MyApplications(props) {
 
     return (
         <Container className="d-flex flex-column justify-content-center align-items-center">
-            <h1 className="display-2">My Applications</h1>
+            <h1 className="display-3 mt-5">My Applications</h1>
             <Stack className="p-5 justify-content-center align-items-center">
                 <Applied />
             </Stack>
