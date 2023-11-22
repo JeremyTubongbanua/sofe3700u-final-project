@@ -216,7 +216,7 @@ VALUES (
         'Atsign',
         'We are a SV start up building Networking 2.0 technology securing networkign devices by making them addressable wherever and whenever, closing ports on vulnerable networking devices and making firewalls truly firewalls, and giving data privacy back to the people of the Internet.',
         NULL,
-        'https://imgur.com/undefined'
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkPMc4PJz4LMaNNb63G0-QW5OvNwljP81qTsdIL5e8&s'
     );
 INSERT INTO `job_posting` (
         id,
@@ -247,9 +247,9 @@ VALUES
     (14, 6, 'Elementary-Level Science Tutor', 'Looking for a concurrent university student with basic knowledge of biology, chemistry, and physics.', 8000, 'https://images.pexels.com/photos/2280571/pexels-photo-2280571.jpeg?auto=compress&cs=tinysrgb&w=1600', 1, 1, 1),
     (15, 6, 'High School Math Tutor', 'Familiar with calculus and vectors', 10000, 'https://images.pexels.com/photos/6238050/pexels-photo-6238050.jpeg?auto=compress&cs=tinysrgb&w=1600', 1, 1, 1),
     (16, 6, 'High School Science Tutor', 'Familiar with calculus and vectors', 10000, 'https://images.pexels.com/photos/6238050/pexels-photo-6238050.jpeg?auto=compress&cs=tinysrgb&w=1600', 1, 1, 1),
-    (17, 7, 'Software Intern', 'A current college/university student who wants to help give the Internet its privacy back, familiar with C and/or Dart.', 10000, 'https://images.pexels.com/photos/2698465/pexels-photo-2698465.jpeg?auto=compress&cs=tinysrgb&w=1600', 1, 0, 0),
-    (18, 7, 'Software Intern', 'A current college/university student who wants to help give the Internet its privacy back, familiar with C and/or Dart.', 10000, 'https://images.pexels.com/photos/2698465/pexels-photo-2698465.jpeg?auto=compress&cs=tinysrgb&w=1600', 1, 0, 0),
-    (19, 7, 'Software Intern', 'A current college/university student who wants to help give the Internet its privacy back, familiar with C and/or Dart.', 10000, 'https://images.pexels.com/photos/2698465/pexels-photo-2698465.jpeg?auto=compress&cs=tinysrgb&w=1600', 1, 0, 0),
+    (17, 7, 'Software Intern', 'A current college/university student who wants to help give the Internet its privacy back, familiar with C and/or Dart.', 10000, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkPMc4PJz4LMaNNb63G0-QW5OvNwljP81qTsdIL5e8&s', 1, 0, 0),
+    (18, 7, 'Software Intern', 'A current college/university student who wants to help give the Internet its privacy back, familiar with C and/or Dart.', 10000, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkPMc4PJz4LMaNNb63G0-QW5OvNwljP81qTsdIL5e8&s', 1, 0, 0),
+    (19, 7, 'Software Intern', 'A current college/university student who wants to help give the Internet its privacy back, familiar with C and/or Dart.', 10000, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkPMc4PJz4LMaNNb63G0-QW5OvNwljP81qTsdIL5e8&s', 1, 0, 0),
     (20, 7, 'Marketing Intern', 'A current college/university student who wants to help give the Internet its privacy back, familiar with making videos or still graphics.', 10000, 'https://images.pexels.com/photos/936135/pexels-photo-936135.jpeg?auto=compress&cs=tinysrgb&w=1600', 1, 0, 0),
     (21, 7, 'Marketing Intern', 'A current college/university student who wants to help give the Internet its privacy back, familiar with making videos or still graphics.', 10000, 'https://images.pexels.com/photos/936135/pexels-photo-936135.jpeg?auto=compress&cs=tinysrgb&w=1600', 1, 0, 0),
     (22, 7, 'Marketing Intern', 'A current college/university student who wants to help give the Internet its privacy back, familiar with making videos or still graphics.', 10000, 'https://images.pexels.com/photos/936135/pexels-photo-936135.jpeg?auto=compress&cs=tinysrgb&w=1600', 1, 0, 0);
