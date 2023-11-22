@@ -30,13 +30,13 @@ function CompanyPostings() {
         fetch(url, {
             'method': 'POST',
             'body': JSON.stringify({
-                id: 1
+                id: 0
             }),
             'headers': {
                 'Content-Type': 'application/json'
             }
         }).then((res) => res.json()).then((data) => {
-            if(data.message === 'success'){
+            if (data.message === 'success') {
                 setJobPostings(data.data);
             } else {
                 alert(data.data);
@@ -60,6 +60,9 @@ function CompanyPostings() {
                                 <Card.Text>{`Status: ${post.job_posting_status}`}</Card.Text>
                                 <Card.Text>{`Position: ${post.job_posting_title}`}</Card.Text>
                                 <Card.Text>{`Type: ${post.job_posting_type}`}</Card.Text>
+                                <Card.Text>{`Frequency: ${post.job_posting_frequency}`}</Card.Text>
+                                <Card.Text>{`Description: ${post.job_posting_description}`}</Card.Text>
+                                <Card.Text>{`Professions: ${post.professions}`}</Card.Text>
                             </Card.Body>
                         </Col>
                     </Row>
