@@ -16,12 +16,12 @@ function RecruiterProfile(props) {
                                 </h1>
 
                                 <div className='image-container' style={{ width: '200px', height: '200px', display: 'flex', justifyContent: 'center', alignItems: 'center', overflow: 'hidden' }}>
-                                    <Image className="h-100 w-100" src="https://cdn.discordapp.com/attachments/1038256818083868707/1176061766631948318/image.png?ex=656d7fdf&is=655b0adf&hm=60512be52331b503c56a5245c7e27f01aaec23071b0fa53f18cc4eab3d50204a&" rounded fluid />
+                                    <Image className="h-100 w-100" src={props.picture} rounded fluid />
                                 </div>
 
                                 <Form.Group controlId="formStatus">
-                                    <Form.Label>Status</Form.Label>
-                                    <Form.Control className='rounded-0' placeholder={props.recruit_status} />
+                                    <Form.Label>Current Company</Form.Label>
+                                    <Form.Control className='rounded-0' placeholder={props.company_id} />
                                 </Form.Group>
 
                                 <Form.Group controlId="formProfession">
@@ -51,7 +51,7 @@ function RecruiterProfile(props) {
 
                                 <Form.Group controlId="formGridAddress1">
                                     <Form.Label>Address</Form.Label>
-                                    <Form.Control className='rounded-0' placeholder={props.recruit_location} />
+                                    <Form.Control className='rounded-0' placeholder={props.recruiter_location} />
                                 </Form.Group>
 
                                 <Form.Group controlId="formBio">

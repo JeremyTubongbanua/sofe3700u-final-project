@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route, Outlet } from 'react-router-dom
 import RecruitHome from './recruitHome/recruitHome';
 import RecruitProfile from './profile/recruitProfile';
 import PostingView from './postings/postingView';
+import MyApplications from './myApplications/myApplications';
 
 function RecruitIndex() {    return (
         <div className='position-relative'>
@@ -11,27 +12,8 @@ function RecruitIndex() {    return (
             <Routes>
                 <Route path="/" element={<Outlet />}>
                     <Route index element={<RecruitHome />} />
-                    <Route path="profile" element={<RecruitProfile
-                        // u_name={u_name}
-                        // setUName={setUName}
-                        // pass_hash={passHash}
-                        // setPassHash={setPassHash}
-                        // full_name={fullName}
-                        // setFullName={setFullName}
-                        // recruit_location={recruitLocation}
-                        // setRecruitLocation={setRecruitLocation}
-                        // bio={bio}
-                        // setBio={setBio}
-                        // picture={picture}
-                        // setPicture={setPicture}
-                        // recruit_resume={recruitResume}
-                        // setRecruitResume={setRecruitResume}
-                        // recruit_status={recruitStatus}
-                        // setRecruitStatus={setRecruitStatus}
-                        // professions={professions}
-                        // setProfessions={setProfessions}
-                    />} />
-                    <Route path="posting" element={<PostingView />} />
+                    <Route path="profile" element={<RecruitProfile />} />
+                    <Route path="myapps" element={<MyApplications />} />
                 </Route>
             </Routes>
         </div>
