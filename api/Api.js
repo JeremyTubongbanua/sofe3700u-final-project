@@ -152,7 +152,7 @@ app.post('/job_posting/recruit_id', (req, res) => {
     responseGetJobApplicationsByRecruitId(db, req, res);
 });
 
-app.post('/recruiter', (req, res) => {
+app.post('/recruiter/u_name', (req, res) => {
     console.log('POST ' + req.url + '   ' + JSON.stringify(req.body));
     const {responseGetRecruiterByUName} = require('./GetRecruiter.js');
     responseGetRecruiterByUName(db, req, res);
