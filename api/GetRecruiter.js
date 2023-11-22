@@ -2,7 +2,7 @@
 
 const responseGetRecruiterByUName = (db, req, res) => {
     const { u_name } = req.body;
-    const query = 'SELECT * FROM recruiter WHERE uname = ' + u_name + ';';
+    const query = 'SELECT * FROM recruiter WHERE u_name = ' + u_name + ';';
     const values = [u_name];
     db.query(query, values, (err, result) => {
         if (err) {
