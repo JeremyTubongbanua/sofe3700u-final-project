@@ -14,7 +14,7 @@ function RecruiterNav() {
                         Super Cool Jobs
                     </NavLink>
                     <NavLink to="/recruiter" className='link-text' activeStyle={{ borderBottom: '2px solid gray' }}>
-                        Home(Filler)
+                        Company Postings
                     </NavLink>
                     <NavLink to="/recruiter/profile" className='link-text' activeStyle={{ borderBottom: '2px solid gray' }}>
                         My Profile
