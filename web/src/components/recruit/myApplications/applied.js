@@ -43,7 +43,12 @@ function Applied(props) {
                     console.log(jobPostings);
                     return (
                         <Col key={index} xs={12} md={4}>
-                            <Card className="mb-3" style={{ width: '100%' }}>
+                            <Card className="mb-3" style={{ width: '100%' }} onClick={
+                                () => {
+                                    document.cookie = `jobPostingId=${jobPosting.id}`;
+                                    window.location.href = '/recruit/posting';
+                                }
+                            }>
                                 {/* small card image */}
                                 <Card.Img variant="top" src={jobPosting.picture} style={{ objectFit: 'cover', height: '200px' }} />
                                 <Card.Body>

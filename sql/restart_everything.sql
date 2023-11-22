@@ -256,7 +256,7 @@ VALUES
 
 INSERT INTO `recruit` (id, u_name, pass_hash, full_name, recruit_location, bio, picture, recruit_resume, recruit_status_id)
 VALUES 
-    (0, 'x23mark', '123', 'Jeremy Tubongbanua', 'Scarborough, Ontario, Canada', '3rd-Year Software Engineering Student Specializaing in IoT', 'https://imgur.com/SbwZN0K', 'https://www.linkedin.com/in/jeremy-tubongbanua/', 0),
+    (0, 'x23mark', '123', 'Jeremy Tubongbanua', 'Scarborough, Ontario, Canada', '3rd-Year Software Engineering Student Specializaing in IoT', 'https://i.imgur.com/SbwZN0K.png', 'https://www.linkedin.com/in/jeremy-tubongbanua/', 0),
     (1, 'jerryshum', 'de877b38b46ff2a81533394464d8c7ae', 'Jerry Shum', 'Oshawa, Ontario, Canada', '3rd-Year Software Engineering Student', 'https://imgur.com/fxfajwb', 'https://www.linkedin.com/in/jerry-shum/', 1),
     (2, 'neh2332', '123', 'Nehmat Farooq', 'Oshawa, Ontario, Canada', '3rd-Year Software Engineering Student | Aspiring Software Engineer | Gym Enjoyer', 'https://imgur.com/aqSgVKF', 'https://www.linkedin.com/in/nehmat-farooq/', 1),
     (3, 'dudeman', 'de877b38b46ff2a81533394464d8c7ae', 'Noah Toma', 'Ajax, Ontario, Canada', '3rd-Year Software Engineering Student | Certified Goat', 'https://imgur.com/undefined', 'https://www.linkedin.com/in/nt-se/', 0),

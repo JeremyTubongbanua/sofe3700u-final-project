@@ -14,6 +14,7 @@ function RecruitIndex() {    return (
                     <Route index element={<RecruitHome />} />
                     <Route path="profile" element={<RecruitProfile />} />
                     <Route path="myapps" element={<MyApplications />} />
+                    <Route path="posting" element={<PostingView />} />
                 </Route>
             </Routes>
         </div>

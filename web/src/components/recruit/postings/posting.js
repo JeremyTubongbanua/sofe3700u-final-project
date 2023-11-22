@@ -120,7 +120,12 @@ function Posting(props) {
                 Frequency: {jobPostings.job_posting_frequency}
               </Card.Text>
               <div className="mt-auto flex-shrink-1">
-                <Button variant="primary" className="w-50">Check Profile</Button>
+                <Button variant="primary" className="w-50" onClick={
+                  (e) => {
+                    document.cookie = `jobPostingId=${jobPostings.id}`;
+                    window.location.href = '/recruit/posting';
+                  }
+                }>Check Profile</Button>
               </div>
             </Card.Body>
           </Card>
