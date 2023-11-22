@@ -23,7 +23,11 @@ function RecruiterNav() {
                         My Company
                     </NavLink>
                     <Nav.Link>
-                        <button type="submit" className="btn btn-outline-dark w-80 p-3 px-5">
+                        <button className="btn btn-outline-dark w-80 p-3 px-5" onClick={
+                            (e) => {
+                                window.location.href = '/login';
+                            }
+                        }>
                             Log Out
                         </button>
                     </Nav.Link>

@@ -146,6 +146,12 @@ app.post('/login', (req, res) => {
     responseLogin(db, req, res);
 });
 
+app.post('/job_application/recruit_id', (req, res) => {
+    console.log('POST ' + req.url + '   ' + JSON.stringify(req.body));
+    const {responseGetJobApplicationsByRecruitId} = require('./JobApplication.js');
+    responseGetJobApplicationsByRecruitId(db, req, res);
+});
+
 const server = app.listen(3001, '0.0.0.0', () => {
     const host = server.address().address;
     const port = server.address().port;

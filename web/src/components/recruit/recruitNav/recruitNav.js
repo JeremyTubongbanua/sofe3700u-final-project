@@ -24,7 +24,11 @@ function RecruitNav() {
                         My Profile
                     </NavLink>
                     <Nav.Link>
-                        <button type="submit" className="btn btn-outline-dark w-80 p-3 px-5">
+                        <button onClick={
+                            (e) => {
+                                window.location.href = '/login';
+                            }
+                        } className="btn btn-outline-dark w-80 p-3 px-5">
                             Log Out
                         </button>
                     </Nav.Link>

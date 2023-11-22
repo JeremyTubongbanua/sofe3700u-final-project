@@ -24,4 +24,26 @@ const responsePutJobApplicationRecruitApply = (db, req, res) => {
     }
 }
 
-module.exports = {responsePutJobApplicationRecruitApply};
+const responseGetJobApplicationsByRecruitId = (db, req, res) => {
+    /**
+     * {
+     *    "id": 0
+     * }
+     */
+    if(req.body === undefined || req.body['id'] === undefined) {
+        res.status(400).send({'message': 'error', error: 'id is required'});
+    } else {
+        const id = req.body['id'];
+        query = 'SELECT * FROM job_application WHERE recruit_id=' + id + ';';
+        db.query(query, (err, result) => {
+            if(err) {
+                console.log(err);
+                res.status(500).send({'message': 'error', 'error': err});
+            } else {
+                res.status(200).send({'message': 'success', 'data': result});
+            }
+        });
+    }
+};
+
+module.exports = {responsePutJobApplicationRecruitApply, responseGetJobApplicationsByRecruitId};
