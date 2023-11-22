@@ -47,4 +47,38 @@ const responseGetJobApplicationsByRecruitId = (db, req, res) => {
     }
 };
 
-module.exports = {responsePutJobApplicationRecruitApply, responseGetJobApplicationsByRecruitId};
+const resposneGetRecruitsByJobPostingId = (db, req, res) => {
+    let query = 'SELECT recruit.id, recruit.u_name, recruit.full_name, recruit.recruit_location, recruit.bio, recruit.picture, recruit.recruit_resume, recruit_status.recruit_status, profession.profession FROM (recruit LEFT JOIN recruit_status ON recruit.recruit_status_id = recruit_status.id) LEFT JOIN recruit_professions ON recruit.id = recruit_professions.recruit_id LEFT JOIN profession ON recruit_professions.profession_id = profession.id WHERE recruit.id IN (SELECT recruit_id FROM job_application WHERE job_posting_id = ' + req.body['id'] + ');';
+    db.query(query, (err, result) => {
+        if(err) {
+            console.log(err);
+            res.status(500).send({'message': 'error', 'error': err});
+        } else {
+            data = [];
+            for(let i = 0; i < result.length; i++) {
+                for(let j = 0; j < data.length; j++) {
+                    if(data[j]['id'] === result[i]['id']) {
+                        continue;
+                    }
+                }
+                data.push(result[i]);
+                result[i]['professions'] = [];
+            }
+            for(let i = 0; i < result.length; i++) {
+                for(let j = 0; j < data.length; j++) {
+                    if(data[j]['id'] === result[i]['id']) {
+                        if(result[i]['profession'] != null) {
+                            data[j]['professions'].push(result[i]['profession']);
+                        }
+                    }
+                }
+            }
+            for(let i = 0; i < data.length; i++) {
+                delete data[i]['profession'];
+            }
+            res.status(200).send({'message': 'success', 'data': data});
+        }
+    });
+};
+
+module.exports = {responsePutJobApplicationRecruitApply, responseGetJobApplicationsByRecruitId, resposneGetRecruitsByJobPostingId};
