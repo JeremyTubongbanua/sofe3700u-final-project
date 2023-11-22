@@ -2,11 +2,7 @@
 
 const responseGetRecruiterByUName = (db, req, res) => {
     const { uname } = req.body;
-    const query = `
-        SELECT *
-        FROM recruiter
-        WHERE uname = $1
-    `;
+    const query = 'SELECT * FROM recruiter WHERE uname = ' + uname + ';';
     const values = [uname];
     db.query(query, values, (err, result) => {
         if (err) {
