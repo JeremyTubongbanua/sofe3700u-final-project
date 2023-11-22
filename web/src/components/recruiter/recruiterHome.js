@@ -1,4 +1,5 @@
 import React from 'react';
+import CompanyPostings from './companyPostings/companyPostings';
 
 
 function RecruiterHome() {
@@ -7,6 +8,7 @@ function RecruiterHome() {
             <div className="row justify-content-center">
                 <div className="col-12 text-center">
                     <h1 className="display-2">Current Company Postings</h1>
+                    <CompanyPostings />
                 </div>
             </div>
         </div>

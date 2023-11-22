@@ -10,7 +10,7 @@ function CompanyPostings() {
             status: 'open',
             position: 'Software Engineer',
             type: 'Hybrid',
-            picture: 'img_url' // Add a picture property to each posting
+            picture: 'https://images.pexels.com/photos/7173026/pexels-photo-7173026.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' // Add a picture property to each posting
         },
         // More postings...
     ];
@@ -20,20 +20,20 @@ function CompanyPostings() {
             name: 'Applicant',
             bio: 'Bio',
             professions: 'Software Engineer',
-            picture: 'img_url'
+            picture: 'https://images.pexels.com/photos/8951199/pexels-photo-8951199.jpeg?auto=compress&cs=tinysrgb&w=1600'
         },
         // More applicants...
     ];
 
     return (
-        <Container className="bg-light p-5">
+        <Container className="bg-dark-subtle rounded p-4">
             {postings.map((post, index) => (
-                <Card key={index} className="mb-3 p-3 bg-secondary">
+                <Card key={index} className="mb-3 p-3 bg-body-secondary">
                     <Row className="g-0">
                         <Col md={4}>
-                            <Image src={post.picture} alt="Job" roundedCircle fluid /> {/* Display the picture */}
+                            <Image src={post.picture} alt="Job" rounded fluid className='border border-dark border-2' style={{ height: '300px', width: '100%', objectFit: 'cover' }} /> {/* Display the picture */}
                         </Col>
-                        <Col md={8}>
+                        <Col md={8} className="d-flex justify-content-center align-items-center">
                             <Card.Body>
                                 <Card.Title>{`Posting ID ${post.id} | ${post.title}`}</Card.Title>
                                 <Card.Text>{`Salary: ${post.salary}`}</Card.Text>
@@ -51,7 +51,7 @@ function CompanyPostings() {
                         <Card className="h-100 p-3 bg-light">
                             <Row className="g-0">
                                 <Col md={4}>
-                                    <Image src={applicant.picture} alt="Profile" roundedCircle fluid />
+                                    <Image src={applicant.picture} alt="Profile" rounded fluid style={{ height: '200px', width: '100%', objectFit: 'cover' }} />
                                 </Col>
                                 <Col md={8}>
                                     <Card.Body>
