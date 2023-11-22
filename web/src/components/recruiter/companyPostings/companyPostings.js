@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Card, Container, Row, Col, Image } from 'react-bootstrap';
+import { Card, Container, Row, Col, Image, Button } from 'react-bootstrap';
 import './companyPostings.css'
 
 function CompanyPostings() {
@@ -81,6 +81,7 @@ function CompanyPostings() {
                                 <Card.Text>{`Frequency: ${post.job_posting_frequency}`}</Card.Text>
                                 <Card.Text>{`Description: ${post.job_posting_description}`}</Card.Text>
                                 <Card.Text>{`Professions: ${post.professions}`}</Card.Text>
+                                <Button variant="primary">Edit</Button> {/* Edit button */}
                             </Card.Body>
                         </Col>
                     </Row>
