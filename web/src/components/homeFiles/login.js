@@ -5,7 +5,7 @@ import bcrypt from 'bcryptjs'
 
 function Login() {
 
-    const [username, setUsername] = useState('jeremy');
+    const [username, setUsername] = useState('x23mark');
     const [password, setPassword] = useState('123');
 
     const onLoginPress = () => {

@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Container, Stack } from "react-bootstrap";
 import Applied from "./applied";
 
 function MyApplications(props) {
+
     return (
         <Container className="d-flex flex-column justify-content-center align-items-center">
             <h1 className="display-2">My Applications</h1>

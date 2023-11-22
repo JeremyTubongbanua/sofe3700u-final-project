@@ -256,28 +256,33 @@ VALUES
 
 INSERT INTO `recruit` (id, u_name, pass_hash, full_name, recruit_location, bio, picture, recruit_resume, recruit_status_id)
 VALUES 
-    (0, 'x23mark', '202cb962ac59075b964b07152d234b70', 'Jeremy Tubongbanua', 'Scarborough, Ontario, Canada', '3rd-Year Software Engineering Student Specializaing in IoT', 'https://imgur.com/SbwZN0K', 'https://www.linkedin.com/in/jeremy-tubongbanua/', 0),
+    (0, 'x23mark', '123', 'Jeremy Tubongbanua', 'Scarborough, Ontario, Canada', '3rd-Year Software Engineering Student Specializaing in IoT', 'https://imgur.com/SbwZN0K', 'https://www.linkedin.com/in/jeremy-tubongbanua/', 0),
     (1, 'jerryshum', 'de877b38b46ff2a81533394464d8c7ae', 'Jerry Shum', 'Oshawa, Ontario, Canada', '3rd-Year Software Engineering Student', 'https://imgur.com/fxfajwb', 'https://www.linkedin.com/in/jerry-shum/', 1),
-    (2, 'neh2332', '202cb962ac59075b964b07152d234b70', 'Nehmat Farooq', 'Oshawa, Ontario, Canada', '3rd-Year Software Engineering Student | Aspiring Software Engineer | Gym Enjoyer', 'https://imgur.com/aqSgVKF', 'https://www.linkedin.com/in/nehmat-farooq/', 1),
+    (2, 'neh2332', '123', 'Nehmat Farooq', 'Oshawa, Ontario, Canada', '3rd-Year Software Engineering Student | Aspiring Software Engineer | Gym Enjoyer', 'https://imgur.com/aqSgVKF', 'https://www.linkedin.com/in/nehmat-farooq/', 1),
     (3, 'dudeman', 'de877b38b46ff2a81533394464d8c7ae', 'Noah Toma', 'Ajax, Ontario, Canada', '3rd-Year Software Engineering Student | Certified Goat', 'https://imgur.com/undefined', 'https://www.linkedin.com/in/nt-se/', 0),
-    (4, 'moker', '202cb962ac59075b964b07152d234b70', 'Wesley Kyle De Guzman', 'Scarborough, Ontario, Canada', '3rd-Year Mechatronics Engineering Student at Ontario Tech University', 'https://imgur.com/BGzXDUd', 'https://www.linkedin.com/in/wesley-de-guzman-46529b207/', 1),
+    (4, 'moker', '123', 'Wesley Kyle De Guzman', 'Scarborough, Ontario, Canada', '3rd-Year Mechatronics Engineering Student at Ontario Tech University', 'https://imgur.com/BGzXDUd', 'https://www.linkedin.com/in/wesley-de-guzman-46529b207/', 1),
     (5, 'kh', 'de877b38b46ff2a81533394464d8c7ae', 'Khalid Hafeez', 'Ontario, Canada', 'Associate Professor at Ontario Tech University', 'https://shared.ontariotechu.ca/shared/faculty/feas/images/faculty-photos/khalid.hafeez.png', 'https://engineering.ontariotechu.ca/people/ecse/khalid.hafeez.php', 0),
-    (6, 'billgates', '202cb962ac59075b964b07152d234b70', 'Bill Gates', 'San Jose, California', 'Founder of Microsoft', 'https://imgur.com/JOnMzUu', 'https://en.wikipedia.org/wiki/Bill_Gates', 0),
+    (6, 'billgates', '123', 'Bill Gates', 'San Jose, California', 'Founder of Microsoft', 'https://imgur.com/JOnMzUu', 'https://en.wikipedia.org/wiki/Bill_Gates', 0),
     (7, 'kevinwang', 'de877b38b46ff2a81533394464d8c7ae', 'Kevin Wang', 'Rome, Italy', 'Associate Professor of Finance at Rotman', 'https://imgur.com/A8bcvUF', 'https://www.rotman.utoronto.ca/FacultyAndResearch/Faculty/FacultyBios/Wang_K', 1),
-    (8, 'nadeemkhan', '202cb962ac59075b964b07152d234b70', 'Nadeem Khan', 'Milton, Ontario, Canada', 'Masters of Business & Administration', 'https://media.licdn.com/dms/image/D5603AQHtJa0cVGbFfQ/profile-displayphoto-shrink_200_200/0/1699807793764?e=1705536000&v=beta&t=hkfCkrgDRVP2nMDbO7w6NdrUG3uTCTGFHTT2939hiD4', 'https://www.linkedin.com/in/nadeem-khan-6a8a87241/', 0);
+    (8, 'nadeemkhan', '123', 'Nadeem Khan', 'Milton, Ontario, Canada', 'Masters of Business & Administration', 'https://media.licdn.com/dms/image/D5603AQHtJa0cVGbFfQ/profile-displayphoto-shrink_200_200/0/1699807793764?e=1705536000&v=beta&t=hkfCkrgDRVP2nMDbO7w6NdrUG3uTCTGFHTT2939hiD4', 'https://www.linkedin.com/in/nadeem-khan-6a8a87241/', 0);
 
 INSERT INTO `recruiter` (id, company_id, u_name, pass_hash, full_name, recruiter_location, bio, picture) VALUES 
-    (0, 0, 'recruiter1', '202cb962ac59075b964b07152d234b70', 'John Doe', 'Oshawa, Ontario, Canada', 'Recruiter at Ontario Tech University', 'https://imgur.com/0B738gb'),
-    (1, 1, 'recruiter2', 'de877b38b46ff2a81533394464d8c7ae', 'Jane Doe', 'Toronto, Ontario, Canada', 'Recruiter at Google', 'https://imgur.com/0B738gb'),
-    (2, 2, 'recruiter3', '202cb962ac59075b964b07152d234b70', 'John Doe', 'Toronto, Ontario, Canada', 'Recruiter at Meet Sushi and Boil', 'https://imgur.com/0B738gb'),
-    (3, 3, 'recruiter4', 'de877b38b46ff2a81533394464d8c7ae', 'Jane Doe', 'Toronto, Ontario, Canada', 'Recruiter at Ontario Power Generation', 'https://imgur.com/0B738gb'),
-    (4, 4, 'recruiter5', '202cb962ac59075b964b07152d234b70', 'John Doe', 'Montreal, Quebec, Canada', 'Recruiter at Amazon', 'https://imgur.com/0B738gb'),
-    (5, 5, 'recruiter6', 'de877b38b46ff2a81533394464d8c7ae', 'Jane Doe', 'Toronto, Ontario, Canada', 'Recruiter at Microsoft', 'https://imgur.com/0B738gb'),
-    (6, 6, 'recruiter7', '202cb962ac59075b964b07152d234b70', 'John Doe', 'Toronto, Ontario, Canada', 'Recruiter at Code Ninjas', 'https://imgur.com/0B738gb'),
-    (7, 7, 'recruiter8', 'de877b38b46ff2a81533394464d8c7ae', 'Jane Doe', 'Toronto, Ontario, Canada', 'Recruiter at Atsign', 'https://imgur.com/0B738gb');
+    (0, 0, 'recruiter1', '123', 'John Doe', 'Oshawa, Ontario, Canada', 'Recruiter at Ontario Tech University', 'https://imgur.com/0B738gb'),
+    (1, 1, 'recruiter2', '123', 'Jane Doe', 'Toronto, Ontario, Canada', 'Recruiter at Google', 'https://imgur.com/0B738gb'),
+    (2, 2, 'recruiter3', '123', 'John Doe', 'Toronto, Ontario, Canada', 'Recruiter at Meet Sushi and Boil', 'https://imgur.com/0B738gb'),
+    (3, 3, 'recruiter4', '123', 'Jane Doe', 'Toronto, Ontario, Canada', 'Recruiter at Ontario Power Generation', 'https://imgur.com/0B738gb'),
+    (4, 4, 'recruiter5', '123', 'John Doe', 'Montreal, Quebec, Canada', 'Recruiter at Amazon', 'https://imgur.com/0B738gb'),
+    (5, 5, 'recruiter6', '123', 'Jane Doe', 'Toronto, Ontario, Canada', 'Recruiter at Microsoft', 'https://imgur.com/0B738gb'),
+    (6, 6, 'recruiter7', '123', 'John Doe', 'Toronto, Ontario, Canada', 'Recruiter at Code Ninjas', 'https://imgur.com/0B738gb'),
+    (7, 7, 'recruiter8', '123', 'Jane Doe', 'Toronto, Ontario, Canada', 'Recruiter at Atsign', 'https://imgur.com/0B738gb');
 
 INSERT INTO `job_application` (recruit_id, job_posting_id, job_application_status_id)
 VALUES 
+    (0, 1, 1),
+    (0, 2, 1),
+    (0, 3, 1),
+    (0, 4, 1),
+    (0, 5, 1),
     (0, 12, 1),
     (0, 14, 0),
     (1, 0, 0),
