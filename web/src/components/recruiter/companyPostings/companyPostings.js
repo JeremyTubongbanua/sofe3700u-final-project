@@ -23,25 +23,43 @@ function CompanyPostings() {
         }
     ]
      */
+    const [recruiterId, setRecruiterId] = useState('');
     const [jobPostings, setJobPostings] = useState([]);
 
     useEffect(() => {
-        const url = 'http://jeremymark.ca:3001/company/job_postings';
+        let url = 'http://jeremymark.ca:3001/recruiter/u_name';
         fetch(url, {
             'method': 'POST',
             'body': JSON.stringify({
-                id: 0
+                u_name: document.cookie.split('; ').find(row => row.startsWith('u_name')).split('=')[1]
             }),
             'headers': {
                 'Content-Type': 'application/json'
             }
         }).then((res) => res.json()).then((data) => {
             if (data.message === 'success') {
-                setJobPostings(data.data);
+                setRecruiterId(data.data.id);
+                let url = 'http://jeremymark.ca:3001/company/job_postings';
+                fetch(url, {
+                    'method': 'POST',
+                    'body': JSON.stringify({
+                        id: data.data.id
+                    }),
+                    'headers': {
+                        'Content-Type': 'application/json'
+                    }
+                }).then((res) => res.json()).then((data) => {
+                    if (data.message === 'success') {
+                        setJobPostings(data.data);
+                    } else {
+                        alert(data.data);
+                    }
+                }).catch((err) => { alert(err) });
             } else {
                 alert(data.data);
             }
         }).catch((err) => { alert(err) });
+
     }, []);
 
     return (
