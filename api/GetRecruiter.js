@@ -1,9 +1,9 @@
 
 
 const responseGetRecruiterByUName = (db, req, res) => {
-    const { uname } = req.body;
-    const query = 'SELECT * FROM recruiter WHERE uname = ' + uname + ';';
-    const values = [uname];
+    const { u_name } = req.body;
+    const query = 'SELECT * FROM recruiter WHERE uname = ' + u_name + ';';
+    const values = [u_name];
     db.query(query, values, (err, result) => {
         if (err) {
             console.log(err);
