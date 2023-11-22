@@ -106,7 +106,48 @@ function PostingView(props) {
                         </Col>
 
                         <Form.Group>
-                            <Button variant="primary" type="submit" className='w-100 mt-4'>
+                            <Button variant="primary" className='w-100 mt-4' onClick={
+                                (e) => {
+                                    let url = 'http://jeremymark.ca:3001/recruit/u_name';
+                                    fetch(url, {
+                                        method: 'POST',
+                                        headers: {
+                                            'Content-Type': 'application/json',
+                                        },
+                                        body: JSON.stringify({ u_name: document.cookie.split('; ').find(row => row.startsWith('u_name')).split('=')[1] }),
+                                    })
+                                        .then((response) => response.json())
+                                        .then((data) => {
+                                            if (data.message === 'success') {
+                                                const recruit_id = data.data.id;
+                                                const jobPostingId = document.cookie.split('; ').find(row => row.startsWith('jobPostingId')).split('=')[1];
+                                                const url = 'http://jeremymark.ca:3001/job_application/recruitapply';
+                                                fetch(url, {
+                                                    method: 'PUT',
+                                                    headers: {
+                                                        'Content-Type': 'application/json',
+                                                    },
+                                                    body: JSON.stringify({ recruit_id: parseInt(recruit_id), job_posting_id: parseInt(jobPostingId) }),
+                                                })
+                                                    .then((response) => response.json())
+                                                    .then((data) => {
+                                                        console.log(data);
+                                                        if (data.message === 'success') {
+                                                            alert('Application Submitted!');
+                                                        } else {
+                                                            alert(data.message + ': ' + JSON.stringify(data.error));
+                                                        }
+                                                    }).catch((err) => {
+                                                        alert(err);
+                                                    });
+                                            } else {
+                                                alert('Did not find ' + data.data);
+                                            }
+                                        }).catch((err) => {
+                                            console.log(err);
+                                        });
+                                }
+                            }>
                                 Apply
                             </Button>
                         </Form.Group>
