@@ -34,7 +34,7 @@ const responseGetJobApplicationsByRecruitId = (db, req, res) => {
         res.status(400).send({'message': 'error', error: 'id is required'});
     } else {
         const id = req.body['id'];
-        query = 'SELECT job_posting.id, job_posting.company_id, job_posting.job_posting_title, job_posting.job_posting_description, job_posting.salary, job_posting.picture, job_posting_status.job_posting_status, job_posting_type.job_posting_type, profession.profession FROM job_application INNER JOIN job_posting ON job_application.job_posting_id = job_posting.id INNER JOIN job_posting_status ON job_posting.job_posting_status_id = job_posting_status.id INNER JOIN job_posting_type ON job_posting.job_posting_type_id = job_posting_type.id WHERE job_application.recruit_id = ' + id + ';';
+        query = 'SELECT job_posting.id, job_posting.company_id, job_posting.job_posting_title, job_posting.job_posting_description, job_posting.salary, job_posting.picture, job_posting_status.job_posting_status, job_posting_type.job_posting_type FROM job_application INNER JOIN job_posting ON job_application.job_posting_id = job_posting.id INNER JOIN job_posting_status ON job_posting.job_posting_status_id = job_posting_status.id INNER JOIN job_posting_type ON job_posting.job_posting_type_id = job_posting_type.id WHERE job_application.recruit_id = ' + id + ';';
         db.query(query, (err, result) => {
             if(err) {
                 console.log(err);
