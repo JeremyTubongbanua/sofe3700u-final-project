@@ -5,7 +5,7 @@ const responseGetRecruiterByUName = (db, req, res) => {
     const query = `
         SELECT *
         FROM recruiter
-        WHERE uname = ${uname}
+        WHERE uname = $1
     `;
     const values = [uname];
     db.query(query, values, (err, result) => {
