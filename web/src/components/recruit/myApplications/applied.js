@@ -1,22 +1,30 @@
+
 import React from 'react';
-import { Card, Button, Container, Stack } from "react-bootstrap";
+import { Card, Row, Col } from 'react-bootstrap';
 
 function Applied() {
     // Component logic goes here
 
     return (
-        // JSX code for the component's UI goes here
-        <div>
-            <Card className="w-100 text-center">
-                <Card.Img variant="top" src="https://i.guim.co.uk/img/media/327e46c3ab049358fad80575146be9e0e65686e7/0_56_1023_614/master/1023.jpg?width=700&quality=85&auto=format&fit=max&s=185175f5efa3916bc91cf77b16876ffa" />
-                <Card.Body>
-                    <Card.Title>Job Title</Card.Title>
-                    <Card.Text>
-                        Description asdl;kajsdlkjhasdlkajsdlkjasdlkjasdlkjads huh? aslpdjasldjalskdj huh?
-                    </Card.Text>
-                </Card.Body>
-            </Card>
-        </div>
+
+        <Card key={1} className="mb-3 p-3 bg-body-secondary w-75">
+            <Row className="g-0">
+                <Col md={4}>
+                    <img src='https://images.pexels.com/photos/7173026/pexels-photo-7173026.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' alt="Job" className='border border-dark border-2' style={{ height: '300px', width: '100%', objectFit: 'cover' }} />
+                </Col>
+                <Col md={8} className="d-flex justify-content-center align-items-center">
+                    <Card.Body>
+                        <Card.Title className='fs-3 text' >{`Posting ID:  | `}</Card.Title>
+                        <br></br>
+                        <Card.Text>{`Salary`}</Card.Text>
+                        <Card.Text>{`Status:`}</Card.Text>
+                        <Card.Text>{`Position:`}</Card.Text>
+                        <Card.Text>{`Type: `}</Card.Text>
+                    </Card.Body>
+                </Col>
+            </Row>
+        </Card>
+
     );
 }
 
