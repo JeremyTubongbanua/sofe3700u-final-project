@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+
+* {
+    font-family: Roboto, sans-serif;
+}
+
+.logo {
+    font-family: Inter, sans-serif;
+    font-weight: 300;
+    font-size: 24px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: black;
+}
+
+.link-text {
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: black;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    /* Add a transparent border */
+    transition: border-color 0.3s ease;
+    /* Add transition for smoother effect */
+}
+
+.link-text:hover,
+.active-link {
+    text-shadow: .25px 0px .1px, -.25px 0px .1px;
+    color: black;
+    border-color: gray;
+    /* Change the border color on hover and for active links */
+}
