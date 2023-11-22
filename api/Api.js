@@ -146,7 +146,7 @@ app.post('/login', (req, res) => {
     responseLogin(db, req, res);
 });
 
-app.post('/job_application/recruit_id', (req, res) => {
+app.post('/job_posting/recruit_id', (req, res) => {
     console.log('POST ' + req.url + '   ' + JSON.stringify(req.body));
     const {responseGetJobApplicationsByRecruitId} = require('./JobApplication.js');
     responseGetJobApplicationsByRecruitId(db, req, res);
