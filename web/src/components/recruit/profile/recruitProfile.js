@@ -69,13 +69,11 @@ function RecruitProfile(props) {
                                     <Form.Control className='rounded-0' value={recruit_status} onChange={(e) => {
                                         setRecruitStatus(e.target.value);
                                     }} /> */}
-                                    <select>
-                                        <option onChange={(e) => {
-                                            setRecruitStatus("Not Looking for Jobs");
-                                        }}>Not Looking for Jobs</option>
-                                        <option onChange={(e) => {
-                                            setRecruitStatus("Looking for Jobs");
-                                        }} value={2}>Looking for Jobs</option>
+                                    <select value={recruit_status} onChange={(e) => {
+                                        setRecruitStatus(e.target.value);
+                                    }}>
+                                        <option>Not Looking for Jobs</option>
+                                        <option>Looking for Jobs</option>
                                     </select>
                                 </Form.Group>
 
