@@ -67,10 +67,10 @@ function CompanyPostings() {
             {jobPostings.map((post, index) => (
                 <Card key={index} className="mb-3 p-3 bg-body-secondary">
                     <Row className="g-0">
-                        <Col md={4}>
+                        <Col md={4} className='d-flex justify-content-center align-items-center'>
                             <Image src={post.picture} alt="Job" rounded fluid className='border border-dark border-2' style={{ height: '300px', width: '100%', objectFit: 'cover' }} /> {/* Display the picture */}
                         </Col>
-                        <Col md={8} className="d-flex justify-content-center align-items-center">
+                        <Col md={8} className="px-4 d-flex justify-content-center text-start">
                             <Card.Body>
                                 <Card.Title className='fs-3 text' >{`Posting ID: ${post.id} | ${post.job_posting_title}`}</Card.Title>
                                 <br></br>
@@ -81,7 +81,7 @@ function CompanyPostings() {
                                 <Card.Text>{`Frequency: ${post.job_posting_frequency}`}</Card.Text>
                                 <Card.Text>{`Description: ${post.job_posting_description}`}</Card.Text>
                                 <Card.Text>{`Professions: ${post.professions}`}</Card.Text>
-                                <Button variant="primary">Edit</Button> {/* Edit button */}
+                                <Button variant="primary" className='w-25'>Edit</Button> {/* Edit button */}
                             </Card.Body>
                         </Col>
                     </Row>

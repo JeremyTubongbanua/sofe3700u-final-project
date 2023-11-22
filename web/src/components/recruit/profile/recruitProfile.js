@@ -51,7 +51,7 @@ function RecruitProfile(props) {
     return (
         <div className='d-flex align-items-center justify-content-center' style={{ minHeight: '100vh' }}>
             <Form style={{ width: '100%', maxWidth: '800px' }}>
-                <div className='p-4 d-flex flex-column align-items-stretch bg-secondary-subtle'>
+                <div className='p-4 d-flex flex-column align-items-stretch bg-secondary-subtle rounded-3'>
                     <Row className="mb-2 flex-grow-1 align-self-stretch  ">
                         <Col xs={12} md={6} className="d-flex align-items-center">
                             <Stack gap={3}>
@@ -60,16 +60,16 @@ function RecruitProfile(props) {
                                     Username: {u_name}
                                 </h1>
 
-                                <div className='image-container' style={{ width: '200px', height: '200px', display: 'flex', justifyContent: 'center', alignItems: 'center', overflow: 'hidden' }}>
+                                <div className='image-container border border-black border-2 rounded-2 mb-3' style={{ width: '200px', height: '200px', display: 'flex', justifyContent: 'center', alignItems: 'center', overflow: 'hidden' }}>
                                     <Image className="h-100 w-100" src={picture} rounded fluid />
                                 </div>
 
                                 <Form.Group controlId="formStatus">
                                     {/* <Form.Label>Status</Form.Label>
-                                    <Form.Control className='rounded-0' value={recruit_status} onChange={(e) => {
+                                    <Form.Control className='rounded-1' value={recruit_status} onChange={(e) => {
                                         setRecruitStatus(e.target.value);
                                     }} /> */}
-                                    <select value={recruit_status} onChange={(e) => {
+                                    <select className='w-100 p-2 border-0 border-white rounded-1' value={recruit_status} onChange={(e) => {
                                         setRecruitStatus(e.target.value);
                                     }}>
                                         <option>Not Looking for Jobs</option>
@@ -79,7 +79,7 @@ function RecruitProfile(props) {
 
                                 <Form.Group controlId="formProfession">
                                     <Form.Label>Professions</Form.Label>
-                                    <Form.Control className='rounded-0' value={professions} onChange={(e) => {
+                                    <Form.Control className='rounded-1' value={professions} onChange={(e) => {
                                         setProfessions(e.target.value);
                                     }} />
                                 </Form.Group>
@@ -123,35 +123,35 @@ function RecruitProfile(props) {
                             <Stack gap={3}>
                                 <Form.Group controlId="formGridUsername">
                                     <Form.Label>Full Name</Form.Label>
-                                    <Form.Control className='rounded-0' type="fullname" value={full_name} onChange={(e) => {
+                                    <Form.Control className='rounded-1' type="fullname" value={full_name} onChange={(e) => {
                                         setFullName(e.target.value);
                                     }} />
                                 </Form.Group>
 
                                 <Form.Group controlId="formGridPassword">
                                     <Form.Label>Password</Form.Label>
-                                    <Form.Control className='rounded-0' type="password" value={pass_hash} onChange={(e) => {
+                                    <Form.Control className='rounded-1' type="password" value={pass_hash} onChange={(e) => {
                                         setPassHash(e.target.value);
                                     }} />
                                 </Form.Group>
 
                                 <Form.Group controlId="formGridAddress1">
                                     <Form.Label>Address</Form.Label>
-                                    <Form.Control className='rounded-0' value={recruit_location} onChange={(e) => {
+                                    <Form.Control className='rounded-1' value={recruit_location} onChange={(e) => {
                                         setRecruitLocation(e.target.value);
                                     }} />
                                 </Form.Group>
 
                                 <Form.Group controlId="formResume">
                                     <Form.Label>Resume URL</Form.Label>
-                                    <Form.Control className='rounded-0' value={recruit_resume} onChange={(e) => {
+                                    <Form.Control className='rounded-1' value={recruit_resume} onChange={(e) => {
                                         setRecruitResume(e.target.value);
                                     }} />
                                 </Form.Group>
 
                                 <Form.Group controlId="formBio">
                                     <Form.Label>Bio</Form.Label>
-                                    <Form.Control className='rounded-0' style={{ resize: 'none' }} as="textarea" rows={6} value={bio}
+                                    <Form.Control className='rounded-1' style={{ resize: 'none' }} as="textarea" rows={6} value={bio}
 
                                         onChange={(e) => {
                                             setBio(e.target.value);

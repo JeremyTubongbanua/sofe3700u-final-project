@@ -45,7 +45,7 @@ function RecruiterProfile(props) {
     return (
         <div className='d-flex align-items-center justify-content-center' style={{ minHeight: '100vh' }}>
             <Form style={{ width: '100%', maxWidth: '800px' }}>
-                <div className='p-4 d-flex flex-column align-items-stretch bg-secondary-subtle'>
+                <div className='p-4 d-flex flex-column align-items-stretch bg-secondary-subtle rounded-1'>
                     <Row className="mb-2 flex-grow-1 align-self-stretch  ">
                         <Col xs={12} md={6} className="d-flex align-items-center">
                             <Stack gap={3}>
@@ -55,17 +55,17 @@ function RecruiterProfile(props) {
                                 </h1>
 
                                 <div className='image-container' style={{ width: '200px', height: '200px', display: 'flex', justifyContent: 'center', alignItems: 'center', overflow: 'hidden' }}>
-                                    <Image className="h-100 w-100" src={picture} rounded fluid />
+                                    <Image className="h-100 w-100 border border-black border-2" src={picture} rounded fluid />
                                 </div>
 
                                 <Form.Group controlId="formStatus">
                                     <Form.Label>Current Company</Form.Label>
-                                    <Form.Control className='rounded-0' placeholder={company} />
+                                    <Form.Control className='rounded-1' placeholder={company} />
                                 </Form.Group>
 
                                 <Form.Group controlId="formProfession">
                                     <Form.Label>Professions</Form.Label>
-                                    <Form.Control className='rounded-0' placeholder={professions} />
+                                    <Form.Control className='rounded-1' placeholder={professions} />
                                 </Form.Group>
 
                                 <Form.Group>
@@ -80,22 +80,22 @@ function RecruiterProfile(props) {
                             <Stack gap={3}>
                                 <Form.Group controlId="formGridUsername">
                                     <Form.Label>Full Name</Form.Label>
-                                    <Form.Control className='rounded-0' type="fullname" placeholder={fullName} />
+                                    <Form.Control className='rounded-1' type="fullname" placeholder={fullName} />
                                 </Form.Group>
 
                                 <Form.Group controlId="formGridPassword">
                                     <Form.Label>Password</Form.Label>
-                                    <Form.Control className='rounded-0' type="password" placeholder={passHash} />
+                                    <Form.Control className='rounded-1' type="password" placeholder={passHash} />
                                 </Form.Group>
 
                                 <Form.Group controlId="formGridAddress1">
                                     <Form.Label>Address</Form.Label>
-                                    <Form.Control className='rounded-0' placeholder={recruiterLocation} />
+                                    <Form.Control className='rounded-1' placeholder={recruiterLocation} />
                                 </Form.Group>
 
                                 <Form.Group controlId="formBio">
                                     <Form.Label>Bio</Form.Label>
-                                    <Form.Control className='rounded-0' style={{ resize: 'none' }} as="textarea" rows={6} placeholder={bio} />
+                                    <Form.Control className='rounded-1' style={{ resize: 'none' }} as="textarea" rows={6} placeholder={bio} />
                                 </Form.Group>
                             </Stack>
                         </Col>

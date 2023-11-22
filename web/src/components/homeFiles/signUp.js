@@ -105,7 +105,7 @@ function SignUp() {
             for (let i = 0; i < data.data.length; i++) {
                 u_names.push(data.data[i].u_name);
             }
-            if(u_names.includes(username)) {
+            if (u_names.includes(username)) {
                 alert('Username already exists.');
                 return;
             }
@@ -139,10 +139,10 @@ function SignUp() {
         <div>
 
             <Header />
-            <div className="container mt-5">
+            <div className="container my-5">
                 <div className="row justify-content-center">
-                    <div className="col-xs-4">
-                        <div className="card border border-2 border-black rounded-0 text-center ">
+                    <div className="col-md-6">
+                        <div className="card border border-2 border-black rounded-1 text-center ">
                             <div className="card-body">
                                 <div className='card-title my-5 title-card'>
                                     Sign Up As
@@ -152,13 +152,13 @@ function SignUp() {
                                         <label htmlFor="username" className="form-label ">
                                             Username
                                         </label>
-                                        <input type="username" className="form-control rounded-0 bg-secondary-subtle" id="username" onChange={onChangeUsername} value={username} />
+                                        <input type="username" className="form-control rounded-1 bg-secondary-subtle" id="username" onChange={onChangeUsername} value={username} />
                                     </div>
                                     <div className="mb-3">
                                         <label htmlFor="password" className="form-label">
                                             Password
                                         </label>
-                                        <input type="password" className="form-control rounded-0 bg-secondary-subtle" id="password" onChange={onChangePassword} value={password} />
+                                        <input type="password" className="form-control rounded-1 bg-secondary-subtle" id="password" onChange={onChangePassword} value={password} />
                                     </div>
                                     <div className="mb-3">
                                         <label htmlFor="confirmPassword" className="form-label">
@@ -166,7 +166,7 @@ function SignUp() {
                                         </label>
                                         <input
                                             type="password"
-                                            className="form-control rounded-0 bg-secondary-subtle"
+                                            className="form-control rounded-1 bg-secondary-subtle"
                                             id="confirmPassword"
                                             onChange={onChangeConfirmPassword}
                                             value={confirmPassword}
@@ -176,7 +176,7 @@ function SignUp() {
                                         <label htmlFor="full_name" className="form-label">
                                             Full Name
                                         </label>
-                                        <input type="text" className="form-control rounded-0 bg-secondary-subtle" id="full_name"
+                                        <input type="text" className="form-control rounded-1 bg-secondary-subtle" id="full_name"
                                             onChange={(e) => setFullName(e.target.value)}
                                             value={fullName}
                                         />
@@ -185,7 +185,7 @@ function SignUp() {
                                         <label htmlFor="picture" className="form-label">
                                             Picture
                                         </label>
-                                        <input type="text" className="form-control rounded-0 bg-secondary-subtle" id="picture"
+                                        <input type="text" className="form-control rounded-1 bg-secondary-subtle" id="picture"
                                             value={picture}
                                             onChange={(e) => setPicture(e.target.value)}
                                         />
@@ -194,13 +194,13 @@ function SignUp() {
                                         <label htmlFor="bio" className="form-label">
                                             Bio
                                         </label>
-                                        <textarea className="form-control rounded-0 bg-secondary-subtle" id="bio" onChange={(e) => setBio(e.target.value)} value={bio} rows="3"></textarea>
+                                        <textarea className="form-control rounded-1 bg-secondary-subtle" id="bio" onChange={(e) => setBio(e.target.value)} value={bio} rows="3"></textarea>
                                     </div>
                                     <div className="mb-3">
                                         <label htmlFor="location" className="form-label">
                                             Location
                                         </label>
-                                        <input type="text" className="form-control rounded-0 bg-secondary-subtle" id="location" onChange={(e) => setLocation(e.target.value)} value={location} />
+                                        <input type="text" className="form-control rounded-1 bg-secondary-subtle" id="location" onChange={(e) => setLocation(e.target.value)} value={location} />
                                     </div>
                                     <div className="mb-3">
                                         <div className="d-flex justify-content-center">
@@ -248,7 +248,7 @@ function SignUp() {
                                                 <label htmlFor="recruit_resume" className="form-label">
                                                     Recruit Resume
                                                 </label>
-                                                <input type="text" className="form-control rounded-0 bg-secondary-subtle" id="recruit_resume" onChange={(e) => setRecruitResume(e.target.value)} value={recruitResume} />
+                                                <input type="text" className="form-control rounded-1 bg-secondary-subtle" id="recruit_resume" onChange={(e) => setRecruitResume(e.target.value)} value={recruitResume} />
                                             </div>
                                         </div>
                                     )}
@@ -261,7 +261,7 @@ function SignUp() {
                                                     Select Company
                                                 </label>
                                                 <select
-                                                    className="form-select rounded-0 bg-secondary-subtle"
+                                                    className="form-select rounded-1 bg-secondary-subtle"
                                                     id="company"
                                                     value={selectedCompany}
                                                     onChange={handleCompanyChange}
@@ -273,12 +273,12 @@ function SignUp() {
                                             {/* ... (other recruiter specific fields) */}
                                         </div>
                                     )}
-                                    <button className="btn btn-dark w-75 p-3" onClick={onSignUpPress}>
+                                    <button className="btn btn-dark w-75 p-3 mt-3" onClick={onSignUpPress}>
                                         Sign Up
                                     </button>
 
                                     <Link to="/Login">
-                                        <button className="btn btn-outline-secondary w-75 mt-3 p-3">
+                                        <button className="btn btn-outline-secondary w-75 mt-3 p-3 text-blaCK">
                                             Log In
                                         </button>
                                     </Link>

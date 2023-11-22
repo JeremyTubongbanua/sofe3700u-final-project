@@ -1,12 +1,8 @@
-
 import React, { useEffect, useState } from 'react';
 import { Card, Row, Col } from 'react-bootstrap';
 
 function Applied(props) {
-    // Component logic goes here
-
     const [jobPostings, setJobPostings] = useState([]);
-
 
     useEffect(() => {
         const u_name = document.cookie.split('; ').find(row => row.startsWith('u_name')).split('=')[1];
@@ -19,7 +15,6 @@ function Applied(props) {
                 'Content-Type': 'application/json'
             }
         }).then((res) => res.json()).then((data) => {
-            console.log(data);
             fetch('http://jeremymark.ca:3001/job_posting/recruit_id', {
                 method: 'POST',
                 body: JSON.stringify({
@@ -38,17 +33,14 @@ function Applied(props) {
 
     return (
         <div>
-            <Row>
+            <Row className="mb-3">
                 {jobPostings.map((jobPosting, index) => {
-                    console.log(jobPostings);
                     return (
-                        <Col key={index} xs={12} md={4}>
-                            <Card className="mb-3 h-75" style={{ width: '100%' }} onClick={
-                                () => {
-                                    document.cookie = `jobPostingId=${jobPosting.id}`;
-                                    window.location.href = '/recruit/posting';
-                                }
-                            }>
+                        <Col key={index} xs={12} md={4} className="mb-3">
+                            <Card className="h-100" style={{ width: '100%' }} onClick={() => {
+                                document.cookie = `jobPostingId=${jobPosting.id}`;
+                                window.location.href = '/recruit/posting';
+                            }}>
                                 {/* small card image */}
                                 <Card.Img variant="top" src={jobPosting.picture} style={{ objectFit: 'cover', height: '200px' }} />
                                 <Card.Body>
@@ -64,7 +56,7 @@ function Applied(props) {
                 })}
             </Row>
         </div>
-    )
+    );
 }
 
 export default Applied;

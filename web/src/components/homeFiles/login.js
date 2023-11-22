@@ -42,8 +42,8 @@ function Login() {
             <Header />
             <div className="container mt-5">
                 <div className="row justify-content-center">
-                    <div className="col-xs-4">
-                        <div className="card border border-2 border-black rounded-0 text-center ">
+                    <div className="col-md-5 col-sm-8">
+                        <div className="card border border-2 border-black rounded-1 text-center ">
                             <div className="card-body">
                                 <div className='card-title my-5 title-card'>
                                     Log In
@@ -53,14 +53,14 @@ function Login() {
                                         <label htmlFor="username" className="form-label ">
                                             Username
                                         </label>
-                                        <input type="text" value={username} onChange={(e) => { setUsername(e.target.value) }} className="form-control rounded-0 bg-secondary-subtle" id="username" />
+                                        <input type="text" value={username} onChange={(e) => { setUsername(e.target.value) }} className="form-control rounded-1 bg-secondary-subtle" id="username" />
                                     </div>
                                     <div className="mb-3">
                                         <label htmlFor="password" className="form-label">
                                             Password
                                         </label>
 
-                                        <input type="password" value={password} onChange={(e) => { setPassword(e.target.value) }} className="form-control rounded-0 bg-secondary-subtle" id="password" />
+                                        <input type="password" value={password} onChange={(e) => { setPassword(e.target.value) }} className="form-control rounded-1 bg-secondary-subtle" id="password" />
                                     </div>
 
                                     <button onClick={(e) => { onLoginPress() }} className="btn btn-dark mt-3 w-75 p-3">
@@ -68,7 +68,7 @@ function Login() {
                                     </button>
 
                                     <Link to="/signup">
-                                        <button className="btn btn-outline-secondary w-75 mt-3 p-3">
+                                        <button className="btn btn-outline-secondary w-75 my-3 p-3 text-black">
                                             Sign Up
                                         </button>
                                     </Link>
