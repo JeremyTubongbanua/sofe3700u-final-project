@@ -1,6 +1,8 @@
 # supercooljobs
 
-sofe3700u final project
+sofe3700u final project.
+
+Deployed at [http://jeremymark.ca/](http://jeremymark.ca/)
 
 | Name | Student Number |
 | ---- | -------------- |
@@ -14,7 +16,29 @@ CRN:43511
 
 ## Project Description
 
-Super Cool Jobs
+Super Cool Jobs is a full-stack application that consists of recruits, recruiters, companies, and job applications. Recruits can apply to jobs, recruiters can post jobs, and companies can hire recruiters to post jobs on their behalf. Recruits can also view their job applications and recruiters can view their job postings. Companies can view their recruiters and job postings.
+
+## Project Structure
+
+```
+.
+├── api/
+│   ├── Api.js (entrypoint for External API)
+│   └── ...
+├── sql/
+│   ├── api_queries/recruit/
+│   ├── creation/
+│   ├── deletion/
+│   ├── insertions/
+│   ├── job_postings
+│   ├── show_tables/
+│   ├── views/
+│   └── restart_everything.sql (Refresh data)
+└── web/
+    ├── public/
+    ├── src/
+    └── package.json
+```
 
 ## Installation Instructions
 
