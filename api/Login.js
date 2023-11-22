@@ -13,7 +13,7 @@ const responseLogin = (db, req, res) => {
                 if(result[0]['pass_hash'] === req.body['pass_hash']) {
                     res.status(200).json({'message': 'success', 'data': result[0]});
                 } else {
-                    res.status(400).json({'message': 'error', 'data': 'password incorrect'});
+                    res.status(400).json({'message': 'error', 'data': 'password incorrect' + result[0]['pass_hash'] + ' ' + req.body['pass_hash']});
                 }
             }
         }

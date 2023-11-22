@@ -5,15 +5,14 @@ import bcrypt from 'bcryptjs'
 
 function Login() {
 
-    const [username, setUsername] = useState('x23mark');
-    const [password, setPassword] = useState('202cb962ac59075b964b07152d234b70');
+    const [username, setUsername] = useState('jeremy');
+    const [password, setPassword] = useState('123');
 
     const onLoginPress = () => {
         const url = 'http://jeremymark.ca:3001/login';
-        const hashedPassword = bcrypt.hashSync(password);
         const body = {
             u_name: username,
-            pass_hash: hashedPassword
+            pass_hash: password
         };
         const options = {
             method: 'POST',
@@ -32,7 +31,7 @@ function Login() {
                     // redirect to /${account_type}
                     window.location.href = `/${data.data.account_type}`;
                 } else {
-                    alert('Incorrect username or password');
+                    alert(data.data);
                 }
             }).catch((err) => { alert(err) });
 

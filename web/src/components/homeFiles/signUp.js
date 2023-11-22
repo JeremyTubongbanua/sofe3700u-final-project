@@ -8,15 +8,15 @@ import bcrypt from 'bcryptjs'
 function SignUp() {
     const [userType, setUserType] = useState('recruit');
     const [selectedCompany, setSelectedCompany] = useState('');
-    const [username, setUsername] = useState('el28');
-    const [password, setPassword] = useState('123456');
-    const [confirmPassword, setConfirmPassword] = useState('123456');
+    const [username, setUsername] = useState('jeremy');
+    const [password, setPassword] = useState('123');
+    const [confirmPassword, setConfirmPassword] = useState('123');
 
-    const [fullName, setFullName] = useState('Emily Lai');
-    const [recruitResume, setRecruitResume] = useState('https://www.linkedin.com/in/-emily-lai/');
-    const [picture, setPicture] = useState('https://media.licdn.com/dms/image/D5603AQGXKuUJ-RGsRQ/profile-displayphoto-shrink_200_200/0/1677041538074?e=1705536000&v=beta&t=oJwqQcdXkPSl5tlXQ2nmasNq0KGXOZVyneO4EHy-F48');
-    const [bio, setBio] = useState('Hi, I am Emily Lai, the VP of Finance & Administration of OT EngSoc');
-    const [location, setLocation] = useState('Aurora, Ontario');
+    const [fullName, setFullName] = useState('Jeremy Tubongbanua');
+    const [recruitResume, setRecruitResume] = useState('https://www.linkedin.com/in/jeremy-tubongbanua/');
+    const [picture, setPicture] = useState('https://media.licdn.com/dms/image/D5603AQEBfA6cTTcGCw/profile-displayphoto-shrink_400_400/0/1689217294985?e=1706140800&v=beta&t=JKOr4F2hgZp6oFpOTbnJTExv_AwORwuJQ1_-4g7yTXU');
+    const [bio, setBio] = useState('Hi, I am Jeremy, VP Communications of the OTU Computer Science Club');
+    const [location, setLocation] = useState('Richmond Hill, Ontario');
 
     const [companies, setCompanies] = useState([]); // [{id:0, company_name: 'Ontario Tech university',..}, {id: 1, company_name: 'University of Toronto',..},...]
 
@@ -70,12 +70,10 @@ function SignUp() {
         }
 
         // hash password
-        const hashedPassword = bcrypt.hashSync(password);
-        console.log(hashedPassword);
 
         let body = {
             "u_name": username,
-            "pass_hash": hashedPassword,
+            "pass_hash": password,
             "full_name": fullName,
             "picture": picture,
             "bio": bio,
