@@ -122,6 +122,11 @@ function CompanyPostings() {
                                                         <Card.Title className='fw-medium text-decoration-underline'>{applicant.name}</Card.Title>
                                                         <Card.Text>{applicant.bio}</Card.Text>
                                                         <Card.Text>Professions: {applicant.professions.join(', ')}</Card.Text>
+                                                        <Card.Text>ID: {applicant.id}</Card.Text>
+                                                        <Card.Text>Location: {applicant.recruit_location}</Card.Text>
+                                                        <Card.Text>Resume: {applicant.recruit_resume}</Card.Text>
+                                                        <Card.Text>Username: {applicant.u_name}</Card.Text>
+                                                        <Card.Text>Status: {applicant.recruit_status}</Card.Text>
                                                     </Card.Body>
                                                 </Card.Body>
                                             </Col>
