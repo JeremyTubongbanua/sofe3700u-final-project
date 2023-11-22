@@ -257,13 +257,13 @@ VALUES
 INSERT INTO `recruit` (id, u_name, pass_hash, full_name, recruit_location, bio, picture, recruit_resume, recruit_status_id)
 VALUES 
     (0, 'x23mark', '123', 'Jeremy Tubongbanua', 'Scarborough, Ontario, Canada', '3rd-Year Software Engineering Student Specializaing in IoT', 'https://i.imgur.com/SbwZN0K.png', 'https://www.linkedin.com/in/jeremy-tubongbanua/', 0),
-    (1, 'jerryshum', 'de877b38b46ff2a81533394464d8c7ae', 'Jerry Shum', 'Oshawa, Ontario, Canada', '3rd-Year Software Engineering Student', 'https://imgur.com/fxfajwb', 'https://www.linkedin.com/in/jerry-shum/', 1),
-    (2, 'neh2332', '123', 'Nehmat Farooq', 'Oshawa, Ontario, Canada', '3rd-Year Software Engineering Student | Aspiring Software Engineer | Gym Enjoyer', 'https://imgur.com/aqSgVKF', 'https://www.linkedin.com/in/nehmat-farooq/', 1),
-    (3, 'dudeman', 'de877b38b46ff2a81533394464d8c7ae', 'Noah Toma', 'Ajax, Ontario, Canada', '3rd-Year Software Engineering Student | Certified Goat', 'https://imgur.com/undefined', 'https://www.linkedin.com/in/nt-se/', 0),
-    (4, 'moker', '123', 'Wesley Kyle De Guzman', 'Scarborough, Ontario, Canada', '3rd-Year Mechatronics Engineering Student at Ontario Tech University', 'https://imgur.com/BGzXDUd', 'https://www.linkedin.com/in/wesley-de-guzman-46529b207/', 1),
+    (1, 'jerryshum', 'de877b38b46ff2a81533394464d8c7ae', 'Jerry Shum', 'Oshawa, Ontario, Canada', '3rd-Year Software Engineering Student', 'https://i.imgur.com/fxfajwb.png', 'https://www.linkedin.com/in/jerry-shum/', 1),
+    (2, 'neh2332', '123', 'Nehmat Farooq', 'Oshawa, Ontario, Canada', '3rd-Year Software Engineering Student | Aspiring Software Engineer | Gym Enjoyer', 'https://i.imgur.com/aqSgVKF.png', 'https://www.linkedin.com/in/nehmat-farooq/', 1),
+    (3, 'dudeman', 'de877b38b46ff2a81533394464d8c7ae', 'Noah Toma', 'Ajax, Ontario, Canada', '3rd-Year Software Engineering Student | Certified Goat', 'https://static.wikia.nocookie.net/character-stats-and-profiles/images/2/2f/Robloxian_3D_Png.png/revision/latest?cb=20230629111153', 'https://www.linkedin.com/in/nt-se/', 0),
+    (4, 'moker', '123', 'Wesley Kyle De Guzman', 'Scarborough, Ontario, Canada', '3rd-Year Mechatronics Engineering Student at Ontario Tech University', 'https://i.imgur.com/BGzXDUd.png', 'https://www.linkedin.com/in/wesley-de-guzman-46529b207/', 1),
     (5, 'kh', 'de877b38b46ff2a81533394464d8c7ae', 'Khalid Hafeez', 'Ontario, Canada', 'Associate Professor at Ontario Tech University', 'https://shared.ontariotechu.ca/shared/faculty/feas/images/faculty-photos/khalid.hafeez.png', 'https://engineering.ontariotechu.ca/people/ecse/khalid.hafeez.php', 0),
-    (6, 'billgates', '123', 'Bill Gates', 'San Jose, California', 'Founder of Microsoft', 'https://imgur.com/JOnMzUu', 'https://en.wikipedia.org/wiki/Bill_Gates', 0),
-    (7, 'kevinwang', 'de877b38b46ff2a81533394464d8c7ae', 'Kevin Wang', 'Rome, Italy', 'Associate Professor of Finance at Rotman', 'https://imgur.com/A8bcvUF', 'https://www.rotman.utoronto.ca/FacultyAndResearch/Faculty/FacultyBios/Wang_K', 1),
+    (6, 'billgates', '123', 'Bill Gates', 'San Jose, California', 'Founder of Microsoft', 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Bill_Gates_-_2023_-_P062021-967902_%28cropped%29.jpg/330px-Bill_Gates_-_2023_-_P062021-967902_%28cropped%29.jpg', 'https://en.wikipedia.org/wiki/Bill_Gates', 0),
+    (7, 'kevinwang', 'de877b38b46ff2a81533394464d8c7ae', 'Kevin Wang', 'Rome, Italy', 'Associate Professor of Finance at Rotman', 'https://i.imgur.com/A8bcvUF.png', 'https://www.rotman.utoronto.ca/FacultyAndResearch/Faculty/FacultyBios/Wang_K', 1),
     (8, 'nadeemkhan', '123', 'Nadeem Khan', 'Milton, Ontario, Canada', 'Masters of Business & Administration', 'https://media.licdn.com/dms/image/D5603AQHtJa0cVGbFfQ/profile-displayphoto-shrink_200_200/0/1699807793764?e=1705536000&v=beta&t=hkfCkrgDRVP2nMDbO7w6NdrUG3uTCTGFHTT2939hiD4', 'https://www.linkedin.com/in/nadeem-khan-6a8a87241/', 0);
 
 INSERT INTO `recruiter` (id, company_id, u_name, pass_hash, full_name, recruiter_location, bio, picture) VALUES 
@@ -315,7 +315,7 @@ VALUES
     (2, 20, 1),
     (2, 21, 1),
     (4, 20, 2),
-    (5, 0, 2),
+    (5, 0, 1),
     (7, 17, 1),
     (7, 18, 1),
     (7, 19, 1),

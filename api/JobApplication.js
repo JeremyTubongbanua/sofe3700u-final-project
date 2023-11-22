@@ -56,13 +56,17 @@ const resposneGetRecruitsByJobPostingId = (db, req, res) => {
         } else {
             data = [];
             for(let i = 0; i < result.length; i++) {
+                let isDuplicate = false;
                 for(let j = 0; j < data.length; j++) {
                     if(data[j]['id'] === result[i]['id']) {
-                        continue;
+                        isDuplicate = true;
+                        break;
                     }
                 }
-                data.push(result[i]);
-                result[i]['professions'] = [];
+                if(!isDuplicate) {
+                    data.push(result[i]);
+                    result[i]['professions'] = [];
+                }
             }
             for(let i = 0; i < result.length; i++) {
                 for(let j = 0; j < data.length; j++) {
