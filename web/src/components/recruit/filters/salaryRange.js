@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Container, Row, Col, Form } from 'react-bootstrap';
 
 function SalaryRange(props) {
-  const [salary, setSalary] = useState({ min: 0, max: 80000 });
+  const [salary, setSalary] = useState({ min: 0, max: 100000 });
 
   const handleInputChange = (e) => {
     setSalary({ ...salary, [e.target.name]: parseFloat(e.target.value) });

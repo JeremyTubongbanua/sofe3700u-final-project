@@ -270,14 +270,14 @@ VALUES
     (8, 'nadeemkhan', '123', 'Nadeem Khan', 'Milton, Ontario, Canada', 'Masters of Business & Administration', 'https://media.licdn.com/dms/image/D5603AQHtJa0cVGbFfQ/profile-displayphoto-shrink_200_200/0/1699807793764?e=1705536000&v=beta&t=hkfCkrgDRVP2nMDbO7w6NdrUG3uTCTGFHTT2939hiD4', 'https://www.linkedin.com/in/nadeem-khan-6a8a87241/', 0);
 
 INSERT INTO `recruiter` (id, company_id, u_name, pass_hash, full_name, recruiter_location, bio, picture) VALUES 
-    (0, 0, 'recruiter1', '123', 'John Doe', 'Oshawa, Ontario, Canada', 'Recruiter at Ontario Tech University', 'https://i.imgur.com/0B738gb.png'),
-    (1, 1, 'recruiter2', '123', 'Jane Doe', 'Toronto, Ontario, Canada', 'Recruiter at Google', 'https://i.imgur.com/0B738gb.png'),
-    (2, 2, 'recruiter3', '123', 'John Doe', 'Toronto, Ontario, Canada', 'Recruiter at Meet Sushi and Boil', 'https://i.imgur.com/0B738gb.png'),
-    (3, 3, 'recruiter4', '123', 'Jane Doe', 'Toronto, Ontario, Canada', 'Recruiter at Ontario Power Generation', 'https://i.imgur.com/0B738gb.png'),
-    (4, 4, 'recruiter5', '123', 'John Doe', 'Montreal, Quebec, Canada', 'Recruiter at Amazon', 'https://i.imgur.com/0B738gb.png'),
-    (5, 5, 'recruiter6', '123', 'Jane Doe', 'Toronto, Ontario, Canada', 'Recruiter at Microsoft', 'https://i.imgur.com/0B738gb.png'),
-    (6, 6, 'recruiter7', '123', 'John Doe', 'Toronto, Ontario, Canada', 'Recruiter at Code Ninjas', 'https://i.imgur.com/0B738gb.png'),
-    (7, 7, 'recruiter8', '123', 'Jane Doe', 'Toronto, Ontario, Canada', 'Recruiter at Atsign', 'https://i.imgur.com/0B738gb.png');
+    (0, 0, 'recruiter1', '123', 'John Doe', 'Oshawa, Ontario, Canada', 'Recruiter at Ontario Tech University', 'https://www.freeiconspng.com/thumbs/person-icon/grab-vector-graphic-person-icon--imagebasket-13.png'),
+    (1, 1, 'recruiter2', '123', 'Jane Doe', 'Toronto, Ontario, Canada', 'Recruiter at Google', 'https://www.freeiconspng.com/thumbs/person-icon/grab-vector-graphic-person-icon--imagebasket-13.png'),
+    (2, 2, 'recruiter3', '123', 'John Doe', 'Toronto, Ontario, Canada', 'Recruiter at Meet Sushi and Boil', 'https://www.freeiconspng.com/thumbs/person-icon/grab-vector-graphic-person-icon--imagebasket-13.png'),
+    (3, 3, 'recruiter4', '123', 'Jane Doe', 'Toronto, Ontario, Canada', 'Recruiter at Ontario Power Generation', 'https://www.freeiconspng.com/thumbs/person-icon/grab-vector-graphic-person-icon--imagebasket-13.png'),
+    (4, 4, 'recruiter5', '123', 'John Doe', 'Montreal, Quebec, Canada', 'Recruiter at Amazon', 'https://www.freeiconspng.com/thumbs/person-icon/grab-vector-graphic-person-icon--imagebasket-13.png'),
+    (5, 5, 'recruiter6', '123', 'Jane Doe', 'Toronto, Ontario, Canada', 'Recruiter at Microsoft', 'https://www.freeiconspng.com/thumbs/person-icon/grab-vector-graphic-person-icon--imagebasket-13.png'),
+    (6, 6, 'recruiter7', '123', 'John Doe', 'Toronto, Ontario, Canada', 'Recruiter at Code Ninjas', 'https://www.freeiconspng.com/thumbs/person-icon/grab-vector-graphic-person-icon--imagebasket-13.png'),
+    (7, 7, 'recruiter8', '123', 'Jane Doe', 'Toronto, Ontario, Canada', 'Recruiter at Atsign', 'https://www.freeiconspng.com/thumbs/person-icon/grab-vector-graphic-person-icon--imagebasket-13.png');
 
 INSERT INTO `job_application` (recruit_id, job_posting_id, job_application_status_id)
 VALUES 
