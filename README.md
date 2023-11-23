@@ -1,8 +1,13 @@
-# supercooljobs
+<div align="center">
+<hr>
 
-sofe3700u final project.
+# SuperCoolJobs
 
-Deployed at [http://jeremymark.ca/](http://jeremymark.ca/)
+<ins>***SOFE3700U final project***</ins>
+
+<ins>*Wednesday, November 22, 2023*</ins>
+
+**Deployed @ [http://jeremymark.ca/](http://jeremymark.ca/)**
 
 | Name | Student Number |
 | ---- | -------------- |
@@ -11,14 +16,28 @@ Deployed at [http://jeremymark.ca/](http://jeremymark.ca/)
 | Nehmat Farooq | 100819864 |
 | Jerry Shum | 100845217 | 
 
-Group 9
-CRN:43511
+*Group No.: 9*
 
-## Project Description
+*CRN: 43511*
 
-Super Cool Jobs is a full-stack application that consists of recruits, recruiters, companies, and job applications. Recruits can apply to jobs, recruiters can post jobs, and companies can hire recruiters to post jobs on their behalf. Recruits can also view their job applications and recruiters can view their job postings. Companies can view their recruiters and job postings.
+</div>
+<br>
 
-## Project Structure
+<div align="center">
+
+## Description
+
+SuperCoolJobs is a full-stack application that allows candidates, recruiters, and companies to network and engage in the job application process. Candidates can apply to jobs, recruiters can post jobs, and companies can hire recruiters to post jobs on their behalf. Candidates, in turn, can place job applications, and recruiters are able to place, view, and modify job postings. Finally, companies have the ability to view their recruiters and their job postings.
+
+</div>
+<br>
+
+<div align="center">
+
+## Structure
+
+</div>
+<br>
 
 ```
 .
@@ -40,13 +59,20 @@ Super Cool Jobs is a full-stack application that consists of recruits, recruiter
     └── package.json
 ```
 
-## Installation Instructions
+<div align="center">
 
-The 2 major components, the website and the external API, are located in the web and api folders respectively. They canboth be started using conventional npm scripts.
+## Installation
 
-Requirements to run these services include:
+The two major components, the website and the external API, are located in the web and api folders respectively. They can both be initiated via conventional npm scripts.
 
-- [NodeJS](https://nodejs.org/en/), LTS is recommended. NPM is included with NodeJS.
+| Requirements |
+|:---:|
+| [NodeJS](https://nodejs.org/en/) (LTS is recommended; NPM is included with NodeJS) |
+
+</div>
+<br>
+
+<div align="center">
 
 ### Running the External API
 
@@ -60,7 +86,7 @@ npm i
 npm run start
 ```
 
-### Running the Website
+### Running the Application
 
 Linux
 
@@ -71,3 +97,7 @@ cd web
 npm i 
 npm run start
 ```
+</div>
+<br>
+
+<hr>
