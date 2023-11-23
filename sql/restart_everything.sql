@@ -1,6 +1,6 @@
 USE supercooljobs;
 
-DROP TABLE IF EXISTS `job_application_professions`;
+DROP TABLE IF EXISTS `job_application_profesxsions`;
 DROP TABLE IF EXISTS `job_application`;
 DROP TABLE IF EXISTS `recruiter`;
 DROP TABLE IF EXISTS `recruit_professions`;
