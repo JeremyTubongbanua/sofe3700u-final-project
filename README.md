@@ -3,22 +3,22 @@
 
 # SuperCoolJobs
 
-<ins>***SOFE3700U final project***</ins>
+<ins>**_SOFE3700U final project_**</ins>
 
-<ins>*Wednesday, November 22, 2023*</ins>
+<ins>_Wednesday, November 22, 2023_</ins>
 
 **Deployed @ [http://jeremymark.ca/](http://jeremymark.ca/)**
 
-| Name | Student Number |
-| ---- | -------------- |
-| Jeremy Mark Tubongbanua | 100849092 |
-| Noah Toma | 100825559 |
-| Nehmat Farooq | 100819864 |
-| Jerry Shum | 100845217 | 
+| Name                    | Student Number |
+| ----------------------- | -------------- |
+| Jeremy Mark Tubongbanua | 100849092      |
+| Noah Toma               | 100825559      |
+| Nehmat Farooq           | 100819864      |
+| Jerry Shum              | 100845217      |
 
-*Group No.: 9*
+_Group No.: 9_
 
-*CRN: 43511*
+_CRN: 43511_
 
 </div>
 <br>
@@ -65,8 +65,8 @@ SuperCoolJobs is a full-stack application that allows candidates, recruiters, an
 
 The two major components, the website and the external API, are located in the web and api folders respectively. They can both be initiated via conventional npm scripts.
 
-| Requirements |
-|:---:|
+|                                    Requirements                                    |
+| :--------------------------------------------------------------------------------: |
 | [NodeJS](https://nodejs.org/en/) (LTS is recommended; NPM is included with NodeJS) |
 
 </div>
@@ -94,11 +94,12 @@ Simply enter the directory, install the dependencies, and run the start script.
 
 ```sh
 cd web
-npm i 
+npm i
 npm run start
 ```
 
 ## Table Creations
+
 ```
 CREATE TABLE IF NOT EXISTS `job_posting_type` (
     id INTEGER NOT NULL UNIQUE,
@@ -218,7 +219,7 @@ VALUES (0, 'Rejected'),
     (1, 'Pending'),
     (2, 'Accepted');
 INSERT INTO `profession` (id, profession)
-VALUES 
+VALUES
     (0, 'Software Engineering'),
     (1, 'Data Engineering'),
     (2, 'Mechanical Engineering'),
@@ -311,7 +312,7 @@ INSERT INTO `job_posting` (
         job_posting_type_id,
         job_posting_frequency_id
     )
-VALUES 
+VALUES
     (0, 0, 'Software Engineering Associate Professor','A professor with a Software and Electrical background and a PhD in Engineering', 180000,'https://images.pexels.com/photos/716276/pexels-photo-716276.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',0, 2, 2),
     (1,0,'Data Management Lab Instructor','A Master''s student with a strong software and databases background.', 90000, 'https://images.pexels.com/photos/7173026/pexels-photo-7173026.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', 1, 2, 1),
     (2, 1, 'Project Manager', 'Someone to manage the google developers in their weekly scrum meetings and facilitate team activity and meetings.', 50000, 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', 1, 0, 0),
@@ -340,7 +341,7 @@ VALUES
     (25, 2, 'Full Stack Developer', 'A developer with a strong background in both frontend and backend development.', 90000, 'https://images.pexels.com/photos/7173026/pexels-photo-7173026.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', 1, 2, 0);
 
 INSERT INTO `recruit` (id, u_name, pass_hash, full_name, recruit_location, bio, picture, recruit_resume, recruit_status_id)
-VALUES 
+VALUES
     (0, 'x23mark', '123', 'Jeremy Tubongbanua', 'Scarborough, Ontario, Canada', '3rd-Year Software Engineering Student Specializaing in IoT', 'https://i.imgur.com/SbwZN0K.png', 'https://www.linkedin.com/in/jeremy-tubongbanua/', 0),
     (1, 'jerryshum', 'de877b38b46ff2a81533394464d8c7ae', 'Jerry Shum', 'Oshawa, Ontario, Canada', '3rd-Year Software Engineering Student', 'https://i.imgur.com/fxfajwb.png', 'https://www.linkedin.com/in/jerry-shum/', 1),
     (2, 'neh2332', '123', 'Nehmat Farooq', 'Oshawa, Ontario, Canada', '3rd-Year Software Engineering Student | Aspiring Software Engineer | Gym Enjoyer', 'https://i.imgur.com/aqSgVKF.png', 'https://www.linkedin.com/in/nehmat-farooq/', 1),
@@ -351,7 +352,7 @@ VALUES
     (7, 'kevinwang', 'de877b38b46ff2a81533394464d8c7ae', 'Kevin Wang', 'Rome, Italy', 'Associate Professor of Finance at Rotman', 'https://i.imgur.com/A8bcvUF.png', 'https://www.rotman.utoronto.ca/FacultyAndResearch/Faculty/FacultyBios/Wang_K', 1),
     (8, 'nadeemkhan', '123', 'Nadeem Khan', 'Milton, Ontario, Canada', 'Masters of Business & Administration', 'https://media.licdn.com/dms/image/D5603AQHtJa0cVGbFfQ/profile-displayphoto-shrink_200_200/0/1699807793764?e=1705536000&v=beta&t=hkfCkrgDRVP2nMDbO7w6NdrUG3uTCTGFHTT2939hiD4', 'https://www.linkedin.com/in/nadeem-khan-6a8a87241/', 0);
 
-INSERT INTO `recruiter` (id, company_id, u_name, pass_hash, full_name, recruiter_location, bio, picture) VALUES 
+INSERT INTO `recruiter` (id, company_id, u_name, pass_hash, full_name, recruiter_location, bio, picture) VALUES
     (0, 0, 'recruiter1', '123', 'John Doe', 'Oshawa, Ontario, Canada', 'Recruiter at Ontario Tech University', 'https://i.imgur.com/0B738gb.png'),
     (1, 1, 'recruiter2', '123', 'Jane Doe', 'Toronto, Ontario, Canada', 'Recruiter at Google', 'https://i.imgur.com/0B738gb.png'),
     (2, 2, 'recruiter3', '123', 'John Doe', 'Toronto, Ontario, Canada', 'Recruiter at Meet Sushi and Boil', 'https://i.imgur.com/0B738gb.png'),
@@ -362,7 +363,7 @@ INSERT INTO `recruiter` (id, company_id, u_name, pass_hash, full_name, recruiter
     (7, 7, 'recruiter8', '123', 'Jane Doe', 'Toronto, Ontario, Canada', 'Recruiter at Atsign', 'https://i.imgur.com/0B738gb.png');
 
 INSERT INTO `job_application` (recruit_id, job_posting_id, job_application_status_id)
-VALUES 
+VALUES
     (0, 1, 1),
     (0, 2, 1),
     (0, 3, 1),
@@ -424,7 +425,7 @@ VALUES (0, 0),
 (7, 8);
 
 INSERT INTO `job_posting_professions` (job_posting_id, profession_id)
-VALUES 
+VALUES
     (0, 0),
     (0, 1),
     (0, 15),
@@ -439,16 +440,16 @@ VALUES
     (4, 8),
     (5, 8),
     (6, 1),
-    (6, 5), 
-    (6, 7), 
+    (6, 5),
+    (6, 7),
     (7, 7),
     (8, 7),
     (8, 8),
-    (8, 10), 
+    (8, 10),
     (9, 0),
     (9, 1),
     (9, 9),
-    (9, 17), 
+    (9, 17),
     (10, 0),
     (11, 0),
     (12, 15),
@@ -481,6 +482,7 @@ CREATE VIEW view1 AS (
 ```
 
 ### View 2 - see average job salary that each recruiter applied to
+
 ```sql
 CREATE VIEW view2 AS (
     SELECT r.recruit_id, r.recruit_name, AVG(j.job_salary) AS average_salary
@@ -492,9 +494,10 @@ CREATE VIEW view2 AS (
 ```
 
 ### View 3 - View all the job_posting_ids of the people who applied to job postings which had a greater salary than 65000. must use a correlated nested query
+
 ```sql
 CREATE VIEW view3 AS (
-    SELECT recruits.id AS rid, recruits.u_name, recruits.full_name, job_posting.id AS jpid, job_posting.salary FROM (SELECT recruit.id, recruit.u_name, recruit.full_name 
+    SELECT recruits.id AS rid, recruits.u_name, recruits.full_name, job_posting.id AS jpid, job_posting.salary FROM (SELECT recruit.id, recruit.u_name, recruit.full_name
     FROM recruit JOIN (SELECT *
     FROM job_application
     WHERE job_posting_id IN (
@@ -514,14 +517,15 @@ CREATE VIEW view4 AS (
     SELECT * FROM recruit
     LEFT JOIN job_application ON recruit.id = job_application.recruit_id
 
-    UNION 
+    UNION
 
-    SELECT * FROM job_application 
+    SELECT * FROM job_application
     RIGHT JOIN recruit ON job_application.recruit_id = recruit.id
 );
 ```
 
 ### View 5 - Shows all usernames of all accounts in the system
+
 ```sql
 CREATE VIEW view5 AS (
     (
@@ -537,6 +541,7 @@ CREATE VIEW view5 AS (
 ```
 
 ### View 6 - See what company each recruiter in the system works for
+
 ```sql
 CREATE VIEW view6 AS (
     SELECT recruiter.full_name 'Recruiter',
@@ -547,6 +552,7 @@ CREATE VIEW view6 AS (
 ```
 
 ### View 7 - Company, job offering, type, and salary, ordered by company name in ascending order
+
 ```sql
 CREATE VIEW view7 AS (
     SELECT C.company_name 'Company',
@@ -570,6 +576,7 @@ CREATE VIEW view8 AS(
 ```
 
 ### View 9 - Recruits that are looking for work and have uploaded a resume
+
 ```sql
 CREATE VIEW view9 AS (
     SELECT recruit.full_name,
@@ -582,6 +589,7 @@ CREATE VIEW view9 AS (
 ```
 
 ### View 10
+
 ```sql
 CREATE VIEW view10 AS (
     SELECT J.job_posting_title 'Job Title',
@@ -596,6 +604,7 @@ CREATE VIEW view10 AS (
 ```
 
 ### View 11 - view all the job_postings that each company has posted
+
 ```sql
 CREATE VIEW view11 AS (
     SELECT company.id AS 'company_id', job_posting.id AS 'job_posting_id'
@@ -604,6 +613,7 @@ CREATE VIEW view11 AS (
 ```
 
 ### View 12 - show all usernames, password hashes, as well as what type of account they are (recruit or recruiter)
+
 ```sql
 CREATE VIEW view12 AS (
     (
@@ -707,168 +717,153 @@ Similar to recruit table, each tuple represents an account in our system
 - **Method:** POST
 - **Endpoint:** `/company/job_postings`
 - **Request Body:**
-    ```json
-    {
-        "id": 1
-    }
-    ```
+  ```json
+  {
+    "id": 1
+  }
+  ```
 - **Response Body (Sample):**
-    ```json
-    {
-        "message": "success",
-        "data": [
-            {
-                "id": 2,
-                "company_id": 1,
-                "job_posting_title": "Project Manager",
-                "job_posting_description": "Someone to manage the google developers in their weekly scrum meetings and facilitate team activity and meetings.",
-                "salary": 50000,
-                "picture": "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                "job_posting_status": "Open",
-                "job_posting_type": "Remote",
-                "job_posting_frequency": "Contract",
-                "professions": [
-                    "Sales",
-                    "Data Science",
-                    "Data Analytics"
-                ]
-            }
-            // ... (complete data structure)
-        ]
-    }
-    ```
+  ```json
+  {
+    "message": "success",
+    "data": [
+      {
+        "id": 2,
+        "company_id": 1,
+        "job_posting_title": "Project Manager",
+        "job_posting_description": "Someone to manage the google developers in their weekly scrum meetings and facilitate team activity and meetings.",
+        "salary": 50000,
+        "picture": "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "job_posting_status": "Open",
+        "job_posting_type": "Remote",
+        "job_posting_frequency": "Contract",
+        "professions": ["Sales", "Data Science", "Data Analytics"]
+      }
+      // ... (complete data structure)
+    ]
+  }
+  ```
 
 #### (1.2) Get Job Posting By Id
 
 - **Method:** POST
 - **Endpoint:** `/job_posting/id`
 - **Headers:**
-    ```json
-    {
-        "Content-Type": "application/json"
-    }
-    ```
+  ```json
+  {
+    "Content-Type": "application/json"
+  }
+  ```
 - **Request Body:**
-    ```json
-    {
-        "id": 3
-    }
-    ```
+  ```json
+  {
+    "id": 3
+  }
+  ```
 - **Response Body (Sample):**
-    ```json
-    {
-        "message": "success",
-        "data": {
-            "id": 3,
-            "company_id": 2,
-            "company_name": "Meet Sushi and Boil",
-            "job_posting_title": "Sushi Chef",
-            "job_posting_description": "Someone with 3+ years of experience in making sushi",
-            "salary": 80000,
-            "picture": "https://images.pexels.com/photos/8951199/pexels-photo-8951199.jpeg?auto=compress&cs=tinysrgb&w=1600",
-            "job_posting_status": "Open",
-            "job_posting_type": "In-Person",
-            "job_posting_frequency": "Full-Time",
-            "professions": [
-                "Customer Service",
-                "Cooking"
-            ]
-        }
+  ```json
+  {
+    "message": "success",
+    "data": {
+      "id": 3,
+      "company_id": 2,
+      "company_name": "Meet Sushi and Boil",
+      "job_posting_title": "Sushi Chef",
+      "job_posting_description": "Someone with 3+ years of experience in making sushi",
+      "salary": 80000,
+      "picture": "https://images.pexels.com/photos/8951199/pexels-photo-8951199.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "job_posting_status": "Open",
+      "job_posting_type": "In-Person",
+      "job_posting_frequency": "Full-Time",
+      "professions": ["Customer Service", "Cooking"]
     }
-    ```
+  }
+  ```
 
 #### (1.3) Get All Job Postings
 
 - **Method:** POST
 - **Endpoint:** `/job_postings`
 - **Headers:**
-    ```json
-    {
-        "Content-Type": "application/json"
-    }
-    ```
+  ```json
+  {
+    "Content-Type": "application/json"
+  }
+  ```
 - **Request Body:**
-    ```json
-    {}
-    ```
+  ```json
+  {}
+  ```
 - **Response Body (Sample):**
-    ```json
-    {
-        "message": "success",
-        "data": [
-            {
-                "id": 0,
-                "company_id": 0,
-                "company_name": "Ontario Tech University",
-                "job_posting_title": "Software Engineering Associate Professor",
-                "job_posting_description": "A professor with a Software and Electrical background and a PhD in Engineering",
-                "salary": 180000,
-                "picture": "https://images.pexels.com/photos/716276/pexels-photo-716276.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                "job_posting_status": "Closed",
-                "job_posting_type": "In-Person",
-                "job_posting_frequency": "Full-Time",
-                "professions": [
-                    "Software Engineering",
-                    "Data Engineering",
-                    "Education"
-                ]
-            },
-            // ... (complete data structure)
-        ]
-    }
-    ```
+  ```json
+  {
+    "message": "success",
+    "data": [
+      {
+        "id": 0,
+        "company_id": 0,
+        "company_name": "Ontario Tech University",
+        "job_posting_title": "Software Engineering Associate Professor",
+        "job_posting_description": "A professor with a Software and Electrical background and a PhD in Engineering",
+        "salary": 180000,
+        "picture": "https://images.pexels.com/photos/716276/pexels-photo-716276.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "job_posting_status": "Closed",
+        "job_posting_type": "In-Person",
+        "job_posting_frequency": "Full-Time",
+        "professions": ["Software Engineering", "Data Engineering", "Education"]
+      }
+      // ... (complete data structure)
+    ]
+  }
+  ```
 
 ### (1.4) Get Job Posting By Filter
 
 - **Method:** POST
 - **Endpoint:** `/job_posting/filter`
 - **Headers:**
-    ```json
-    {
-        "Content-Type": "application/json"
-    }
-    ```
+  ```json
+  {
+    "Content-Type": "application/json"
+  }
+  ```
 - **Request Body:**
-    ```json
-    {
-        "job_posting_titles": [],
-        "company_names": [],
-        "professions": [],
-        "salary": {
-            "min": 0,
-            "max": 1999999
-        },
-        "job_posting_statuses": [],
-        "job_posting_types": [],
-        "job_posting_frequencies": ["Part-Time"]
-    }
-    ```
+  ```json
+  {
+    "job_posting_titles": [],
+    "company_names": [],
+    "professions": [],
+    "salary": {
+      "min": 0,
+      "max": 1999999
+    },
+    "job_posting_statuses": [],
+    "job_posting_types": [],
+    "job_posting_frequencies": ["Part-Time"]
+  }
+  ```
 - **Response Body (Sample):**
-    ```json
-    {
-        "message": "success",
-        "data": [
-            {
-                "id": 1,
-                "company_id": 0,
-                "company_name": "Ontario Tech University",
-                "job_posting_title": "Data Management Lab Instructor",
-                "job_posting_description": "A Master's student with a strong software and databases background.",
-                "salary": 90000,
-                "picture": "https://images.pexels.com/photos/7173026/pexels-photo-7173026.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                "job_posting_status": "Open",
-                "job_posting_type": "In-Person",
-                "job_posting_frequency": "Part-Time",
-                "professions": [
-                    "Software Engineering",
-                    "Data Engineering",
-                    "Education"
-                ]
-            },
-            // ... (complete data structure)
-        ]
-    }
-    ```
+  ```json
+  {
+    "message": "success",
+    "data": [
+      {
+        "id": 1,
+        "company_id": 0,
+        "company_name": "Ontario Tech University",
+        "job_posting_title": "Data Management Lab Instructor",
+        "job_posting_description": "A Master's student with a strong software and databases background.",
+        "salary": 90000,
+        "picture": "https://images.pexels.com/photos/7173026/pexels-photo-7173026.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "job_posting_status": "Open",
+        "job_posting_type": "In-Person",
+        "job_posting_frequency": "Part-Time",
+        "professions": ["Software Engineering", "Data Engineering", "Education"]
+      }
+      // ... (complete data structure)
+    ]
+  }
+  ```
 
 ## (2) Company
 
@@ -877,85 +872,77 @@ Similar to recruit table, each tuple represents an account in our system
 - **Method:** POST
 - **Endpoint:** `/company/id`
 - **Headers:**
-    ```json
-    {
-        "Content-Type": "application/json"
-    }
-    ```
+  ```json
+  {
+    "Content-Type": "application/json"
+  }
+  ```
 - **Request Body:**
-    ```json
-    {
-        "id": 2
-    }
-    ```
+  ```json
+  {
+    "id": 2
+  }
+  ```
 - **Response Body (Sample):**
-    ```json
-    {
-        "message": "success",
-        "data": {
-            "id": 2,
-            "company_name": "Meet Sushi and Boil",
-            "company_description": "We make some pretty good sushi",
-            "company_location": "3595 Sheppard Ave East , Toronto, Ontario",
-            "logo": "https://imgur.com/vwwGPgT",
-            "job_postings": [
-                3,
-                4,
-                5,
-                24,
-                25
-            ],
-            "recruiters": [
-                2
-            ]
-        }
+  ```json
+  {
+    "message": "success",
+    "data": {
+      "id": 2,
+      "company_name": "Meet Sushi and Boil",
+      "company_description": "We make some pretty good sushi",
+      "company_location": "3595 Sheppard Ave East , Toronto, Ontario",
+      "logo": "https://imgur.com/vwwGPgT",
+      "job_postings": [3, 4, 5, 24, 25],
+      "recruiters": [2]
     }
-    ```
+  }
+  ```
 
 ### (2.2) Get All Companies
 
 - **Method:** POST
 - **Endpoint:** `/companies`
 - **Headers:**
-    ```json
-    {
-        "Content-Type": "application/json"
-    }
-    ```
+  ```json
+  {
+    "Content-Type": "application/json"
+  }
+  ```
 - **Request Body:**
-    ```json
-    {}
-    ```
+  ```json
+  {}
+  ```
 - **Response Body (Sample):**
-    ```json
-    {
-        "message": "success",
-        "data": [
-            {
-                "id": 0,
-                "company_name": "Ontario Tech University",
-                "company_description": "Ontario's fastest growing engineering university",
-                "company_location": "2000 Simcoe Street North, Oshawa, Ontario, Canada",
-                "logo": "https://pbs.twimg.com/profile_images/1110951821579829253/weqEaAsM_400x400.png"
-            },
-            {
-                "id": 1,
-                "company_name": "Google",
-                "company_description": "Google LLC is an American multinational technology company that specializes in Internet-related services and products.",
-                "company_location": "111 Richmond Street West Toronto, Ontario, Canada",
-                "logo": "https://blog.hubspot.com/hubfs/image8-2.jpg"
-            },
-            {
-                "id": 2,
-                "company_name": "Meet Sushi and Boil",
-                "company_description": "We make some pretty good sushi",
-                "company_location": "3595 Sheppard Ave East , Toronto, Ontario",
-                "logo": "https://imgur.com/vwwGPgT"
-            }
-            // ... (complete data structure)
-        ]
-    }
-    ```
+  ```json
+  {
+    "message": "success",
+    "data": [
+      {
+        "id": 0,
+        "company_name": "Ontario Tech University",
+        "company_description": "Ontario's fastest growing engineering university",
+        "company_location": "2000 Simcoe Street North, Oshawa, Ontario, Canada",
+        "logo": "https://pbs.twimg.com/profile_images/1110951821579829253/weqEaAsM_400x400.png"
+      },
+      {
+        "id": 1,
+        "company_name": "Google",
+        "company_description": "Google LLC is an American multinational technology company that specializes in Internet-related services and products.",
+        "company_location": "111 Richmond Street West Toronto, Ontario, Canada",
+        "logo": "https://blog.hubspot.com/hubfs/image8-2.jpg"
+      },
+      {
+        "id": 2,
+        "company_name": "Meet Sushi and Boil",
+        "company_description": "We make some pretty good sushi",
+        "company_location": "3595 Sheppard Ave East , Toronto, Ontario",
+        "logo": "https://imgur.com/vwwGPgT"
+      }
+      // ... (complete data structure)
+    ]
+  }
+  ```
 
 ## (3) Recruit
 
@@ -964,184 +951,178 @@ Similar to recruit table, each tuple represents an account in our system
 - **Method:** POST
 - **Endpoint:** `/recruit/id`
 - **Headers:**
-    ```json
-    {
-        "Content-Type": "application/json"
-    }
-    ```
+  ```json
+  {
+    "Content-Type": "application/json"
+  }
+  ```
 - **Request Body:**
-    ```json
-    {
-        "id": 0
-    }
-    ```
+  ```json
+  {
+    "id": 0
+  }
+  ```
 - **Response Body (Sample):**
-    ```json
-    {
-        "message": "success",
-        "data": {
-            "id": 0,
-            "u_name": "x23mark",
-            "pass_hash": "123",
-            "full_name": "Jeremy Tubongbanua",
-            "recruit_location": "Scarborough, Ontario, Canada",
-            "bio": "3rd-Year Software Engineering Student Specializing in IoT",
-            "picture": "https://i.imgur.com/SbwZN0K.png",
-            "recruit_resume": "https://www.linkedin.com/in/jeremy-tubongbanua/",
-            "recruit_status": "Not Looking for Jobs",
-            "professions": [
-                "Software Engineering"
-            ]
-        }
+  ```json
+  {
+    "message": "success",
+    "data": {
+      "id": 0,
+      "u_name": "x23mark",
+      "pass_hash": "123",
+      "full_name": "Jeremy Tubongbanua",
+      "recruit_location": "Scarborough, Ontario, Canada",
+      "bio": "3rd-Year Software Engineering Student Specializing in IoT",
+      "picture": "https://i.imgur.com/SbwZN0K.png",
+      "recruit_resume": "https://www.linkedin.com/in/jeremy-tubongbanua/",
+      "recruit_status": "Not Looking for Jobs",
+      "professions": ["Software Engineering"]
     }
-    ```
+  }
+  ```
 
 ### (3.2) Get All Recruits
 
 - **Method:** GET
 - **Endpoint:** `/recruits`
 - **Headers:**
-    ```json
-    {
-        "Content-Type": "application/json"
-    }
-    ```
+  ```json
+  {
+    "Content-Type": "application/json"
+  }
+  ```
 - **Request Body:**
-    ```json
-    {}
-    ```
+  ```json
+  {}
+  ```
 - **Response Body (Sample):**
-    ```json
-    {
-        "message": "success",
-        "data": [
-            {
-                "id": 0,
-                "u_name": "x23mark",
-                "pass_hash": "123",
-                "full_name": "Jeremy Tubongbanua",
-                "recruit_location": "Scarborough, Ontario, Canada",
-                "bio": "3rd-Year Software Engineering Student Specializing in IoT",
-                "picture": "https://i.imgur.com/SbwZN0K.png",
-                "recruit_resume": "https://www.linkedin.com/in/jeremy-tubongbanua/",
-                "recruit_status": "Not Looking for Jobs",
-                "professions": [
-                    "Software Engineering"
-                ]
-            },
-            // ... (complete data structure)
-        ]
-    }
-    ```
+  ```json
+  {
+    "message": "success",
+    "data": [
+      {
+        "id": 0,
+        "u_name": "x23mark",
+        "pass_hash": "123",
+        "full_name": "Jeremy Tubongbanua",
+        "recruit_location": "Scarborough, Ontario, Canada",
+        "bio": "3rd-Year Software Engineering Student Specializing in IoT",
+        "picture": "https://i.imgur.com/SbwZN0K.png",
+        "recruit_resume": "https://www.linkedin.com/in/jeremy-tubongbanua/",
+        "recruit_status": "Not Looking for Jobs",
+        "professions": ["Software Engineering"]
+      }
+      // ... (complete data structure)
+    ]
+  }
+  ```
 
 ### (3.3) Get Recruit By u_name
 
 - **Method:** POST
 - **Endpoint:** `/recruit/u_name`
 - **Headers:**
-    ```json
-    {
-        "Content-Type": "application/json"
-    }
-    ```
+  ```json
+  {
+    "Content-Type": "application/json"
+  }
+  ```
 - **Request Body:**
-    ```json
-    {
-        "u_name": "jeremy"
-    }
-    ```
+  ```json
+  {
+    "u_name": "jeremy"
+  }
+  ```
 - **Response Body (Sample):**
-    ```json
-    {
-        "message": "success",
-        "data": {
-            "id": 0,
-            "u_name": "x23mark",
-            "pass_hash": "123",
-            "full_name": "Jeremy Tubongbanua",
-            "recruit_location": "Scarborough, Ontario, Canada",
-            "bio": "3rd-Year Software Engineering Student Specializing in IoT",
-            "picture": "https://i.imgur.com/SbwZN0K.png",
-            "recruit_resume": "https://www.linkedin.com/in/jeremy-tubongbanua/",
-            "recruit_status": "Not Looking for Jobs",
-            "professions": [
-                "Software Engineering"
-            ]
-        }
+  ```json
+  {
+    "message": "success",
+    "data": {
+      "id": 0,
+      "u_name": "x23mark",
+      "pass_hash": "123",
+      "full_name": "Jeremy Tubongbanua",
+      "recruit_location": "Scarborough, Ontario, Canada",
+      "bio": "3rd-Year Software Engineering Student Specializing in IoT",
+      "picture": "https://i.imgur.com/SbwZN0K.png",
+      "recruit_resume": "https://www.linkedin.com/in/jeremy-tubongbanua/",
+      "recruit_status": "Not Looking for Jobs",
+      "professions": ["Software Engineering"]
     }
-    ```
+  }
+  ```
 
 ### (3.4) Put New Recruit
 
 - **Method:** POST
 - **Endpoint:** `/recruit`
 - **Headers:**
-    ```json
-    {
-        "Content-Type": "application/json"
-    }
-    ```
+  ```json
+  {
+    "Content-Type": "application/json"
+  }
+  ```
 - **Request Body:**
-    ```json
-    {
-        "u_name": "el28",
-        "pass_hash": "de877b38b46ff2a81533394464d8c7ae",
-        "full_name": "Emily Lai",
-        "recruit_location": "Aurora, Ontario",
-        "bio": "Hi, I am Emily Lai, the VP of Finance & Administration of OT EngSoc",
-        "picture": "https://media.licdn.com/dms/image/D5603AQGXKuUJ-RGsRQ/profile-displayphoto-shrink_200_200/0/1677041538074?e=1705536000&v=beta&t=oJwqQcdXkPSl5tlXQ2nmasNq0KGXOZVyneO4EHy-F48",
-        "recruit_resume": "https://www.linkedin.com/in/-emily-lai/",
-        "recruit_status_id": 1
-    }
-    ```
+  ```json
+  {
+    "u_name": "el28",
+    "pass_hash": "de877b38b46ff2a81533394464d8c7ae",
+    "full_name": "Emily Lai",
+    "recruit_location": "Aurora, Ontario",
+    "bio": "Hi, I am Emily Lai, the VP of Finance & Administration of OT EngSoc",
+    "picture": "https://media.licdn.com/dms/image/D5603AQGXKuUJ-RGsRQ/profile-displayphoto-shrink_200_200/0/1677041538074?e=1705536000&v=beta&t=oJwqQcdXkPSl5tlXQ2nmasNq0KGXOZVyneO4EHy-F48",
+    "recruit_resume": "https://www.linkedin.com/in/-emily-lai/",
+    "recruit_status_id": 1
+  }
+  ```
 - **Response Body (Sample):**
-    ```json
-    {
-        "message": "success",
-        "data": {
-            "fieldCount": 0,
-            "affectedRows": 1,
-            "insertId": 0,
-            "info": "",
-            "serverStatus": 2,
-            "warningStatus": 0,
-            "changedRows": 0
-        }
+  ```json
+  {
+    "message": "success",
+    "data": {
+      "fieldCount": 0,
+      "affectedRows": 1,
+      "insertId": 0,
+      "info": "",
+      "serverStatus": 2,
+      "warningStatus": 0,
+      "changedRows": 0
     }
-    ```
+  }
+  ```
 
 ### (3.5) Patch Recruit
 
 - **Method:** POST
 - **Endpoint:** `/recruit`
 - **Headers:**
-    ```json
-    {
-        "Content-Type": "application/json"
-    }
-    ```
+  ```json
+  {
+    "Content-Type": "application/json"
+  }
+  ```
 - **Request Body:**
-    ```json
-    {
-        "id": 0,
-        "u_name": "x23mark112"
-    }
-    ```
+  ```json
+  {
+    "id": 0,
+    "u_name": "x23mark112"
+  }
+  ```
 - **Response Body (Sample):**
-    ```json
-    {
-        "message": "success",
-        "data": {
-            "fieldCount": 0,
-            "affectedRows": 1,
-            "insertId": 0,
-            "info": "Rows matched: 1  Changed: 1  Warnings: 0",
-            "serverStatus": 2,
-            "warningStatus": 0,
-            "changedRows": 1
-        }
+  ```json
+  {
+    "message": "success",
+    "data": {
+      "fieldCount": 0,
+      "affectedRows": 1,
+      "insertId": 0,
+      "info": "Rows matched: 1  Changed: 1  Warnings: 0",
+      "serverStatus": 2,
+      "warningStatus": 0,
+      "changedRows": 1
     }
-    ```
+  }
+  ```
 
 ## (4) Recruiter
 
@@ -1150,38 +1131,206 @@ Similar to recruit table, each tuple represents an account in our system
 - **Method:** PUT
 - **Endpoint:** `/recruiter`
 - **Headers:**
+
   ```json
   {
-      "Content-Type": "application/json"
+    "Content-Type": "application/json"
   }
   ```
 
-- **Request Body:** 
-    ```json
-    {
-        "company_id": 0,
-        "u_name": "el28",
-        "pass_hash": "1234",
-        "full_name": "Nehmat F",
-        "recruiter_location": "Oshawa, Ontario",
-        "bio": "Cool guy",
-        "picture": "123"
-    }
-    ```
+- **Request Body:**
+
+  ```json
+  {
+    "company_id": 0,
+    "u_name": "el28",
+    "pass_hash": "1234",
+    "full_name": "Nehmat F",
+    "recruiter_location": "Oshawa, Ontario",
+    "bio": "Cool guy",
+    "picture": "123"
+  }
+  ```
 
 - **Response Body (Sample):**
+
 ```json
 {
-    "message": "success",
-    "data": {
-        "fieldCount": 0,
-        "affectedRows": 1,
-        "insertId": 0,
-        "info": "",
-        "serverStatus": 2,
-        "warningStatus": 0,
-        "changedRows": 0
-    }
+  "message": "success",
+  "data": {
+    "fieldCount": 0,
+    "affectedRows": 1,
+    "insertId": 0,
+    "info": "",
+    "serverStatus": 2,
+    "warningStatus": 0,
+    "changedRows": 0
+  }
 }
-
 ```
+
+### (4.2) Patch Recruiter
+
+- **Method**: PATCH
+- **Endpoint**: /recruiter
+- **Headers**:
+
+```json
+{ "Content-Type": "application/json" }
+```
+
+- **Request Body:**
+
+```json
+{
+  "id": 0,
+  "company_id": 0,
+  "u_name": "jeremy",
+  "pass_hash": "123",
+  "full_name": "Jeremy",
+  "bio": "I am Jeremy, a recruiter",
+  "picture": "456"
+}
+```
+
+- **Response Body (Sample):**
+
+```json
+{
+  "message": "success",
+  "data": {
+    "fieldCount": 0,
+    "affectedRows": 1,
+    "insertId": 0,
+    "info": "Rows matched: 1 Changed: 1 Warnings: 0",
+    "serverStatus": 2,
+    "warningStatus": 0,
+    "changedRows": 1
+  }
+}
+```
+
+### (4.3) Get Recruiter
+
+- **Method**: POST
+- **Endpoint**: /recruiter/u_name
+- **Headers**:
+
+```json
+{ "Content-Type": "application/json" }
+```
+
+- **Request Body:**
+
+```json
+{
+  "u_name": "recruiter1"
+}
+```
+
+- **Response Body (Sample):**
+
+```json
+{
+  "message": "success"
+}
+```
+
+### (5) Recruiter
+
+### (5.1) Put New Recruiter
+
+- **Method**: PUT
+- **Endpoint**: /recruiter
+- **Headers**: Content-Type: application/json
+- **Request**
+
+````json
+Body: { "company_id": 0, "u_name": "el28", "pass_hash": "1234", "full_name": "Nehmat F", "recruiter_location": "Oshawa, Ontario", "bio": "Cool guy", "picture": "123" } ```
+- **Response** ```json Body (Sample): { "message": "success", "data": { "fieldCount": 0, "affectedRows": 1, "insertId": 0, "info": "", "serverStatus": 2, "warningStatus": 0, "changedRows": 0 } }
+````
+
+### (5.2) Patch Recruiter
+
+- **Method**: PATCH
+- **Endpoint**: /recruiter
+- **Headers**: Content-Type: application/json
+- **Request**
+
+```json
+ Body: { "id": 0, "company_id": 0, "u_name": "jeremy", "pass_hash": "123", "full_name": "Jeremy", "bio": "I am Jeremy, a recruiter", "picture": "456" }
+```
+
+- **Response**
+
+```json
+Body (Sample): { "message": "success", "data": { "fieldCount": 0, "affectedRows": 1, "insertId": 0, "info": "Rows matched: 1 Changed: 1 Warnings: 0", "serverStatus": 2, "warningStatus": 0, "changedRows": 1 } }
+```
+
+### (5.3) Get Recruiter
+
+- **Method**: POST
+- **Endpoint**: /recruiter/u_name
+- **Headers**: Content-Type: application/json
+- **Request**
+
+```json
+Body: { "u_name": "recruiter1" }
+```
+
+- **Response**
+
+```json
+Body (Sample): { "message": "success" }
+```
+
+(6) Job Application
+(6.1) Recruit Apply For Job Posting
+Method: PUT
+Endpoint: /job_application/recruitapply
+Headers: Content-Type: application/json
+Request Body: { "recruit_id": 1, "job_posting_id": 2 }
+Response Body (Sample): { "message": "success", "data": { "fieldCount": 0, "affectedRows": 1, "insertId": 0, "info": "", "serverStatus": 2, "warningStatus": 0, "changedRows": 0 } }
+(6.2) Get Job Posting By Recruit Id
+Method: POST
+Endpoint: /job_posting/recruit_id
+Headers: Content-Type: application/json
+Request Body: { "id": 0 }
+Response Body (Sample): { "message": "success", "data": [{ "id": 1, "company_id": 0, "job_posting_title": "Data Management Lab Instructor", "job_posting_description": "A Master's student with a strong software and databases background.", "salary": 90000, "picture": "https://images.pexels.com/photos/7173026/pexels-photo-7173026.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", "job_posting_status": "Open", "job_posting_type": "In-Person" }, { "id": 2, "company_id": 1, "job_posting_title": "Project Manager", "job_posting_description": "Someone to manage the google developers in their weekly scrum meetings and facilitate team activity and meetings.", "salary": 50000, "picture": "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", "job_posting_status": "Open", "job_posting_type": "Remote" }] }
+(6.3) Get Recruit By Job Posting Id
+Method: POST
+Endpoint: /job_application/job_postingid
+Headers: Content-Type: application/json
+Request Body: { "id": 1 }
+Response Body (Sample): { "message": "success", "data": [{ "id": 0, "u_name": "x23mark112", "full_name": "Jeremy Tubongbanua", "recruit_location": "Scarborough, Ontario, Canada", "bio": "3rd-Year Software Engineering Student Specializing in IoT", "picture": "https://i.imgur.com/SbwZN0K.png", "recruit_resume": "https://www.linkedin.com/in/jeremy-tubongbanua/", "recruit_status": "Not Looking for Jobs", "professions": ["Software Engineering"] }, { "id": 1, "u_name": "jerryshum", "full_name": "Jerry Shum", "recruit_location": "Oshawa, Ontario, Canada", "bio": "3rd-Year Software Engineering Student", "picture": "https://i.imgur.com/fxfajwb.png", "recruit_resume": "https://www.linkedin.com/in/jerry-shum/", "recruit_status": "Looking for Jobs", "professions": ["Software Engineering"] }, { "id": 2, "u_name": "neh2332", "full_name": "Nehmat Farooq", "recruit_location": "Oshawa, Ontario, Canada", "bio": "3rd-Year Software Engineering Student | Aspiring Software Engineer | Gym Enjoyer", "picture": "https://i.imgur.com/aqSgVKF.png", "recruit_resume": "https://www.linkedin.com/in/nehmat-farooq/", "recruit_status": "Looking for Jobs", "professions": ["Software Engineering"] }] }
+
+
+(7) Professions
+(7.1) Get All Professions
+Method: POST
+Endpoint: /professions
+Headers: Content-Type: application/json
+Request Body: {}
+Response Body (Sample): { "message": "success", "data": [{ "id": 0, "profession": "Software Engineering" }, { "id": 1, "profession": "Data Engineering" }, { "id": 2, "profession": "Mechanical Engineering" }, { "id": 3, "profession": "Accounting" }, { "id": 4, "profession": "Finance" }, { "id": 5, "profession": "Marketing" }, { "id": 6, "profession": "Sales" }, { "id": 7, "profession": "Human Resources" }, { "id": 8, "profession": "Customer Service" }, { "id": 9, "profession": "Data Science" }, { "id": 10, "profession": "Data Analytics" }, { "id": 12, "profession": "Machine Learning" }, { "id": 13, "profession": "Data Mining" }, { "id": 14, "profession": "Electrical Engineering" }, { "id": 15, "profession": "Education" }, { "id": 16, "profession": "Cooking" }, { "id": 17, "profession": "Big Data" }, { "id": 18, "profession": "High School Math" }] }
+This information is now available without markdown code blocks for easy reference.
+
+(8) Login
+(8.1) Login
+Check that the password hash and username exist in the database (a.k.a., they have provided correct details) to receive an authenticated session.
+Method: POST
+Endpoint: /login
+Headers: Content-Type: application/json
+Request Body:
+{
+"u_name": "x23mark",
+"pass_hash": "202cb962ac59075b964b07152d234b70"
+}
+Response Body (Sample):
+{
+"message": "success",
+"data": {
+"u_name": "x23mark112",
+"pass_hash": "123",
+"account_type": "recruit"
+}
+}
